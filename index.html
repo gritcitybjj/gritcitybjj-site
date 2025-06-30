@@ -3,69 +3,339 @@
 <head>
   <meta charset="UTF-8">
   <title>GRIT CITY BJJ | Tacoma, WA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { background: #fff; font-family: 'Segoe UI', Arial, sans-serif; color: #232323; margin: 0; padding: 0; }
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 12px; }
-    .banner { width: 100%; max-width: 1100px; height: auto; display: block; margin: 0 auto 16px auto; border-bottom: 2px solid #e1e1e1; }
-    .student-login { display: flex; justify-content: center; margin: 16px 0 24px 0; }
-    .student-login img { width: 230px; cursor: pointer; }
-    .schedule-section { margin: 36px 0 36px 0; }
-    .schedule-title { text-align: center; font-size: 1.4em; color: #16405b; font-weight: 600; letter-spacing: 1.1px; margin-bottom: 18px;}
-    .schedule-frame { display: flex; justify-content: center; }
-    .schedule-frame iframe { width: 98%; min-width: 340px; max-width: 1000px; height: 900px; border-radius: 10px; box-shadow: 0 1px 8px #0001;}
-    .cta-section { display: flex; justify-content: center; margin: 0 0 42px 0; }
-    .cta { background: #f3f7fa; border-radius: 10px; box-shadow: 0 1px 8px #0001; padding: 28px 32px; max-width: 410px; width: 100%;}
-    .cta h2 { margin: 0 0 14px 0; font-size: 1.28em; color: #16405b; letter-spacing: 1.1px; }
-    .cta form { display: flex; flex-direction: column; gap: 11px; }
-    .cta label { font-weight: 500; margin-bottom: 2px; }
-    .cta input, .cta button { padding: 9px; border-radius: 6px; border: 1px solid #b8bfc7; font-size: 1em; }
-    .cta button { background: #193d4d; color: #fff; border: none; cursor: pointer; font-weight: bold; letter-spacing: 1.1px; transition: background .18s; }
-    .cta button:hover { background: #0f232e; }
-    .maps-section { margin: 40px 0 32px 0; }
-    .maps-title { text-align: center; font-size: 1.23em; color: #0c283c; margin-bottom: 10px; font-weight: 600; }
-    .maps-images { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; }
-    .maps-images img { width: 390px; max-width: 100%; border-radius: 7px; box-shadow: 0 2px 8px #0002; border: 1px solid #e1e1e1; }
-    .maps-link { display: flex; justify-content: center; margin: 16px 0 0 0; }
-    .maps-link a { background: #1a57a7; color: #fff; padding: 11px 25px; border-radius: 7px; font-weight: 600; letter-spacing: 1.3px; font-size: 1.09em; text-decoration: none; transition: background 0.18s;}
-    .maps-link a:hover { background: #072745;}
-    .gallery-section { margin: 40px 0 30px 0; }
-    .gallery-title { text-align: center; font-size: 1.17em; color: #13213c; margin-bottom: 14px; letter-spacing: 1.3px; font-weight: 600; }
-    .gallery-images { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
-    .gallery-images img { width: 270px; height: 185px; object-fit: cover; border-radius: 7px; box-shadow: 0 2px 12px #0002; border: 1px solid #eaeaea; background: #e7e7e7; }
-    .instructors-section { margin: 48px 0 35px 0; text-align: center; }
-    .instructors-title { font-size: 1.25em; color: #183c52; letter-spacing: 1.5px; margin-bottom: 17px; font-weight: 600; }
-    .instructor-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 46px; }
-    .instructor { background: #f5fafd; border-radius: 14px; box-shadow: 0 2px 14px #0002; padding: 28px 16px 18px 16px; max-width: 290px; min-width: 230px; flex: 1 1 290px; margin-bottom: 20px;}
-    .instructor img { width: 230px; height: 370px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 10px #0001; border: 1.5px solid #d3e3ef; margin-bottom: 14px; background: #c8d2e6; }
-    .instructor-name { font-weight: bold; font-size: 1.16em; margin-bottom: 5px; color: #16244d; }
-    .instructor-bio { font-size: 1em; color: #1c242e; text-align: left; margin-bottom: 0;}
-    .awards-section { margin: 44px 0 34px 0; text-align: center;}
-    .awards-title { font-size: 1.19em; color: #7a161b; font-weight: 600; letter-spacing: 1.2px; margin-bottom: 12px;}
-    .awards-images { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 8px;}
-    .awards-images img { width: 90px; height: 90px; object-fit: contain; margin: 7px 7px; border-radius: 6px; background: #eaeaea;}
-    .faq-section { margin: 48px 0 32px 0; background: #fafdff; padding: 26px 15px 12px 15px; border-radius: 15px; box-shadow: 0 2px 14px #0001; max-width: 1050px; margin-left: auto; margin-right: auto;}
-    .faq-title { text-align: center; color: #154777; font-size: 1.2em; letter-spacing: 1px; margin-bottom: 13px; font-weight: 600;}
-    .faq-list { list-style: none; padding-left: 0; font-size: 1.07em;}
-    .faq-list li { margin-bottom: 16px; padding-left: 4px;}
-    .code-conduct-section { max-width: 980px; margin: 48px auto 32px auto; padding: 26px 18px 18px 18px; background: #f9fcff; border-radius: 15px; border: 1px solid #e0e8f0; box-shadow: 0 1px 8px #0001;}
-    .code-title { color: #175177; text-align: center; font-size: 1.15em; letter-spacing: 1.2px; margin-bottom: 13px; font-weight: bold;}
-    .code-list, .etiquette-list, .hygiene-list, .uniform-list, .spectator-list { list-style: none; padding-left: 0; margin-bottom: 10px; font-size: 1.04em; line-height: 1.55;}
-    .code-section-title { font-size: 1em; font-weight: bold; color: #26406b; margin-top: 20px; margin-bottom: 2px;}
-    .bottom-badges { display: flex; justify-content: space-between; align-items: flex-end; margin: 40px 0 16px 0; padding: 10px 0 15px 0; background: #fafcff; border-radius: 13px 13px 0 0; box-shadow: 0 -1px 5px #0001;}
-    .bottom-badges img { display: block; }
-    @media (max-width: 900px) {
-      .gallery-images img, .instructor img { width: 96%; max-width: 270px; height: auto;}
-      .bottom-badges { flex-direction: column; gap: 14px; align-items: center; text-align: center;}
-      .maps-images img { width: 98%;}
-      .schedule-frame iframe { height: 500px; }
+    body {
+      background: #fff;
+      color: #222;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+.main-banner {
+  width: 100%;
+  max-width: 1200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto 10px auto;
+  object-fit: contain;  /* Use 'contain' to show whole banner, 'cover' for edge-to-edge/cropped */
+}
+    .student-login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 16px 0 24px 0;
+    }
+    .student-login img {
+      cursor: pointer;
+      height: 45px;
+      width: auto;
+      box-shadow: 0 2px 14px rgba(20,60,100,0.09);
+      border-radius: 8px;
+      transition: transform 0.12s;
+    }
+    .student-login img:hover {
+      transform: scale(1.09);
+      box-shadow: 0 4px 18px rgba(20,60,100,0.13);
+    }
+    .schedule-embed {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0 20px 0;
+    }
+    .schedule-embed iframe {
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      width: 98vw;
+      max-width: 850px;
+      height: 750px;
+      background: #fff;
+    }
+    .try-free-class {
+      max-width: 430px;
+      margin: 35px auto 40px auto;
+      background: #f3f3f3;
+      border-radius: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 28px 30px;
+      text-align: center;
+      border: 1.5px solid #dedede;
+    }
+    .try-free-class h2 {
+      font-size: 1.4em;
+      margin-bottom: 12px;
+      font-weight: 700;
+      color: #14307f;
+      letter-spacing: 1px;
+    }
+    .try-free-class form input, .try-free-class form button {
+      font-size: 1em;
+      margin: 6px 0;
+      padding: 10px 12px;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #b7b7b7;
+      box-sizing: border-box;
+    }
+    .try-free-class form button {
+      background: #14307f;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .try-free-class form button:hover {
+      background: #314be7;
+    }
+    .location-maps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 22px;
+      margin: 35px 0;
+    }
+    .location-maps img, .location-maps iframe {
+      max-width: 99vw;
+      border-radius: 10px;
+      margin: 0;
+    }
+    .gallery-title {
+      font-size: 1.7em;
+      font-weight: 700;
+      text-align: center;
+      margin: 42px 0 14px 0;
+      color: #14307f;
+      letter-spacing: 1px;
+    }
+    .academy-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 38px;
+    }
+    .academy-gallery img {
+      width: 320px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+    }
+    .instructors-section {
+      background: #fafcff;
+      border-radius: 15px;
+      margin: 32px 0 40px 0;
+      padding: 25px 18px 30px 18px;
+      box-shadow: 0 1px 8px rgba(60,90,150,0.04);
+    }
+    .instructors-title {
+      font-size: 1.5em;
+      font-weight: 700;
+      text-align: center;
+      color: #14307f;
+      margin-bottom: 26px;
+      letter-spacing: 1px;
+    }
+    .instructors-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 42px;
+    }
+    .instructor-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+      padding: 19px 18px;
+      text-align: center;
+      width: 260px;
+      min-width: 220px;
+    }
+    .instructor-card img {
+      width: 180px;
+      height: 255px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.09);
+    }
+    .instructor-card h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.2em;
+      font-weight: 700;
+      color: #10316a;
+    }
+    .instructor-card p {
+      font-size: 1em;
+      color: #363636;
+      margin-bottom: 0;
+    }
+    .awards-section {
+      margin: 44px 0 35px 0;
+      text-align: center;
+    }
+    .awards-section h2 {
+      font-size: 1.2em;
+      color: #14307f;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .awards-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+    }
+    .awards-logos img {
+      height: 100px;
+      width: auto;
+      margin-bottom: 7px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: #fff;
+      padding: 3px 3px;
+    }
+    .conduct-section, .faqs-section {
+      margin: 40px auto 35px auto;
+      max-width: 900px;
+      background: #f7faff;
+      border-radius: 12px;
+      padding: 28px 23px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+    }
+    .conduct-section h2, .faqs-section h2 {
+      text-align: center;
+      color: #14307f;
+      margin-bottom: 15px;
+      font-size: 1.25em;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .conduct-section ul {
+      margin: 0 0 15px 0;
+      padding-left: 18px;
+    }
+    .conduct-section ul li {
+      margin-bottom: 7px;
+      font-size: 1em;
+      color: #343a40;
+    }
+    .faqs-section .faq-item {
+      margin-bottom: 14px;
+    }
+    .faqs-section .faq-q {
+      font-weight: bold;
+      color: #0d2b64;
+      margin-bottom: 2px;
+    }
+    .faqs-section .faq-a {
+      margin-left: 10px;
+      color: #262626;
+    }
+    /* Footer & Bottom Logos */
+    footer {
+      margin-top: 50px;
+      background: #fff;
+      padding: 28px 0 0 0;
+      border-top: 2px solid #e0e0e0;
+    }
+    .footer-logos-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      max-width: 900px;
+      margin: 0 auto 12px auto;
+      gap: 18px;
+      background: #fff;
+    }
+    .footer-logos-row .sanitized {
+      height: auto;
+      max-height: 175px;
+      width: auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.10);
+      object-fit: contain;
+      display: block;
+    }
+    .footer-logos-row .military {
+      height: 150px; /* (original 175px minus 25px) */
+      width: auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.10);
+      object-fit: contain;
+      display: block;
+    }
+    .footer-logos-row .bullies {
+      height: 175px; /* (original 200px minus 25px) */
+      width: auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.10);
+      object-fit: contain;
+      display: block;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 46px;
+      margin: 30px 0 12px 0;
+    }
+    .social-links img {
+      height: 54px;
+      width: 54px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+      transition: transform 0.13s;
+    }
+    .social-links img:hover {
+      transform: scale(1.13);
+      box-shadow: 0 2px 16px rgba(20,60,100,0.14);
+    }
+    .footer-bottom {
+      text-align: center;
+      color: #a6a6a6;
+      font-size: 15px;
+      margin-top: 18px;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 950px) {
+      .footer-logos-row img { max-height: 95px; }
+      .footer-logos-row .sanitized { max-height: 95px; }
+      .footer-logos-row .military { height: 65px; }
+      .footer-logos-row .bullies { height: 90px; }
+    }
+    @media (max-width: 700px) {
+      .main-banner { height: 100px; }
+      .instructor-card img { width: 120px; height: 170px; }
+    }
+    @media (max-width: 550px) {
+      .container { padding: 0 5px; }
+      .main-banner { height: 58px; }
+      .awards-logos img { height: 56px; }
+      .footer-logos-row img { max-height: 54px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <!-- Main Banner -->
-    <img src="MAIN_BANNER.jpg" alt="GRIT CITY BJJ Banner" class="banner">
+    <img src="MAIN_BANNER.jpg" class="main-banner" alt="GRIT CITY BJJ Main Banner">
 
     <!-- Student Login -->
     <div class="student-login">
@@ -75,132 +345,92 @@
     </div>
 
     <!-- Schedule -->
-    <div class="schedule-section">
-      <div class="schedule-title">Class Schedule</div>
-      <div class="schedule-frame">
-        <iframe src="https://calendar.google.com/calendar/embed?src=gritcitybjj%40gmail.com&ctz=America%2FLos_Angeles"
-          style="border: 0" frameborder="0" scrolling="no"></iframe>
-      </div>
+    <div class="schedule-embed">
+      <iframe src="https://calendar.google.com/calendar/embed?src=gritcitybjj%40gmail.com&ctz=America%2FLos_Angeles"
+        frameborder="0" scrolling="no"></iframe>
     </div>
 
-    <!-- Try a Free Class CTA -->
-    <div class="cta-section">
-      <div class="cta">
-        <h2>Try a FREE Class</h2>
-        <form action="mailto:gritcitybjj@gmail.com" method="POST" enctype="text/plain">
-          <label for="name">Name *</label>
-          <input type="text" id="name" name="name" required>
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" required>
-          <label for="phone">Phone (optional)</label>
-          <input type="tel" id="phone" name="phone">
-          <button type="submit">Request Your Free Class</button>
-        </form>
-      </div>
+    <!-- Try a Free Class -->
+    <div class="try-free-class">
+      <h2>Try a FREE Class</h2>
+      <form action="mailto:gritcitybjj@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="Name" placeholder="Name (required)" required>
+        <input type="email" name="Email" placeholder="Email (required)" required>
+        <input type="tel" name="Phone" placeholder="Phone (optional)">
+        <button type="submit">Request Free Class</button>
+      </form>
+      <div style="margin-top:8px; font-size:0.95em; color:#888;">Or call us at <a href="tel:2532546538" style="color:#153088;text-decoration:underline;">253-254-6538</a></div>
     </div>
 
-    <!-- Maps/Location Section -->
-    <div class="maps-section">
-      <div class="maps-title">Our Location — Cedar Plaza (Building D)</div>
-      <div class="maps-images">
-        <img src="CEDAR-PLAZA-LOCATION.jpg" alt="Cedar Plaza Map">
-        <img src="CEDAR-PLAZA---BUILDING-D.jpg" alt="Building D Map">
-      </div>
-      <div class="maps-link">
-        <a href="https://maps.app.goo.gl/debgQ8w2XD5YwNJ9A" target="_blank">
-          Tap for Live Directions
-        </a>
-      </div>
-    </div>
+    <!-- Location Maps -->
+<div class="location-maps">
+  <img src="CEDAR-PLAZA-LOCATION.jpg" alt="Tacoma Cedar Plaza Map" style="width: 380px;">
+  <img src="CEDAR-PLAZA---BUILDING-D.jpg" alt="Cedar Plaza Building D" style="width: 320px;">
+</div>
+<div style="text-align:center; margin: 12px 0 35px 0;">
+  <a href="https://maps.app.goo.gl/debgQ8w2XD5YwNJ9A" target="_blank" style="font-weight:700; color:#14307f; font-size:1.13em; text-decoration:underline;">
+    Get Directions on Google Maps
+  </a>
+</div>
+
 
     <!-- Academy Gallery -->
-    <div class="gallery-section">
-      <div class="gallery-title">Academy Gallery</div>
-      <div class="gallery-images">
-        <img src="GRIT_CITY_BJJ.jpg" alt="Front Entrance">
-        <img src="GRIT_CITY_BJJ_TACOMA.jpg" alt="Academy at Night">
-        <img src="IMG_5422.jpeg" alt="Lobby/Changing Area">
-        <img src="IMG_5425.jpeg" alt="Bag/Strength Area">
-        <img src="IMG_5426.jpeg" alt="Mat Space">
-        <img src="IMG_5427.jpeg" alt="Mat Space Alt View">
-      </div>
+    <div class="gallery-title">Academy Gallery</div>
+    <div class="academy-gallery">
+      <img src="GRIT_CITY_BJJ.jpg" alt="Front Entrance">
+      <img src="GRIT_CITY_BJJ_TACOMA.jpg" alt="Night Front">
+      <img src="IMG_5422.jpeg" alt="Lobby">
+      <img src="IMG_5425.jpeg" alt="Bag Area">
+      <img src="IMG_5426.jpeg" alt="Mat Space">
+      <img src="IMG_5427.jpeg" alt="Mat View">
     </div>
 
-    <!-- Instructors Section -->
+    <!-- Instructors -->
     <div class="instructors-section">
-      <div class="instructors-title">Our Instructors</div>
-      <div class="instructor-list">
-        <div class="instructor">
+      <div class="instructors-title">Instructors</div>
+      <div class="instructors-list">
+        <div class="instructor-card">
           <img src="MCM_5th_DEGREE.jpg" alt="Professor Marcello C Monteiro">
-          <div class="instructor-name">Professor Marcello C Monteiro</div>
-          <div class="instructor-bio">
-            Master Monteiro is well known in Brasil as a teacher and coach for creating fighting strategies, teaching the most important tricks and details that speed up the learning process and facilitate the performance of each movement used by fighters.
-            <br><br>
-            Since the age of six, Marcello has been hooked on Jiu-Jitsu, starting at Carlson Gracie's Academy and transitioning to W2M in Copacabana. Owned by Ricardo Juca, W2M was the home base for Jiu-Jitsu legend Ricardo De la Riva. From White-Black, Marcello studied with De la Riva and many considered him as De la Riva's protege. In 1998, Marcello opened his first school in Rio and in 1999, Marcello received his Black Belt from De la Riva. In 2001, he received an additional certificate for his black belt from 9th Degree Red Belt Carlos Robson Gracie.
-            <br><br>
-            Today Marcello holds a 6th Degree Black Belt. He also leads one of America's largest Jiu-Jitsu Associations with over 100 schools training under him, including Michael Proctor's Brazilian Jiu-Jitsu Academy of Tacoma.
-          </div>
+          <h3>Professor Marcello C Monteiro</h3>
+          <p>Master Monteiro is well known in Brazil as a teacher and coach for creating fighting strategies, teaching the most important tricks and details that speed up the learning process and facilitate the performance of each movement used by fighters.<br><br>
+          Since the age of six, Marcello has been hooked on Jiu-Jitsu, starting at Carlson Gracie's Academy and transitioning to W2M in Copacabana. Owned by Ricardo Juca, W2M was the home base for Jiu-Jitsu legend Ricardo De la Riva. From White-Black, Marcello studied with De la Riva and many considered him as De la Riva's protege. In 1998, Marcello opened his first school in Rio and in 1999, Marcello received his Black Belt from De la Riva. In 2001, he received an additional certificate for his black belt from 9th Degree Red Belt Carlos Robson Gracie.<br><br>
+          Today Marcello holds a 6th Degree Black Belt. He also leads one of America's largest Jiu-Jitsu Associations with over 100 schools training under him, including Michael Proctor's Brazilian Jiu-Jitsu Academy of Tacoma.</p>
         </div>
-        <div class="instructor">
+        <div class="instructor-card">
           <img src="MICHAEL_PROCTOR.JPG" alt="Professor Michael Proctor">
-          <div class="instructor-name">Professor Michael Proctor</div>
-          <div class="instructor-bio">
-            Michael Proctor is a Marcello Monteiro protégé. Michael began his Brazilian Jiu-Jitsu career under Lotus Club Jiu-Jitsu, transitioning to De La Riva Black Belt Marcello Monteiro in 2008. In 2010 Michael opened the first Marcello C. Monteiro Academy in Washington State. Michael is the proud owner of Brazilian Jiu-Jitsu Tacoma and currently holds the rank of 3rd Degree Black Belt under Marcello C. Monteiro.
-          </div>
+          <h3>Professor Michael Proctor</h3>
+          <p>Michael Proctor is a Marcello Monteiro protégé. Michael began his Brazilian Jiu-Jitsu career under Lotus Club Jiu-Jitsu, transitioning to De La Riva Black Belt Marcello Monteiro in 2008. In 2010 Michael opened the first Marcello C. Monteiro Academy in Washington State. Michael is the proud owner of Brazilian Jiu-Jitsu Tacoma and currently holds the rank of 3rd Degree Black Belt under Marcello C. Monteiro.</p>
         </div>
-        <div class="instructor">
+        <div class="instructor-card">
           <img src="DAVID_GINES.JPG" alt="Professor David Gines">
-          <div class="instructor-name">Professor David Gines</div>
-          <div class="instructor-bio">
-            2nd Degree Black Belt under Michael Proctor & Marcello C. Monteiro.
-          </div>
+          <h3>Professor David Gines</h3>
+          <p>2nd Degree Black Belt under Michael Proctor & Marcello C. Monteiro</p>
         </div>
       </div>
     </div>
 
-    <!-- Awards Section -->
+    <!-- Awards -->
     <div class="awards-section">
-      <div class="awards-title">Academy Awards</div>
-      <div class="awards-images">
-        <img src="academy~~element1146~~14.jpg" alt="Award 1">
-        <img src="academy~~element1146~~15.jpg" alt="Award 2">
-        <img src="academy~~element1146~~16.jpg" alt="Award 3">
-        <img src="academy~~element1146~~17.jpg" alt="Award 4">
-        <img src="academy~~element1146~~18.jpg" alt="Award 5">
-        <img src="academy~~element1146~~19.jpg" alt="Award 6">
-        <img src="academy~~element1146~~20.jpg" alt="Award 7">
-        <img src="academy~~element1146~~21.jpg" alt="Award 8">
-        <img src="academy~~element1146~~22.jpg" alt="Award 9">
-        <img src="academy~~element1146~~23.jpg" alt="Award 10">
-        <img src="academy~~element1146~~24.jpg" alt="Award 11">
+      <h2>Academy Awards</h2>
+      <div class="awards-logos">
+        <img src="academy~~element1146~~14.jpg" alt="Award">
+        <img src="academy~~element1146~~15.jpg" alt="Award">
+        <img src="academy~~element1146~~16.jpg" alt="Award">
+        <img src="academy~~element1146~~17.jpg" alt="Award">
+        <img src="academy~~element1146~~18.jpg" alt="Award">
+        <img src="academy~~element1146~~19.jpg" alt="Award">
+        <img src="academy~~element1146~~20.jpg" alt="Award">
+        <img src="academy~~element1146~~21.jpg" alt="Award">
+        <img src="academy~~element1146~~22.jpg" alt="Award">
+        <img src="academy~~element1146~~23.jpg" alt="Award">
+        <img src="academy~~element1146~~24.jpg" alt="Award">
       </div>
     </div>
 
-    <!-- FAQ Section -->
-    <div class="faq-section">
-      <div class="faq-title">Brazilian Jiu-Jitsu FAQ's</div>
-      <ul class="faq-list">
-        <li><b>1. What can BJJ and your school do for me?</b><br>BJJ is a highly effective form of self-defense that promotes a healthy lifestyle. Adding BJJ to your life will help you get in shape, gain self confidence and self discipline, and relieve stress while forming a network of like-minded people sure to motivate and inspire you. Our Brazilian Jiu-Jitsu Academy in Tacoma offers a safe, friendly, and family-style atmosphere that many of our students consider their second home.</li>
-        <li><b>2. Do I need to be in shape for this?</b><br>We are proud to cater to all fitness levels here at the academy and have many students whose exercise routines were limited or non-existent prior to joining the academy. Our team will ensure a progressive and gradual plan to help you acclimate to our programs while achieving your fitness goals.</li>
-        <li><b>3. Am I too old to train?</b><br>Classes are enjoyed by younger and older students alike. Our classes and programs are designed to meet the training goals and provide results for students of any age.</li>
-        <li><b>4. Will I be expected to compete?</b><br>Those who wish to do so can, but it is NOT a requirement.</li>
-        <li><b>5. Do I need to have prior experience?</b><br>No. You do not need to have practiced in any form of martial art to train at our academy.</li>
-        <li><b>6. Do you offer beginner level classes?</b><br>Yes. We have beginner level classes that are designed for students with no experience through up to one year of experience. These classes, with a specific, detailed curriculum, stress the basics necessary to build a solid base and grow in a healthy and productive manner.</li>
-        <li><b>7. Do you offer striking or kickboxing classes?</b><br>Yes. We offer MMA training which incorporate Muay Thai Kickboxing and Boxing. These particular arts are a great complement to BJJ and are other major components of mixed martial arts today. In addition, it is a fantastic workout and a great way to keep in shape.</li>
-        <li><b>8. I want to lose weight, can your school and programs help me?</b><br>Absolutely. Both our Brazilian Jiu-Jitsu and MMA Classes offer a fantastic workout that you cannot achieve through your typical gym routines. These classes involve your entire body and will develop and challenge your physical abilities. We have had many students who have combined healthy eating with our Brazilian Jiu-Jitsu and MMA programs to lose great amounts of weight.</li>
-        <li><b>9. What does a typical class consist of?</b><br>Each class begins with a warm-up routine designed to prepare your body for the actual class and help reduce injuries. After the warm-up, technical instruction begins. The techniques taught vary according to the instructor's goals for that particular class. After the technical instruction, students engage in live sparring or rolling. An essential part of every class, live sparring allows students to practice the techniques they have learned against a resisting partner, break a sweat, and reap the rewards of a very good workout.</li>
-        <li><b>10. Do you offer family discounts?</b><br>Yes. Please speak with staff regarding the discounts available to family members.</li>
-        <li><b>11. What is the cost of membership?</b><br>Pricing will depend on each individual's needs. We encourage prospective students to try out an introductory class so that we can assess each individual's goals and determine what he or she would like to get out of training. We can then make a recommendation for frequency of training and what classes would be best suited for each individual.</li>
-        <li><b>12. Do you offer classes for kids and at what age do you start at?</b><br>Yes, we currently offer kids and teens classes. Students for BJJ can enroll as young as 5 years old.</li>
-        <li><b>13. How long will it take to get my Black Belt?</b><br>This is a common question, but one that has no exact answer. The journey to black belt depends on each individual's abilities, perseverance, and dedication. Students must train hard and be prepared overcome many obstacles on their journey to black belt.</li>
-        <li><b>14. How do I get started?</b><br>To get started with your training, contact us or give us a call @ <a href="tel:2532546538">253-254-6538</a>. We look forward to seeing you on the mats!</li>
-      </ul>
-    </div>
-
-    <!-- Code of Conduct Section -->
-    <div class="code-conduct-section">
-      <div class="code-title">CODE OF CONDUCT<br>Brazilian Jiu-Jitsu Tacoma</div>
-      <ul class="code-list">
+    <!-- Code of Conduct -->
+    <div class="conduct-section">
+      <h2>Code of Conduct</h2>
+      <ul>
         <li>01. Always be respectful.</li>
         <li>02. Always address Professors and Coaches accordingly.</li>
         <li>03. Uphold the integrity of our principles on and off the mats.</li>
@@ -213,40 +443,117 @@
         <li>10. Be Humble</li>
         <li>11. Believe & Achieve</li>
       </ul>
-      <div class="code-section-title">ETIQUETTE</div>
-      <ul class="etiquette-list">
+      <strong>Etiquette</strong>
+      <ul>
         <li>12. No shoes on the mats. Shoes or flip flops required when you are not on the mats.</li>
         <li>13. No food or open containers/cups. Bottled drinks only.</li>
         <li>14. No electronic devices allowed in the training area.</li>
         <li>15. Change in the designated changing areas. Do not change in the restrooms.</li>
         <li>16. All training gear and bags should be left in the bag area, not on the benches or around the training area.</li>
       </ul>
-      <div class="code-section-title">HYGIENE</div>
-      <ul class="hygiene-list">
+      <strong>Hygiene</strong>
+      <ul>
         <li>17. Always keep good hygiene.</li>
         <li>18. The uniform must be clean at all times.</li>
         <li>19. Keep fingernails and toenails trimmed.</li>
         <li>20. All jewelry, piercings, necklaces, and other items should be removed during training.</li>
       </ul>
-      <div class="code-section-title">UNIFORM</div>
-      <ul class="uniform-list">
+      <strong>Uniform</strong>
+      <ul>
         <li>21. All students must wear our patches on their uniform at all times.</li>
         <li>22. Absolutely, no other school/affiliation patches may be worn for training.</li>
       </ul>
-      <div class="code-section-title">SPECTATORS</div>
-      <ul class="spectator-list">
+      <strong>Spectators</strong>
+      <ul>
         <li>23. Spectators must sit in the designated seating area.</li>
         <li>24. Keep all electronic devices silent unless given prior permission to have them on.</li>
         <li>25. Absolutely NO coaching your children or other students during class.</li>
       </ul>
     </div>
 
-    <!-- Bottom Logos/Badges -->
-    <div class="bottom-badges">
-      <img src="SANITIZED-FACILITY.jpg" alt="Sanitized Facility" style="height:54px;">
-      <img src="MILITARY-DISCOUNTS.gif" alt="Military Discounts" style="height:58px;">
-      <img src="NO-BULLIES.jpg" alt="No Bullies" style="height:70px;">
+    <!-- FAQ's -->
+    <div class="faqs-section">
+      <h2>Brazilian Jiu-Jitsu FAQ's</h2>
+      <div class="faq-item">
+        <div class="faq-q">1. What can BJJ and your school do for me?</div>
+        <div class="faq-a">BJJ is a highly effective form of self-defense that promotes a healthy lifestyle. Adding BJJ to your life will help you get in shape, gain self-confidence and self-discipline, and relieve stress while forming a network of like-minded people sure to motivate and inspire you. Our Brazilian Jiu-Jitsu Academy in Tacoma offers a safe, friendly, and family-style atmosphere that many of our students consider their second home.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">2. Do I need to be in shape for this?</div>
+        <div class="faq-a">We are proud to cater to all fitness levels here at the academy and have many students whose exercise routines were limited or non-existent prior to joining the academy. Our team will ensure a progressive and gradual plan to help you acclimate to our programs while achieving your fitness goals.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">3. Am I too old to train?</div>
+        <div class="faq-a">Classes are enjoyed by younger and older students alike. Our classes and programs are designed to meet the training goals and provide results for students of any age.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">4. Will I be expected to compete?</div>
+        <div class="faq-a">Those who wish to do so can, but it is NOT a requirement.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">5. Do I need to have prior experience?</div>
+        <div class="faq-a">No. You do not need to have practiced in any form of martial art to train at our academy.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">6. Do you offer beginner level classes?</div>
+        <div class="faq-a">Yes. We have beginner level classes that are designed for students with no experience through up to one year of experience. These classes, with a specific, detailed curriculum, stress the basics necessary to build a solid base and grow in a healthy and productive manner.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">7. Do you offer striking or kickboxing classes?</div>
+        <div class="faq-a">Yes. We offer MMA training which incorporate Muay Thai Kickboxing and Boxing. These particular arts are a great complement to BJJ and are other major components of mixed martial arts today. In addition, it is a fantastic workout and a great way to keep in shape.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">8. I want to lose weight, can your school and programs help me?</div>
+        <div class="faq-a">Absolutely. Both our Brazilian Jiu-Jitsu and MMA Classes offer a fantastic workout that you cannot achieve through your typical gym routines. These classes involve your entire body and will develop and challenge your physical abilities. We have had many students who have combined healthy eating with our Brazilian Jiu-Jitsu and MMA programs to lose great amounts of weight.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">9. What does a typical class consist of?</div>
+        <div class="faq-a">Each class begins with a warm-up routine designed to prepare your body for the actual class and help reduce injuries. After the warm-up, technical instruction begins. The techniques taught vary according to the instructor's goals for that particular class. After the technical instruction, students engage in live sparring or rolling. An essential part of every class, live sparring allows students to practice the techniques they have learned against a resisting partner, break a sweat, and reap the rewards of a very good workout.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">10. Do you offer family discounts?</div>
+        <div class="faq-a">Yes. Please speak with staff regarding the discounts available to family members.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">11. What is the cost of membership?</div>
+        <div class="faq-a">Pricing will depend on each individual's needs. We encourage prospective students to try out an introductory class so that we can assess each individual's goals and determine what he or she would like to get out of training. We can then make a recommendation for frequency of training and what classes would be best suited for each individual.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">12. Do you offer classes for kids and at what age do you start at?</div>
+        <div class="faq-a">Yes, we currently offer kids and teens classes. Students for BJJ can enroll as young as 5 years old.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">13. How long will it take to get my Black Belt?</div>
+        <div class="faq-a">This is a common question, but one that has no exact answer. The journey to black belt depends on each individual's abilities, perseverance, and dedication. Students must train hard and be prepared overcome many obstacles on their journey to black belt.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">14. How do I get started?</div>
+        <div class="faq-a">To get started with your training, contact us or give us a call @ <a href="tel:2532546538" style="color:#14307f; text-decoration:underline;">253-254-6538</a>. We look forward to seeing you on the mats!</div>
+      </div>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logos-row">
+      <img src="SANITIZED-FACILITY.jpg" alt="Sanitized Facility" class="sanitized" />
+      <img src="MILITARY-DISCOUNTS.gif" alt="Military Discounts" class="military" />
+      <img src="NO-BULLIES.jpg" alt="No Bullies" class="bullies" />
+    </div>
+    <div class="social-links">
+      <a href="https://www.instagram.com/gritcitybjj" target="_blank" title="Instagram">
+        <img src="instagram.png" alt="Instagram" />
+      </a>
+      <a href="https://x.com/gritcitybjj" target="_blank" title="𝕏">
+        <img src="𝕏.png" alt="𝕏" style="background:#000;" />
+      </a>
+      <a href="https://www.facebook.com/gritcitybjj" target="_blank" title="Facebook">
+        <img src="facebook.png" alt="Facebook" />
+      </a>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 GRIT CITY BJJ | All Rights Reserved
+    </div>
+  </footer>
 </body>
 </html>
