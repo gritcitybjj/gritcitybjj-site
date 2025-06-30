@@ -2,117 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>GRIT CITY BJJ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GRIT CITY BJJ – Tacoma, WA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Inter,sans-serif; margin:0; background:#fff; color:#111; }
-    .banner { width:100%; max-height:340px; object-fit:cover; display:block; }
-    .section { padding:2rem; max-width:1000px; margin:auto; }
-    .section h2 { border-bottom:2px solid #cc0000; display:inline-block; padding-bottom:4px; margin-bottom:1rem;}
-    .facility, .awards { display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; }
-    .facility img, .awards img { width:140px; border-radius:7px; box-shadow:0 2px 8px rgba(0,0,0,0.11);}
-    .coach { flex:1 1 320px; max-width:340px; min-width:220px; margin:1rem 0; }
-    .coach img { width:220px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.09);}
-    .instructors { display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; }
-    .faq p { margin-bottom:1.2em; }
-    .cta, .calendar { text-align: center; margin-top:2rem; }
-    @media (max-width:700px) {
-      .facility, .awards, .instructors { flex-direction:column; align-items:center; }
-      .coach img, .facility img, .awards img { width:90vw; max-width:300px;}
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #111;
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    .banner {
+      width: 100%;
+      max-width: 960px;
+      display: block;
+      margin: 24px auto 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    h1 {
+      margin-top: 36px;
+      text-align: center;
+      letter-spacing: 2px;
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #222;
+    }
+    hr {
+      border: none;
+      border-top: 2px solid #ddd;
+      margin: 32px 0 24px 0;
+    }
+    @media (max-width: 700px) {
+      .banner,
+      .container {
+        max-width: 100vw;
+        padding: 8px;
+      }
+      h1 {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Banner -->
-  <img src="MAIN_BANNER.jpg" alt="Main Banner" class="banner">
+  <!-- Main Banner -->
+  <img src="MAIN_BANNER.jpg" alt="GRIT CITY BJJ Main Banner" class="banner">
 
-  <!-- Call to Action -->
-  <div class="cta">
-    <h2>Try a FREE Class</h2>
-    <form action="mailto:gritcitybjj@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Name*" required><br>
-      <input type="email" name="email" placeholder="Email*" required><br>
-      <input type="text" name="phone" placeholder="Phone (optional)"><br>
-      <input type="submit" value="Try a FREE Class" style="background:#cc0000;color:#fff;padding:10px 20px;border:none;border-radius:4px;cursor:pointer;">
-    </form>
+  <div class="container">
+    <h1>GRIT CITY BJJ – Tacoma, WA</h1>
+    <p style="text-align:center; font-size:1.2em; color:#444;">
+      <strong>BRAZILIAN JIU-JITSU | WRESTLING | MMA</strong>
+    </p>
+    <hr>
+    <!-- Add more content below (FAQ, Instructor bios, etc) -->
+    <p style="text-align:center; color:#888;">
+      <strong>3635 S Lawrence St, STE G, Tacoma, WA 98409</strong> <br>
+      <strong>253-254-6538</strong> &nbsp; | &nbsp;
+      <a href="mailto:gritcitybjj@gmail.com" style="color:#2262a0;">gritcitybjj@gmail.com</a>
+    </p>
   </div>
-
-  <!-- Calendar -->
-  <div class="calendar">
-    <h2>Class Schedule</h2>
-    <iframe src="https://calendar.google.com/calendar/embed?src=Z3JpdGNpdHliampAZ21haWwuY29t" style="width:100%;max-width:900px;height:400px;border:none;"></iframe>
-  </div>
-
-  <!-- Contact Info -->
-  <section class="section">
-    <h2>Contact & Visit</h2>
-    <p><strong>Address:</strong> 3635 S Lawrence St, STE G, Tacoma, WA 98409</p>
-    <p><strong>Phone:</strong> <a href="tel:2532546538">253-254-6538</a></p>
-    <p><strong>Email:</strong> <a href="mailto:gritcitybjj@gmail.com">gritcitybjj@gmail.com</a></p>
-  </section>
-
-  <!-- Facility -->
-  <section class="section">
-    <h2>Academy Facility</h2>
-    <div class="facility">
-      <img src="GRIT_CITY_BJJ.jpg" alt="Facility 1">
-      <img src="GRIT_CITY_BJJ_TACOMA.jpg" alt="Facility 2">
-      <img src="IMG_5422.jpeg" alt="Facility 3">
-      <img src="IMG_5425.jpeg" alt="Facility 4">
-      <img src="IMG_5426.jpeg" alt="Facility 5">
-      <img src="IMG_5427.jpeg" alt="Facility 6">
-      <img src="SANITIZED-FACILITY.jpg" alt="Sanitized Facility">
-      <img src="MILITARY-DISCOUNTS.gif" alt="Military Discount">
-      <img src="Military_Logos.jpg" alt="Military Logos">
-      <img src="NO-BULLIES.jpg" alt="No Bullies">
-    </div>
-  </section>
-
-  <!-- Awards -->
-  <section class="section">
-    <h2>Awards</h2>
-    <div class="awards">
-      <img src="academy~~element1146~~14.jpg" alt="Award 1">
-      <img src="academy~~element1146~~15.jpg" alt="Award 2">
-      <img src="academy~~element1146~~16.jpg" alt="Award 3">
-      <img src="academy~~element1146~~17.jpg" alt="Award 4">
-      <img src="academy~~element1146~~18.jpg" alt="Award 5">
-      <img src="academy~~element1146~~19.jpg" alt="Award 6">
-      <img src="academy~~element1146~~20.jpg" alt="Award 7">
-      <img src="academy~~element1146~~21.jpg" alt="Award 8">
-      <img src="academy~~element1146~~22.jpg" alt="Award 9">
-      <img src="academy~~element1146~~23.jpg" alt="Award 10">
-      <img src="academy~~element1146~~24.jpg" alt="Award 11">
-    </div>
-  </section>
-
-  <!-- Instructors -->
-  <section class="section">
-    <h2>Instructors</h2>
-    <div class="instructors">
-      <div class="coach">
-        <img src="MCM_5th_DEGREE.jpg" alt="Marcello C Monteiro">
-        <h3>Marcello C Monteiro</h3>
-        <p>6th Degree Black Belt<br>Full bio...</p>
-      </div>
-      <div class="coach">
-        <img src="MICHAEL_PROCTOR.JPG" alt="Michael Proctor">
-        <h3>Michael Proctor</h3>
-        <p>3rd Degree Black Belt<br>Full bio...</p>
-      </div>
-      <div class="coach">
-        <img src="DAVID_GINES.JPG" alt="David Gines">
-        <h3>David Gines</h3>
-        <p>2nd Degree Black Belt<br>Full bio...</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section faq">
-    <h2>BJJ FAQ</h2>
-    <p><strong>1. What can BJJ and your school do for me?</strong><br>BJJ is a highly effective form of self-defense... (paste your full FAQ content here)</p>
-    <!-- Add all your FAQ questions/answers here -->
-  </section>
 </body>
 </html>
