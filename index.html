@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>GRIT CITY BJJ</title>
-  <link rel="stylesheet" href="/assets/style.css"/>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; background: #fff; color: #111; }
-    .banner { width: 100%; max-height: 400px; object-fit: cover; display: block; }
-    .section { padding: 2rem; max-width: 1000px; margin: auto; }
-    .instructors, .awards, .facility { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
-    .instructors img, .awards img, .facility img { width: 180px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
-    .coach { flex: 1 1 300px; max-width: 340px; min-width: 260px; margin: 1rem 0; }
-    h2 { border-bottom: 2px solid #cc0000; display: inline-block; padding-bottom: 4px; margin-bottom: 1rem;}
-    .faq { margin-top: 2rem;}
-    .faq p { margin-bottom: 1.2em;}
+    body { font-family: 'Inter', sans-serif; margin:0; background:#fff; color:#111; }
+    .banner { width:100%; max-height:340px; object-fit:cover; display:block; }
+    .section { padding:2rem; max-width:1000px; margin:auto; }
+    .section h2 { border-bottom:2px solid #cc0000; display:inline-block; padding-bottom:4px; margin-bottom:1rem;}
+    .instructors, .awards, .facility { display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; }
+    .coach { flex:1 1 320px; max-width:340px; min-width:220px; margin:1rem 0; }
+    .coach img { width:220px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.09);}
+    .awards img, .facility img { width:140px; border-radius:7px; box-shadow:0 2px 8px rgba(0,0,0,0.11);}
+    .faq p { margin-bottom:1.2em; }
+    @media (max-width:700px) {
+      .instructors, .awards, .facility { flex-direction:column; align-items:center; }
+      .coach img, .awards img, .facility img { width:90vw; max-width:300px;}
+    }
   </style>
 </head>
 <body>
-  <!-- Main Banner -->
-  <img src="/assets/images/MAIN_BANNER.jpg" alt="GRIT CITY BJJ Main Banner" class="banner" />
+  <!-- Banner -->
+  <img src="MAIN_BANNER.jpg" alt="Main Banner" class="banner">
 
   <!-- Instructors -->
   <section class="section">
     <h2>Instructors</h2>
     <div class="instructors">
       <div class="coach">
-        <img src="/assets/images/MCM_5th_DEGREE.jpg" alt="Marcello C Monteiro"/>
+        <img src="MCM_5th_DEGREE.jpg" alt="Marcello C Monteiro">
         <h3>Marcello C Monteiro</h3>
         <p>6th Degree Black Belt<br>
-        Master Monteiro is well known in Brasil as a teacher and coach for creating fighting strategies... (use full bio here)</p>
+        Master Monteiro is well known in Brasil as a teacher and coach for creating fighting strategies, teaching the most important tricks and details that speed up the learning process and facilitate the performance of each movement used by fighters.<br>
+        Since the age of six, Marcello has been hooked on Jiu-Jitsu, starting at Carlson Gracie's Academy and transitioning to W2M in Copacabana. Owned by Ricardo Juca, W2M was the home base for Jiu-Jitsu legend Ricardo De la Riva. From White-Black, Marcello studied with De la Riva and many considered him as De la Riva's protege. In 1998, Marcello opened his first school in Rio and in 1999, Marcello received his Black Belt from De la Riva. In 2001, he received an additional certificate for his black belt from 9th Degree Red Belt Carlos Robson Gracie.<br>
+        Today Marcello holds a 6th Degree Black Belt. He also leads one of America's largest Jiu-Jitsu Associations with over 100 schools training under him, including Michael Proctor's Brazilian Jiu-Jitsu Academy of Tacoma.</p>
       </div>
       <div class="coach">
-        <img src="/assets/images/MICHAEL_PROCTOR.JPG" alt="Michael Proctor"/>
+        <img src="MICHAEL_PROCTOR.JPG" alt="Michael Proctor">
         <h3>Michael Proctor</h3>
         <p>3rd Degree Black Belt<br>
-        Michael Proctor is a Marcello Monteiro protégé... (use full bio here)</p>
+        Michael Proctor is a Marcello Monteiro protégé. Michael began his Brazilian Jiu-Jitsu career under Lotus Club Jiu-Jitsu, transitioning to De La Riva Black Belt Marcello Monteiro in 2008. In 2010 Michael opened the first Marcello C. Monteiro Academy in Washington State. Michael is the proud owner of Brazilian Jiu-Jitsu Tacoma and currently holds the rank of 3rd Degree Black Belt under Marcello C. Monteiro.</p>
       </div>
       <div class="coach">
-        <img src="/assets/images/DAVID_GINES.JPG" alt="David Gines"/>
+        <img src="DAVID_GINES.JPG" alt="David Gines">
         <h3>David Gines</h3>
         <p>2nd Degree Black Belt<br>
-        Professor David Gines represents the next generation... (use full bio here)</p>
+        Professor David Gines represents the next generation of black belt leadership at GRIT CITY BJJ. With over a decade of experience and promotions under both Michael Proctor and Marcello C. Monteiro, he brings intensity, technical clarity, and high-level execution to every session.<br>
+        A key driver behind student growth and competition prep, Professor David is known for his sharp eye, precise instruction, and straight-up passion for the grind.</p>
       </div>
     </div>
   </section>
@@ -50,45 +57,45 @@
   <section class="section">
     <h2>Awards</h2>
     <div class="awards">
-      <img src="/assets/images/academy~~element1146~~14.jpg" alt="Award 1"/>
-      <img src="/assets/images/academy~~element1146~~15.jpg" alt="Award 2"/>
-      <img src="/assets/images/academy~~element1146~~16.jpg" alt="Award 3"/>
-      <img src="/assets/images/academy~~element1146~~17.jpg" alt="Award 4"/>
-      <img src="/assets/images/academy~~element1146~~18.jpg" alt="Award 5"/>
-      <img src="/assets/images/academy~~element1146~~19.jpg" alt="Award 6"/>
-      <img src="/assets/images/academy~~element1146~~20.jpg" alt="Award 7"/>
-      <img src="/assets/images/academy~~element1146~~21.jpg" alt="Award 8"/>
-      <img src="/assets/images/academy~~element1146~~22.jpg" alt="Award 9"/>
-      <img src="/assets/images/academy~~element1146~~23.jpg" alt="Award 10"/>
-      <img src="/assets/images/academy~~element1146~~24.jpg" alt="Award 11"/>
+      <img src="academy~~element1146~~14.jpg" alt="Award 1">
+      <img src="academy~~element1146~~15.jpg" alt="Award 2">
+      <img src="academy~~element1146~~16.jpg" alt="Award 3">
+      <img src="academy~~element1146~~17.jpg" alt="Award 4">
+      <img src="academy~~element1146~~18.jpg" alt="Award 5">
+      <img src="academy~~element1146~~19.jpg" alt="Award 6">
+      <img src="academy~~element1146~~20.jpg" alt="Award 7">
+      <img src="academy~~element1146~~21.jpg" alt="Award 8">
+      <img src="academy~~element1146~~22.jpg" alt="Award 9">
+      <img src="academy~~element1146~~23.jpg" alt="Award 10">
+      <img src="academy~~element1146~~24.jpg" alt="Award 11">
     </div>
   </section>
 
-  <!-- Facility Tour -->
+  <!-- Facility -->
   <section class="section">
     <h2>Academy Facility</h2>
     <div class="facility">
-      <img src="/assets/images/GRIT_CITY_BJJ.jpg" alt="Facility 1"/>
-      <img src="/assets/images/GRIT_CITY_BJJ_TACOMA.jpg" alt="Facility 2"/>
-      <img src="/assets/images/IMG_5422.jpeg" alt="Facility 3"/>
-      <img src="/assets/images/IMG_5425.jpeg" alt="Facility 4"/>
-      <img src="/assets/images/IMG_5426.jpeg" alt="Facility 5"/>
-      <img src="/assets/images/IMG_5427.jpeg" alt="Facility 6"/>
-      <img src="/assets/images/SANITIZED-FACILITY.jpg" alt="Sanitized"/>
-      <img src="/assets/images/MILITARY-DISCOUNTS.gif" alt="Military Discount"/>
-      <img src="/assets/images/Military_Logos.jpg" alt="Military Logos"/>
-      <img src="/assets/images/NO-BULLIES.jpg" alt="No Bullies"/>
+      <img src="GRIT_CITY_BJJ.jpg" alt="Facility 1">
+      <img src="GRIT_CITY_BJJ_TACOMA.jpg" alt="Facility 2">
+      <img src="IMG_5422.jpeg" alt="Facility 3">
+      <img src="IMG_5425.jpeg" alt="Facility 4">
+      <img src="IMG_5426.jpeg" alt="Facility 5">
+      <img src="IMG_5427.jpeg" alt="Facility 6">
+      <img src="SANITIZED-FACILITY.jpg" alt="Sanitized Facility">
+      <img src="MILITARY-DISCOUNTS.gif" alt="Military Discount">
+      <img src="Military_Logos.jpg" alt="Military Logos">
+      <img src="NO-BULLIES.jpg" alt="No Bullies">
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- FAQ -->
   <section class="section faq">
     <h2>BJJ FAQ</h2>
-    <p><strong>1. What can BJJ and your school do for me?</strong><br>BJJ is a highly effective form of self-defense... (etc.)</p>
-    <!-- Add all FAQ Q&A here, as in your earlier message -->
+    <p><strong>1. What can BJJ and your school do for me?</strong><br>BJJ is a highly effective form of self-defense... (continue full FAQ)</p>
+    <!-- Paste all FAQ Q&A here, as in your earlier message -->
   </section>
 
-  <!-- Contact Info -->
+  <!-- Contact -->
   <section class="section">
     <h2>Contact & Visit</h2>
     <p><strong>Address:</strong> 3635 S Lawrence St, STE G, Tacoma, WA 98409</p>
