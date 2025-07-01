@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>GRIT CITY BJJ | Tacoma, WA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       background: #fff;
@@ -19,14 +19,14 @@
       margin: 0 auto;
       padding: 0 15px;
     }
-.main-banner {
-  width: 100%;
-  max-width: 1200px;
-  height: 200px;
-  display: block;
-  margin: 0 auto 10px auto;
-  object-fit: contain;  /* Use 'contain' to show whole banner, 'cover' for edge-to-edge/cropped */
-}
+    .main-banner {
+      width: 100%;
+      max-width: 1200px;
+      height: 200px;
+      display: block;
+      margin: 0 auto 10px auto;
+      object-fit: contain;
+    }
     .student-login {
       display: flex;
       justify-content: center;
@@ -35,15 +35,15 @@
     }
     .student-login img {
       cursor: pointer;
-      height: 45px;
+      height: 45px; /* half size */
       width: auto;
-      box-shadow: 0 2px 14px rgba(20,60,100,0.09);
+      box-shadow: 0 2px 14px rgba(20, 60, 100, 0.09);
       border-radius: 8px;
       transition: transform 0.12s;
     }
     .student-login img:hover {
       transform: scale(1.09);
-      box-shadow: 0 4px 18px rgba(20,60,100,0.13);
+      box-shadow: 0 4px 18px rgba(20, 60, 100, 0.13);
     }
     .schedule-embed {
       display: flex;
@@ -59,42 +59,21 @@
       background: #fff;
     }
     .try-free-class {
-      max-width: 430px;
+      max-width: 680px;
       margin: 35px auto 40px auto;
       background: #f3f3f3;
       border-radius: 18px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
       padding: 28px 30px;
       text-align: center;
       border: 1.5px solid #dedede;
     }
     .try-free-class h2 {
       font-size: 1.4em;
-      margin-bottom: 12px;
+      margin-bottom: 18px;
       font-weight: 700;
       color: #14307f;
       letter-spacing: 1px;
-    }
-    .try-free-class form input, .try-free-class form button {
-      font-size: 1em;
-      margin: 6px 0;
-      padding: 10px 12px;
-      width: 100%;
-      border-radius: 6px;
-      border: 1px solid #b7b7b7;
-      box-sizing: border-box;
-    }
-    .try-free-class form button {
-      background: #14307f;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      margin-top: 10px;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-    .try-free-class form button:hover {
-      background: #314be7;
     }
     .location-maps {
       display: flex;
@@ -103,7 +82,7 @@
       gap: 22px;
       margin: 35px 0;
     }
-    .location-maps img, .location-maps iframe {
+    .location-maps img {
       max-width: 99vw;
       border-radius: 10px;
       margin: 0;
@@ -128,14 +107,14 @@
       height: 210px;
       object-fit: cover;
       border-radius: 8px;
-      box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
     }
     .instructors-section {
       background: #fafcff;
       border-radius: 15px;
       margin: 32px 0 40px 0;
       padding: 25px 18px 30px 18px;
-      box-shadow: 0 1px 8px rgba(60,90,150,0.04);
+      box-shadow: 0 1px 8px rgba(60, 90, 150, 0.04);
     }
     .instructors-title {
       font-size: 1.5em;
@@ -154,7 +133,7 @@
     .instructor-card {
       background: #fff;
       border-radius: 10px;
-      box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
       padding: 19px 18px;
       text-align: center;
       width: 260px;
@@ -166,7 +145,7 @@
       object-fit: cover;
       border-radius: 12px;
       margin-bottom: 12px;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.09);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.09);
     }
     .instructor-card h3 {
       margin: 0 0 5px 0;
@@ -212,7 +191,7 @@
       background: #f7faff;
       border-radius: 12px;
       padding: 28px 23px;
-      box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
     }
     .conduct-section h2, .faqs-section h2 {
       text-align: center;
@@ -243,7 +222,6 @@
       margin-left: 10px;
       color: #262626;
     }
-    /* Footer & Bottom Logos */
     footer {
       margin-top: 50px;
       background: #fff;
@@ -265,25 +243,25 @@
       width: auto;
       background: #fff;
       border-radius: 10px;
-      box-shadow: 0 1px 8px rgba(0,0,0,0.10);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.10);
       object-fit: contain;
       display: block;
     }
     .footer-logos-row .military {
-      height: 150px; /* (original 175px minus 25px) */
+      height: 150px;
       width: auto;
       background: #fff;
       border-radius: 10px;
-      box-shadow: 0 1px 8px rgba(0,0,0,0.10);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.10);
       object-fit: contain;
       display: block;
     }
     .footer-logos-row .bullies {
-      height: 175px; /* (original 200px minus 25px) */
+      height: 175px;
       width: auto;
       background: #fff;
       border-radius: 10px;
-      box-shadow: 0 1px 8px rgba(0,0,0,0.10);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.10);
       object-fit: contain;
       display: block;
     }
@@ -299,12 +277,12 @@
       object-fit: contain;
       border-radius: 10px;
       background: #fff;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
       transition: transform 0.13s;
     }
     .social-links img:hover {
       transform: scale(1.13);
-      box-shadow: 0 2px 16px rgba(20,60,100,0.14);
+      box-shadow: 0 2px 16px rgba(20, 60, 100, 0.14);
     }
     .footer-bottom {
       text-align: center;
@@ -315,74 +293,115 @@
       letter-spacing: 1px;
     }
     @media (max-width: 950px) {
-      .footer-logos-row img { max-height: 95px; }
-      .footer-logos-row .sanitized { max-height: 95px; }
-      .footer-logos-row .military { height: 65px; }
-      .footer-logos-row .bullies { height: 90px; }
+      .footer-logos-row img {
+        max-height: 95px;
+      }
+      .footer-logos-row .sanitized {
+        max-height: 95px;
+      }
+      .footer-logos-row .military {
+        height: 65px;
+      }
+      .footer-logos-row .bullies {
+        height: 90px;
+      }
     }
     @media (max-width: 700px) {
-      .main-banner { height: 100px; }
-      .instructor-card img { width: 120px; height: 170px; }
+      .main-banner {
+        height: 100px;
+      }
+      .instructor-card img {
+        width: 120px;
+        height: 170px;
+      }
     }
     @media (max-width: 550px) {
-      .container { padding: 0 5px; }
-      .main-banner { height: 58px; }
-      .awards-logos img { height: 56px; }
-      .footer-logos-row img { max-height: 54px; }
+      .container {
+        padding: 0 5px;
+      }
+      .main-banner {
+        height: 58px;
+      }
+      .awards-logos img {
+        height: 56px;
+      }
+      .footer-logos-row img {
+        max-height: 54px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <!-- Main Banner -->
-    <img src="MAIN_BANNER.jpg" class="main-banner" alt="GRIT CITY BJJ Main Banner">
+    <img src="MAIN_BANNER.jpg" class="main-banner" alt="GRIT CITY BJJ Main Banner" />
 
     <!-- Student Login -->
     <div class="student-login">
       <a href="https://bjjtacoma.kicksite.net/users/sign_in" target="_blank">
-        <img src="stuloginbutton.png" alt="Student Login">
+        <img src="stuloginbutton.png" alt="Student Login" />
       </a>
     </div>
 
     <!-- Schedule -->
     <div class="schedule-embed">
-      <iframe src="https://calendar.google.com/calendar/embed?src=gritcitybjj%40gmail.com&ctz=America%2FLos_Angeles"
-        frameborder="0" scrolling="no"></iframe>
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=gritcitybjj%40gmail.com&ctz=America%2FLos_Angeles"
+        frameborder="0"
+        scrolling="no"
+      ></iframe>
     </div>
 
     <!-- Try a Free Class -->
-    <div class="try-free-class">
-      <h2>Try a FREE Class</h2>
-      <form action="mailto:gritcitybjj@gmail.com" method="POST" enctype="text/plain">
-        <input type="text" name="Name" placeholder="Name (required)" required>
-        <input type="email" name="Email" placeholder="Email (required)" required>
-        <input type="tel" name="Phone" placeholder="Phone (optional)">
-        <button type="submit">Request Free Class</button>
-      </form>
-      <div style="margin-top:8px; font-size:0.95em; color:#888;">Or call us at <a href="tel:2532546538" style="color:#153088;text-decoration:underline;">253-254-6538</a></div>
-    </div>
+<div class="try-free-class">
+  <h2>TRY A FREE CLASS</h2>
+  <p style="font-size: 0.95em; color: #555; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+    By filling out the form completely, you will receive membership information directly in your email.
+  </p>
+  <iframe
+    src="https://docs.google.com/forms/d/e/1FAIpQLSc39XAD1F_NRiONFbV4b81uYmAMPQkXL6IA24LiXVoGMPg0BQ/viewform?embedded=true"
+    width="100%"
+    height="600"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+  >
+    Loading…
+  </iframe>
+</div>
+
 
     <!-- Location Maps -->
-<div class="location-maps">
-  <img src="CEDAR-PLAZA-LOCATION.jpg" alt="Tacoma Cedar Plaza Map" style="width: 380px;">
-  <img src="CEDAR-PLAZA---BUILDING-D.jpg" alt="Cedar Plaza Building D" style="width: 320px;">
-</div>
-<div style="text-align:center; margin: 12px 0 35px 0;">
-  <a href="https://maps.app.goo.gl/debgQ8w2XD5YwNJ9A" target="_blank" style="font-weight:700; color:#14307f; font-size:1.13em; text-decoration:underline;">
-    Get Directions on Google Maps
-  </a>
-</div>
-
+    <div class="location-maps">
+      <img
+        src="CEDAR-PLAZA-LOCATION.jpg"
+        alt="Tacoma Cedar Plaza Map"
+        style="width: 380px"
+      />
+      <img
+        src="CEDAR-PLAZA---BUILDING-D.jpg"
+        alt="Cedar Plaza Building D"
+        style="width: 320px"
+      />
+    </div>
+    <div style="text-align:center; margin: 12px 0 35px 0;">
+      <a
+        href="https://maps.app.goo.gl/debgQ8w2XD5YwNJ9A"
+        target="_blank"
+        style="font-weight:700; color:#14307f; font-size:1.13em; text-decoration:underline"
+        >Get Directions on Google Maps</a
+      >
+    </div>
 
     <!-- Academy Gallery -->
     <div class="gallery-title">Academy Gallery</div>
     <div class="academy-gallery">
-      <img src="GRIT_CITY_BJJ.jpg" alt="Front Entrance">
-      <img src="GRIT_CITY_BJJ_TACOMA.jpg" alt="Night Front">
-      <img src="IMG_5422.jpeg" alt="Lobby">
-      <img src="IMG_5425.jpeg" alt="Bag Area">
-      <img src="IMG_5426.jpeg" alt="Mat Space">
-      <img src="IMG_5427.jpeg" alt="Mat View">
+      <img src="GRIT_CITY_BJJ.jpg" alt="Front Entrance" />
+      <img src="GRIT_CITY_BJJ_TACOMA.jpg" alt="Night Front" />
+      <img src="IMG_5422.jpeg" alt="Lobby" />
+      <img src="IMG_5425.jpeg" alt="Bag Area" />
+      <img src="IMG_5426.jpeg" alt="Mat Space" />
+      <img src="IMG_5427.jpeg" alt="Mat View" />
     </div>
 
     <!-- Instructors -->
@@ -390,21 +409,50 @@
       <div class="instructors-title">Instructors</div>
       <div class="instructors-list">
         <div class="instructor-card">
-          <img src="MCM_5th_DEGREE.jpg" alt="Professor Marcello C Monteiro">
+          <img src="MCM_5th_DEGREE.jpg" alt="Professor Marcello C Monteiro" />
           <h3>Professor Marcello C Monteiro</h3>
-          <p>Master Monteiro is well known in Brazil as a teacher and coach for creating fighting strategies, teaching the most important tricks and details that speed up the learning process and facilitate the performance of each movement used by fighters.<br><br>
-          Since the age of six, Marcello has been hooked on Jiu-Jitsu, starting at Carlson Gracie's Academy and transitioning to W2M in Copacabana. Owned by Ricardo Juca, W2M was the home base for Jiu-Jitsu legend Ricardo De la Riva. From White-Black, Marcello studied with De la Riva and many considered him as De la Riva's protege. In 1998, Marcello opened his first school in Rio and in 1999, Marcello received his Black Belt from De la Riva. In 2001, he received an additional certificate for his black belt from 9th Degree Red Belt Carlos Robson Gracie.<br><br>
-          Today Marcello holds a 6th Degree Black Belt. He also leads one of America's largest Jiu-Jitsu Associations with over 100 schools training under him, including Michael Proctor's Brazilian Jiu-Jitsu Academy of Tacoma.</p>
+          <p>
+            Master Monteiro is well known in Brazil as a teacher and coach for
+            creating fighting strategies, teaching the most important tricks
+            and details that speed up the learning process and facilitate the
+            performance of each movement used by fighters.<br /><br />
+            Since the age of six, Marcello has been hooked on Jiu-Jitsu,
+            starting at Carlson Gracie's Academy and transitioning to W2M in
+            Copacabana. Owned by Ricardo Juca, W2M was the home base for
+            Jiu-Jitsu legend Ricardo De la Riva. From White-Black, Marcello
+            studied with De la Riva and many considered him as De la Riva's
+            protege. In 1998, Marcello opened his first school in Rio and in
+            1999, Marcello received his Black Belt from De la Riva. In 2001,
+            he received an additional certificate for his black belt from 9th
+            Degree Red Belt Carlos Robson Gracie.<br /><br />
+            Today Marcello holds a 6th Degree Black Belt. He also leads one of
+            America's largest Jiu-Jitsu Associations with over 100 schools
+            training under him, including Michael Proctor's Brazilian
+            Jiu-Jitsu Academy of Tacoma.
+          </p>
         </div>
         <div class="instructor-card">
-          <img src="MICHAEL_PROCTOR.JPG" alt="Professor Michael Proctor">
+          <img src="MICHAEL_PROCTOR.JPG" alt="Professor Michael Proctor" />
           <h3>Professor Michael Proctor</h3>
-          <p>Michael Proctor is a Marcello Monteiro protégé. Michael began his Brazilian Jiu-Jitsu career under Lotus Club Jiu-Jitsu, transitioning to De La Riva Black Belt Marcello Monteiro in 2008. In 2010 Michael opened the first Marcello C. Monteiro Academy in Washington State. Michael is the proud owner of Brazilian Jiu-Jitsu Tacoma and currently holds the rank of 3rd Degree Black Belt under Marcello C. Monteiro.</p>
+          <p>
+            Michael Proctor is a Marcello Monteiro protégé. Michael began his
+            Brazilian Jiu-Jitsu career under Lotus Club Jiu-Jitsu, transitioning
+            to De La Riva Black Belt Marcello Monteiro in 2008. In 2010 Michael
+            opened the first Marcello C. Monteiro Academy in Washington State.
+            Michael is the proud owner of Brazilian Jiu-Jitsu Tacoma and
+            currently holds the rank of 3rd Degree Black Belt under Marcello C.
+            Monteiro.
+          </p>
         </div>
         <div class="instructor-card">
-          <img src="DAVID_GINES.JPG" alt="Professor David Gines">
+          <img src="DAVID_GINES.JPG" alt="Professor David Gines" />
           <h3>Professor David Gines</h3>
-          <p>2nd Degree Black Belt under Michael Proctor & Marcello C. Monteiro</p>
+          <p>
+            David has over a decade of BJJ experience and trains under Michael
+            Proctor and Marcello Monteiro. Known for his technical skill and
+            dedication, he focuses on building strong fundamentals and helping
+            students grow on and off the mats.
+          </p>
         </div>
       </div>
     </div>
@@ -413,17 +461,17 @@
     <div class="awards-section">
       <h2>Academy Awards</h2>
       <div class="awards-logos">
-        <img src="academy~~element1146~~14.jpg" alt="Award">
-        <img src="academy~~element1146~~15.jpg" alt="Award">
-        <img src="academy~~element1146~~16.jpg" alt="Award">
-        <img src="academy~~element1146~~17.jpg" alt="Award">
-        <img src="academy~~element1146~~18.jpg" alt="Award">
-        <img src="academy~~element1146~~19.jpg" alt="Award">
-        <img src="academy~~element1146~~20.jpg" alt="Award">
-        <img src="academy~~element1146~~21.jpg" alt="Award">
-        <img src="academy~~element1146~~22.jpg" alt="Award">
-        <img src="academy~~element1146~~23.jpg" alt="Award">
-        <img src="academy~~element1146~~24.jpg" alt="Award">
+        <img src="academy~~element1146~~14.jpg" alt="Award" />
+        <img src="academy~~element1146~~15.jpg" alt="Award" />
+        <img src="academy~~element1146~~16.jpg" alt="Award" />
+        <img src="academy~~element1146~~17.jpg" alt="Award" />
+        <img src="academy~~element1146~~18.jpg" alt="Award" />
+        <img src="academy~~element1146~~19.jpg" alt="Award" />
+        <img src="academy~~element1146~~20.jpg" alt="Award" />
+        <img src="academy~~element1146~~21.jpg" alt="Award" />
+        <img src="academy~~element1146~~22.jpg" alt="Award" />
+        <img src="academy~~element1146~~23.jpg" alt="Award" />
+        <img src="academy~~element1146~~24.jpg" alt="Award" />
       </div>
     </div>
 
