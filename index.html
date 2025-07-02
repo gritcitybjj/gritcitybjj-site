@@ -46,10 +46,47 @@
       transform: scale(1.09);
       box-shadow: 0 4px 18px rgba(20,60,100,0.13);
     }
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 30px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .nav-bar a {
+      color: #14307f;
+      text-decoration: none;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 5px;
+      transition: border-color 0.2s;
+    }
+    .nav-bar a:hover {
+      border-color: #314be7;
+    }
+    .section-title {
+      font-size: 1.25em;
+      font-weight: 700;
+      color: #14307f;
+      margin: 40px 0 12px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    .address-text {
+      max-width: 850px;
+      margin: 6px auto 12px;
+      text-align: center;
+      font-size: 1em;
+      color: #444;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
     .schedule-embed {
       display: flex;
       justify-content: center;
-      margin: 30px 0 20px;
+      margin: 0 0 20px;
     }
     .schedule-embed iframe {
       border: 2px solid #e0e0e0;
@@ -59,62 +96,22 @@
       height: 750px;
       background: #fff;
     }
-    .try-free-class {
-      max-width: 430px;
-      margin: 35px auto 40px;
-      background: #f3f3f3;
-      border-radius: 18px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      padding: 28px 30px;
-      text-align: center;
-      border: 1.5px solid #dedede;
-    }
-    .try-free-class h2 {
-      font-size: 1.4em;
-      margin-bottom: 12px;
-      font-weight: 700;
-      color: #14307f;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .try-free-class p {
-      font-size: 0.9em;
-      color: #555;
-      margin-bottom: 18px;
-    }
-    .try-free-class form input,
-    .try-free-class form button {
-      font-size: 1em;
-      margin: 6px 0;
-      padding: 10px 12px;
-      width: 100%;
-      border-radius: 6px;
-      border: 1px solid #b7b7b7;
-      box-sizing: border-box;
-    }
-    .try-free-class form button {
-      background: #14307f;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      margin-top: 10px;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-    .try-free-class form button:hover {
-      background: #314be7;
-    }
     .location-maps {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 22px;
-      margin: 35px 0;
+      margin: 35px 0 15px;
     }
-    .location-maps img {
+    .location-maps a img {
       max-width: 99vw;
       border-radius: 10px;
       margin: 0;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .location-maps a img:hover {
+      transform: scale(1.05);
     }
     .location-map-link {
       max-width: 850px;
@@ -128,6 +125,14 @@
     .location-map-link a {
       color: #14307f;
       text-decoration: underline;
+    }
+    .location-text {
+      max-width: 850px;
+      margin: 0 auto 6px;
+      text-align: center;
+      font-size: 0.95em;
+      color: #555;
+      letter-spacing: 0.5px;
     }
     .gallery-title {
       font-size: 1.7em;
@@ -151,6 +156,7 @@
       border-radius: 8px;
       box-shadow: 0 1px 8px rgba(0,0,0,0.05);
     }
+
     /* Academy Lineage */
     h2.lineage-header {
       text-align: center;
@@ -182,6 +188,7 @@
       border-radius: 10px;
       box-shadow: 0 1px 6px rgba(0,0,0,0.1);
     }
+
     /* Instructors Section */
     .instructors-section {
       background: #fafcff;
@@ -246,34 +253,7 @@
     .read-more-btn:hover {
       color: #314be7;
     }
-    /* Awards Section */
-    .awards-section {
-      margin: 44px 0 35px;
-      text-align: center;
-    }
-    .awards-section h2 {
-      font-size: 1.2em;
-      color: #14307f;
-      font-weight: 700;
-      margin-bottom: 16px;
-      letter-spacing: 1px;
-    }
-    .awards-logos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      align-items: center;
-    }
-    .awards-logos img {
-      height: 100px;
-      width: auto;
-      margin-bottom: 7px;
-      object-fit: contain;
-      border-radius: 6px;
-      background: #fff;
-      padding: 3px 3px;
-    }
+
     /* Code of Conduct and FAQ */
     .conduct-section,
     .faqs-section {
@@ -283,7 +263,6 @@
       border-radius: 12px;
       padding: 28px 23px;
       box-shadow: 0 1px 8px rgba(0,0,0,0.04);
-      position: relative;
     }
     .conduct-section h2,
     .faqs-section h2 {
@@ -296,10 +275,100 @@
       user-select: none;
     }
     .content-collapsible {
-      max-height: 180px;
+      max-height: 140px;
       overflow: hidden;
+      position: relative;
       transition: max-height 0.3s ease;
+      color: #343a40;
+      font-size: 1em;
+      line-height: 1.4;
+      padding-left: 18px;
+      margin-bottom: 12px;
     }
+    .content-collapsible.open {
+      max-height: 2000px;
+      padding-bottom: 15px;
+    }
+    .read-more-section-btn {
+      display: block;
+      margin: 0 auto 20px auto;
+      background: none;
+      border: none;
+      color: #14307f;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1em;
+      text-decoration: underline;
+    }
+    .read-more-section-btn:hover {
+      color: #314be7;
+    }
+    .conduct-section ul,
+    .faqs-section .faq-item {
+      margin-bottom: 0;
+    }
+    .conduct-section ul li {
+      margin-bottom: 7px;
+    }
+    .faqs-section .faq-q {
+      font-weight: bold;
+      color: #0d2b64;
+      margin-bottom: 2px;
+    }
+    .faqs-section .faq-a {
+      margin-left: 10px;
+      color: #262626;
+    }
+
+    /* Try a Free Class */
+    .try-free-class {
+      max-width: 430px;
+      margin: 50px auto 70px;
+      background: #f3f3f3;
+      border-radius: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 28px 30px;
+      text-align: center;
+      border: 1.5px solid #dedede;
+    }
+    .try-free-class h2 {
+      font-size: 1.4em;
+      margin-bottom: 12px;
+      font-weight: 700;
+      color: #14307f;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .try-free-class p {
+      font-size: 0.95em;
+      color: #555;
+      margin-bottom: 18px;
+    }
+    .try-free-class form input,
+    .try-free-class form button,
+    .try-free-class form textarea {
+      font-size: 1em;
+      margin: 6px 0;
+      padding: 10px 12px;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #b7b7b7;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    .try-free-class form button {
+      background: #14307f;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .try-free-class form button:hover {
+      background: #314be7;
+    }
+
     /* Footer */
     footer {
       margin-top: 50px;
@@ -401,8 +470,9 @@
       .main-banner {
         height: 58px;
       }
-      .awards-logos img {
-        height: 56px;
+      .academy-gallery img {
+        width: 100%;
+        height: auto;
       }
       .footer-logos-row img {
         max-height: 54px;
@@ -422,77 +492,54 @@
       </a>
     </div>
 
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+      <a href="#conduct">Code of Conduct</a>
+      <a href="#faqs">FAQ's</a>
+      <a href="#try-free-class">Try a Free Class</a>
+    </nav>
+
     <!-- Schedule -->
-    <div class="schedule-embed">
-      <iframe
-        src="https://calendar.google.com/calendar/embed?src=gritcitybjj%40gmail.com&ctz=America%2FLos_Angeles"
-        frameborder="0" scrolling="no"
-        title="Class Schedule"></iframe>
-    </div>
-
-    <!-- Try a Free Class -->
-    <div class="try-free-class">
-      <h2>TRY A FREE CLASS</h2>
-      <p>By filling out the form completely, you will receive membership information in your email.</p>
-      <form action="https://docs.google.com/forms/d/e/1FAIpQLSc39XAD1F_NRiONFbV4b81uYmAMPQkXL6IA24LiXVoGMPg0BQ/formResponse" method="POST" target="_blank" onsubmit="return validateForm(this)">
-        <input type="text" name="entry.2005620554" placeholder="Name (required)" required />
-        <input type="email" name="entry.1045781291" placeholder="Email (required)" required />
-        <input type="tel" name="entry.1166974658" placeholder="Phone (optional)" />
-        <button type="submit">Submit</button>
-      </form>
-      <div style="margin-top: 8px; font-size: 0.95em; color: #888;">
-        Or call us at
-        <a href="tel:2532546538" style="color:#153088;text-decoration:underline;">253-254-6538</a>
+    <section id="schedule" class="schedule-section">
+      <div class="section-title">Live Schedule</div>
+      <div class="schedule-embed">
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=gritcitybjj%40gmail.com&ctz=America%2FLos_Angeles"
+          frameborder="0" scrolling="no"
+          title="Class Schedule"></iframe>
       </div>
-    </div>
+    </section>
 
-    <!-- Location Maps -->
-<h2 style="text-align:center; color:#14307f; font-weight:700; margin-top:40px; margin-bottom:6px;">Location</h2>
-<p style="text-align:center; font-size:0.9em; color:#555; margin-bottom:20px;">
-  We are located right next door to Flags A' Flyin on S 38th & Lawrence
-</p>
-<div class="location-maps">
-  <!-- your location images here -->
-</div>
-    <div class="location-maps">
-      <img src="CEDAR-PLAZA-LOCATION.jpg" alt="Tacoma Cedar Plaza Map" style="width: 380px;" />
-      <img src="CEDAR-PLAZA---BUILDING-D.jpg" alt="Cedar Plaza Building D" style="width: 320px;" />
-    </div>
-    <div class="location-map-link">
-      <a href="https://maps.app.goo.gl/debgQ8w2XD5YwNJ9A" target="_blank" rel="noopener noreferrer">Open live directions map</a>
-    </div>
+    <!-- Location -->
+    <section id="location" class="location-section">
+      <div class="section-title">Location</div>
+      <div class="address-text">3635 S Lawrence St, STE G, Tacoma, WA 98409</div>
+      <div class="location-text">We are located right next door to Flags A' Flyin on S 38th & Lawrence</div>
+      <div class="location-maps">
+        <a href="CEDAR-PLAZA-LOCATION.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="CEDAR-PLAZA-LOCATION.jpg" alt="Tacoma Cedar Plaza Map" style="width: 380px;" />
+        </a>
+        <a href="CEDAR-PLAZA---BUILDING-D.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="CEDAR-PLAZA---BUILDING-D.jpg" alt="Cedar Plaza Building D" style="width: 320px;" />
+        </a>
+      </div>
+      <div class="location-map-link">
+        <a href="https://maps.app.goo.gl/debgQ8w2XD5YwNJ9A" target="_blank" rel="noopener noreferrer">Open live directions map</a>
+      </div>
+    </section>
 
     <!-- Academy Gallery -->
-    <div class="gallery-title">Academy Gallery</div>
-    <div class="academy-gallery">
-      <img src="GRIT_CITY_BJJ.jpg" alt="Front Entrance" />
-      <img src="GRIT_CITY_BJJ_TACOMA.jpg" alt="Night Front" />
-      <img src="IMG_5422.jpeg" alt="Lobby" />
-      <img src="IMG_5425.jpeg" alt="Bag Area" />
-      <img src="IMG_5426.jpeg" alt="Mat Space" />
-      <img src="IMG_5427.jpeg" alt="Mat View" />
-    </div>
-
-    <!-- Awards -->
-    <div class="awards-section">
-      <h2>Academy Awards</h2>
-      <div class="awards-logos">
-        <img src="BEST OF TACOMA 2012.jpg" alt="Best of Tacoma 2012" />
-        <img src="BEST OF TACOMA 2013.jpg" alt="Best of Tacoma 2013" />
-        <img src="BEST OF TACOMA 2014.jpg" alt="Best of Tacoma 2014" />
-        <img src="BEST OF TACOMA 2015.jpg" alt="Best of Tacoma 2015" />
-        <img src="BEST OF TACOMA 2016.jpg" alt="Best of Tacoma 2016" />
-        <img src="BEST OF TACOMA 2017.jpg" alt="Best of Tacoma 2017" />
-        <img src="BEST OF TACOMA 2018.jpg" alt="Best of Tacoma 2018" />
-        <img src="BEST OF TACOMA 2019.jpg" alt="Best of Tacoma 2019" />
-        <img src="BEST OF TACOMA 2020 EXCELLENCE AWARD.jpg" alt="Best of Tacoma 2020" />
-        <img src="BEST OF TACOMA 2022.jpg" alt="Best of Tacoma 2022" />
-        <img src="BEST OF TACOMA 2023.jpg" alt="Best of Tacoma 2023" />
+    <section id="gallery" class="gallery-section">
+      <div class="gallery-title">Academy Gallery</div>
+      <div class="academy-gallery">
+        <img src="IMG_5426.jpeg" alt="Mat Space" />
+        <img src="IMG_5427.jpeg" alt="Mat View" />
+        <img src="IMG_5425.jpeg" alt="Bag Area" />
       </div>
-    </div>
+    </section>
 
     <!-- Academy Lineage -->
-    <h2 class="lineage-header">ACADEMY LINEAGE</h2>
+    <h2 class="lineage-header">Academy Lineage</h2>
     <div class="lineage-main-image">
       <img src="LINEAGE.jpg" alt="Academy Lineage" />
     </div>
@@ -505,8 +552,8 @@
       <img src="MICHAEL PROCTOR SR.png" alt="Michael Proctor" />
     </div>
 
-    <!-- Instructors Section (shortened bios with read more) -->
-    <div class="instructors-section">
+    <!-- Instructors Section -->
+    <section id="instructors" class="instructors-section">
       <div class="instructors-title">Instructors</div>
       <div class="instructors-list">
         <div class="instructor-card">
@@ -545,12 +592,12 @@
           <button class="read-more-btn" onclick="toggleBio(this)">Read More</button>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Code of Conduct -->
-    <div class="conduct-section">
+    <section id="conduct" class="conduct-section">
       <h2>Code of Conduct</h2>
-      <div id="conduct-content" class="content-collapsible" style="max-height: 180px; overflow: hidden; transition: max-height 0.3s ease;">
+      <div class="content-collapsible" id="conduct-content">
         <ul>
           <li>01. Always be respectful.</li>
           <li>02. Always address Professors and Coaches accordingly.</li>
@@ -591,13 +638,13 @@
           <li>25. Absolutely NO coaching your children or other students during class.</li>
         </ul>
       </div>
-      <button class="read-more-btn" onclick="toggleCollapse('conduct-content', this)">Read More</button>
-    </div>
+      <button class="read-more-section-btn" onclick="toggleSection('conduct-content')">Read More</button>
+    </section>
 
     <!-- FAQ's -->
-    <div class="faqs-section">
+    <section id="faqs" class="faqs-section">
       <h2>Brazilian Jiu-Jitsu FAQ's</h2>
-      <div id="faq-content" class="content-collapsible" style="max-height: 180px; overflow: hidden; transition: max-height 0.3s ease;">
+      <div class="content-collapsible" id="faqs-content">
         <div class="faq-item">
           <div class="faq-q">1. What can BJJ and your school do for me?</div>
           <div class="faq-a">BJJ is a highly effective form of self-defense that promotes a healthy lifestyle. Adding BJJ to your life will help you get in shape, gain self-confidence and self-discipline, and relieve stress while forming a network of like-minded people sure to motivate and inspire you. Our Brazilian Jiu-Jitsu Academy in Tacoma offers a safe, friendly, and family-style atmosphere that many of our students consider their second home.</div>
@@ -655,8 +702,25 @@
           <div class="faq-a">To get started with your training, contact us or give us a call @ <a href="tel:2532546538" style="color:#14307f; text-decoration:underline;">253-254-6538</a>. We look forward to seeing you on the mats!</div>
         </div>
       </div>
-      <button class="read-more-btn" onclick="toggleCollapse('faq-content', this)">Read More</button>
-    </div>
+      <button class="read-more-section-btn" onclick="toggleSection('faqs-content')">Read More</button>
+    </section>
+
+    <!-- Try a Free Class -->
+    <section id="try-free-class" class="try-free-class">
+      <h2>TRY A FREE CLASS</h2>
+      <p>By filling out the form completely, you will receive membership information in your email.</p>
+      <form action="mailto:gritcitybjj@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="Name" placeholder="Name (required)" required />
+        <input type="email" name="Email" placeholder="Email (required)" required />
+        <input type="tel" name="Phone" placeholder="Phone (optional)" />
+        <textarea name="Message" placeholder="Questions or Comments (optional)" rows="4"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <div style="margin-top: 8px; font-size: 0.95em; color: #888;">
+        Or call us at
+        <a href="tel:2532546538" style="color:#153088;text-decoration:underline;">253-254-6538</a>
+      </div>
+    </section>
   </div>
 
   <!-- Footer -->
@@ -681,11 +745,12 @@
   </footer>
 
   <script>
+    // Instructor Bio toggle
     function toggleBio(button) {
       const card = button.parentElement;
       const shortBio = card.querySelector('.bio-short');
       const fullBio = card.querySelector('.bio-full');
-      if (fullBio.style.display === 'none') {
+      if (fullBio.style.display === 'none' || fullBio.style.display === '') {
         fullBio.style.display = 'block';
         shortBio.style.display = 'none';
         button.textContent = 'Read Less';
@@ -696,21 +761,24 @@
       }
     }
 
-    function toggleCollapse(id, btn) {
+    // Code of Conduct and FAQ toggle
+    function toggleSection(id) {
       const content = document.getElementById(id);
-      if (content.style.maxHeight && content.style.maxHeight !== "180px") {
-        content.style.maxHeight = "180px";
-        btn.textContent = "Read More";
+      if(content.classList.contains('open')) {
+        content.classList.remove('open');
       } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-        btn.textContent = "Read Less";
+        content.classList.add('open');
       }
     }
 
-    function validateForm(form) {
-      // Basic example validation (optional)
-      return true;
-    }
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-bar a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
   </script>
 </body>
 </html>
