@@ -18,47 +18,28 @@
       margin: 0 auto;
       padding: 0 15px;
     }
-.main-banner {
-  width: 100%;
-  max-width: 100vw;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 10px;
-  display: block;
-}
-@media (max-width: 700px) {
-  .main-banner {
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    border-radius: 0;
-  }
-}
-@media (max-width: 550px) {
-  .main-banner {
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    border-radius: 0;
-  }
-}
+    .main-banner {
+      width: 100vw;
+      max-width: 1200px;
+      height: 200px;
+      max-height: 200px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      display: block;
+    }
     .student-login {
       display: flex;
       justify-content: center;
-      margin: 18px 0 28px;
+      margin: 24px 0 32px;
     }
     .student-login img {
       cursor: pointer;
-      height: 42px; /* Reduced by 50% */
+      height: 56px;
       width: auto;
       box-shadow: 0 2px 14px rgba(20,60,100,0.11);
       border-radius: 11px;
       transition: transform 0.12s;
-      padding: 6px 16px;
+      padding: 8px 24px;
       background: #f3f7ff;
     }
     .student-login img:hover {
@@ -126,21 +107,39 @@
     .location-maps a img:hover {
       transform: scale(1.05);
     }
+    /* Gallery Styles */
+    .gallery-section {
+      margin-bottom: 28px;
+    }
+    .gallery-title {
+      font-size: 1.5em;
+      color: #14307f;
+      font-weight: 700;
+      margin: 40px 0 20px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
     .academy-gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 16px;
+      gap: 18px;
       margin-bottom: 38px;
     }
-    .academy-gallery img {
+    .academy-gallery a img {
       width: 320px;
       height: 210px;
       object-fit: cover;
       border-radius: 8px;
-      box-shadow: 0 1px 8px rgba(0,0,0,0.05);
-      transition: width 0.2s, height 0.2s;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: transform 0.15s;
+      display: block;
     }
+    .academy-gallery a img:hover {
+      transform: scale(1.04);
+    }
+    /* Awards Row */
     .awards-title {
       font-size: 1.3em;
       color: #14307f;
@@ -153,18 +152,23 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 16px;
+      gap: 14px;
       margin-bottom: 40px;
     }
-    .awards-row img {
-      width: 105px;
+    .awards-row a img {
+      width: 100px;
       height: auto;
       border-radius: 8px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
       background: #fff;
       margin: 8px 0;
-      transition: width 0.2s;
+      cursor: pointer;
+      transition: transform 0.15s;
     }
+    .awards-row a img:hover {
+      transform: scale(1.08);
+    }
+    /* Lineage */
     .lineage-header {
       text-align: center;
       color: #14307f;
@@ -182,15 +186,16 @@
     .lineage-photos {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly;
-      gap: 24px;
+      justify-content: center;
+      gap: 18px;
       margin-bottom: 40px;
     }
     .lineage-photos img {
-      width: 125px;
+      width: 100px;
       border-radius: 10px;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 1px 6px rgba(0,0,0,0.11);
     }
+    /* Instructors */
     .instructors-section {
       background: #fafcff;
       border-radius: 15px;
@@ -254,7 +259,7 @@
     .read-more-btn:hover {
       color: #314be7;
     }
-    /* Code of Conduct & FAQ */
+    /* Collapsible Code of Conduct & FAQ */
     .conduct-section, .faqs-section {
       margin: 40px auto 35px auto;
       max-width: 900px;
@@ -273,7 +278,7 @@
       user-select: none;
     }
     .content-collapsible {
-      max-height: 140px;
+      max-height: 800px;
       overflow: hidden;
       position: relative;
       transition: max-height 0.3s ease;
@@ -364,6 +369,7 @@
     .try-free-class form button:hover {
       background: #314be7;
     }
+    /* Footer */
     .footer-logos-row {
       display: flex;
       justify-content: space-between;
@@ -374,7 +380,7 @@
       background: #fff;
     }
     .footer-logos-row img {
-      max-height: 175px;
+      max-height: 120px;
       border-radius: 10px;
       box-shadow: 0 1px 8px rgba(0,0,0,0.10);
       object-fit: contain;
@@ -384,12 +390,12 @@
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 46px;
+      gap: 36px;
       margin: 30px 0 12px 0;
     }
     .social-links img {
-      height: 54px;
-      width: 54px;
+      height: 42px;
+      width: 42px;
       object-fit: contain;
       border-radius: 10px;
       background: #fff;
@@ -408,64 +414,69 @@
       margin-bottom: 6px;
       letter-spacing: 1px;
     }
-
-    /* Mobile Responsive Tweaks */
+    /* MOBILE STYLES */
     @media (max-width: 950px) {
       .footer-logos-row img {
-        max-height: 95px;
-      }
-      .awards-row img {
-        width: 68px;
-      }
-      .academy-gallery img {
-        width: 190px;
-        height: 125px;
+        max-height: 68px;
       }
     }
     @media (max-width: 700px) {
       .main-banner {
-        height: 100px;
+        height: 32vw;
+        min-height: 110px;
+        max-height: 180px;
+        width: 100vw;
+        object-fit: cover;
+        margin-bottom: 10px;
       }
-      .instructor-card img {
-        width: 120px;
-        height: 170px;
-      }
-      .awards-row img {
-        width: 54px;
-      }
-      .academy-gallery img {
-        width: 120px;
-        height: 80px;
+      .student-login img {
+        height: 28px !important;
+        padding: 6px 10px !important;
       }
       .nav-bar {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
-        font-size: 1em;
+        gap: 13px;
+        margin-bottom: 28px;
+      }
+      .academy-gallery a img {
+        width: 90vw;
+        max-width: 350px;
+        height: auto;
+        margin: 0 auto;
+      }
+      .awards-row a img {
+        width: 50px;
+      }
+      .lineage-photos img {
+        width: 62px;
       }
     }
     @media (max-width: 550px) {
       .container {
-        padding: 0 5px;
+        padding: 0 2vw;
       }
       .main-banner {
-        height: 58px;
+        width: 100vw;
+        height: 40vw;
+        min-height: 100px;
+        max-height: 130px;
+        object-fit: cover;
+        margin-bottom: 10px;
       }
-      .academy-gallery img {
-        width: 80px;
-        height: 54px;
+      .academy-gallery a img {
+        width: 98vw;
+        max-width: 98vw;
+        height: auto;
+      }
+      .awards-row a img {
+        width: 38px;
       }
       .footer-logos-row img {
-        max-height: 54px;
+        max-height: 32px;
       }
-      .awards-row img {
-        width: 40px;
-      }
-      .nav-bar {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        font-size: 1em;
+      .lineage-photos img {
+        width: 42px;
       }
     }
   </style>
@@ -519,26 +530,26 @@
     <section id="gallery" class="gallery-section">
       <div class="gallery-title">Academy Gallery</div>
       <div class="academy-gallery">
-        <img src="img_5426.jpeg" alt="Mat Space" />
-        <img src="img_5427.jpeg" alt="Mat View" />
-        <img src="img_5425.jpeg" alt="Bag Area" />
+        <a href="img_5426.jpeg" target="_blank"><img src="img_5426.jpeg" alt="Mat Space" /></a>
+        <a href="img_5427.jpeg" target="_blank"><img src="img_5427.jpeg" alt="Mat View" /></a>
+        <a href="img_5425.jpeg" target="_blank"><img src="img_5425.jpeg" alt="Bag Area" /></a>
       </div>
     </section>
 
     <!-- Academy Awards -->
     <div class="awards-title">Academy Awards</div>
     <div class="awards-row">
-      <img src="best_of_tacoma_2012.jpg" alt="Best of Tacoma 2012" />
-      <img src="best_of_tacoma_2013.jpg" alt="Best of Tacoma 2013" />
-      <img src="best_of_tacoma_2014.jpg" alt="Best of Tacoma 2014" />
-      <img src="best_of_tacoma_2015.jpg" alt="Best of Tacoma 2015" />
-      <img src="best_of_tacoma_2016.jpg" alt="Best of Tacoma 2016" />
-      <img src="best_of_tacoma_2017.jpg" alt="Best of Tacoma 2017" />
-      <img src="best_of_tacoma_2018.jpg" alt="Best of Tacoma 2018" />
-      <img src="best_of_tacoma_2019.jpg" alt="Best of Tacoma 2019" />
-      <img src="best_of_tacoma_2020_excellence_award.jpg" alt="Best of Tacoma 2020 Excellence Award" />
-      <img src="best_of_tacoma_2022.jpg" alt="Best of Tacoma 2022" />
-      <img src="best_of_tacoma_2023.jpg" alt="Best of Tacoma 2023" />
+      <a href="best_of_tacoma_2012.jpg" target="_blank"><img src="best_of_tacoma_2012.jpg" alt="Best of Tacoma 2012" /></a>
+      <a href="best_of_tacoma_2013.jpg" target="_blank"><img src="best_of_tacoma_2013.jpg" alt="Best of Tacoma 2013" /></a>
+      <a href="best_of_tacoma_2014.jpg" target="_blank"><img src="best_of_tacoma_2014.jpg" alt="Best of Tacoma 2014" /></a>
+      <a href="best_of_tacoma_2015.jpg" target="_blank"><img src="best_of_tacoma_2015.jpg" alt="Best of Tacoma 2015" /></a>
+      <a href="best_of_tacoma_2016.jpg" target="_blank"><img src="best_of_tacoma_2016.jpg" alt="Best of Tacoma 2016" /></a>
+      <a href="best_of_tacoma_2017.jpg" target="_blank"><img src="best_of_tacoma_2017.jpg" alt="Best of Tacoma 2017" /></a>
+      <a href="best_of_tacoma_2018.jpg" target="_blank"><img src="best_of_tacoma_2018.jpg" alt="Best of Tacoma 2018" /></a>
+      <a href="best_of_tacoma_2019.jpg" target="_blank"><img src="best_of_tacoma_2019.jpg" alt="Best of Tacoma 2019" /></a>
+      <a href="best_of_tacoma_2020_excellence_award.jpg" target="_blank"><img src="best_of_tacoma_2020_excellence_award.jpg" alt="Best of Tacoma 2020 Excellence Award" /></a>
+      <a href="best_of_tacoma_2022.jpg" target="_blank"><img src="best_of_tacoma_2022.jpg" alt="Best of Tacoma 2022" /></a>
+      <a href="best_of_tacoma_2023.jpg" target="_blank"><img src="best_of_tacoma_2023.jpg" alt="Best of Tacoma 2023" /></a>
     </div>
 
     <!-- Academy Lineage -->
