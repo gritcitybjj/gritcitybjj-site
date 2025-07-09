@@ -340,9 +340,17 @@
         width: 46px;
         height: 46px;
       }
-      .lineage-main-image img {
-        width: 70px;
-      }
+.lineage-main-image img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 100vw;
+  min-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+  height: auto;
+  margin-left: calc(-1 * ((100vw - 100%) / 2));
+  max-width: none;
+}
       .footer-logos-row img {
         max-height: 25px;
       }
@@ -457,8 +465,8 @@
     <!-- Academy Lineage -->
     <h2 class="lineage-header">Academy Lineage</h2>
     <div class="lineage-main-image">
-      <img src="lineage.jpg" alt="Academy Lineage" onclick="openImgPopup(this)" />
-    </div>
+  <img src="lineage.jpg" alt="Academy Lineage" onclick="openImgPopup(this)" />
+</div>
     <div class="lineage-photos">
       <img src="mitsuyo_maeda.jpeg" alt="Mitsuyo Maeda" onclick="openImgPopup(this)" />
       <img src="carlos_gracie_sr.jpeg" alt="Carlos Gracie Sr." onclick="openImgPopup(this)" />
