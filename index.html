@@ -20,43 +20,54 @@
     }
     .main-banner {
       width: 100vw;
-      max-width: 100%;
-      height: 240px;
-      max-height: 240px;
+      max-width: 100vw;
       object-fit: cover;
-      object-position: center;
-      margin-bottom: 10px;
       display: block;
+      margin: 0 auto 10px;
+      height: 210px;
+    }
+    @media (max-width: 700px) {
+      .main-banner {
+        width: 100vw;
+        max-width: 100vw;
+        height: 160px;
+        object-fit: cover;
+      }
+    }
+    @media (max-width: 450px) {
+      .main-banner {
+        height: 120px;
+      }
     }
     .student-login {
       display: flex;
       justify-content: center;
-      margin: 18px 0 28px;
+      margin: 18px 0 24px;
     }
     .student-login img {
       cursor: pointer;
-      height: 48px;
+      height: 38px;
       width: auto;
-      box-shadow: 0 2px 14px rgba(20,60,100,0.11);
-      border-radius: 11px;
+      box-shadow: 0 2px 14px rgba(20,60,100,0.09);
+      border-radius: 8px;
       transition: transform 0.12s;
-      padding: 8px 24px;
+      padding: 4px 10px;
       background: #f3f7ff;
     }
     .student-login img:hover {
-      transform: scale(1.11);
-      box-shadow: 0 4px 22px rgba(20,60,100,0.17);
+      transform: scale(1.08);
       background: #e7f1ff;
     }
     .nav-bar {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 30px;
+      gap: 0;
       font-weight: 600;
       letter-spacing: 1px;
       text-transform: uppercase;
+      margin-bottom: 28px;
+      font-size: 1em;
       flex-wrap: wrap;
     }
     .nav-bar a {
@@ -64,29 +75,36 @@
       text-decoration: none;
       cursor: pointer;
       border-bottom: 2px solid transparent;
-      padding-bottom: 5px;
+      padding: 0 15px 5px 15px;
       transition: border-color 0.2s;
-      margin: 0 6px;
+      display: inline-block;
+      font-size: 1em;
     }
     .nav-bar a:hover {
       border-color: #314be7;
     }
-    .nav-bar a:not(:last-child)::after {
-      content: " | ";
-      color: #ccc;
-      margin-left: 10px;
-      margin-right: 4px;
+    .nav-bar .nav-sep {
+      color: #bbb;
+      font-weight: normal;
+      padding: 0 2px;
+      font-size: 1.05em;
+      user-select: none;
+    }
+    @media (max-width: 600px) {
+      .nav-bar {
+        font-size: 0.97em;
+      }
+      .nav-bar a {
+        padding: 0 7px 5px 7px;
+      }
     }
     .section-title, .gallery-title {
-      font-size: 1.25em;
+      font-size: 1.27em;
       font-weight: 700;
       color: #14307f;
-      margin: 40px 0 12px;
+      margin: 42px 0 14px 0;
       text-align: center;
       letter-spacing: 1px;
-    }
-    .gallery-title {
-      margin: 44px 0 12px 0;
     }
     .address-text, .location-text, .location-map-link {
       text-align: center;
@@ -94,102 +112,126 @@
       font-weight: 600;
       margin: 6px auto 12px;
     }
+    .schedule-embed {
+      display: flex;
+      justify-content: center;
+      margin: 0 0 20px;
+    }
     .schedule-embed iframe {
       border: 2px solid #e0e0e0;
       border-radius: 10px;
-      width: 100%;
-      max-width: 850px;
-      min-width: 300px;
+      width: 98vw;
+      max-width: 820px;
       height: 600px;
       background: #fff;
-      display: block;
-      margin: 0 auto 20px;
+    }
+    @media (max-width: 700px) {
+      .schedule-embed iframe {
+        width: 99vw;
+        height: 480px;
+      }
     }
     .location-maps {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 22px;
-      margin: 35px 0 15px;
+      gap: 18px;
+      margin: 28px 0 10px;
     }
     .location-maps a img {
       border-radius: 10px;
       cursor: pointer;
       transition: transform 0.2s;
-      max-width: 100%;
-      width: 320px;
-      height: auto;
+      width: 175px;
+      max-width: 98vw;
     }
     .location-maps a img:hover {
-      transform: scale(1.05);
+      transform: scale(1.06);
     }
-    .academy-gallery {
+    .academy-gallery, .awards-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 16px;
-      margin-bottom: 38px;
+      gap: 18px;
+      margin-bottom: 36px;
     }
-    .academy-gallery img {
-      width: 130px;
-      height: 130px;
+    .academy-gallery img, .awards-row img {
+      width: 100px;
+      height: 100px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 9px;
       box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+      background: #fff;
       cursor: pointer;
-      transition: transform 0.18s;
+      transition: transform 0.16s;
     }
-    .academy-gallery img:hover {
-      transform: scale(1.08);
+    .academy-gallery img:hover, .awards-row img:hover {
+      transform: scale(1.12);
+      box-shadow: 0 3px 14px rgba(80,80,100,0.14);
+    }
+    @media (max-width: 700px) {
+      .academy-gallery img, .awards-row img {
+        width: 64px;
+        height: 64px;
+      }
+    }
+    .awards-title {
+      font-size: 1.17em;
+      color: #14307f;
+      font-weight: 700;
+      margin: 35px 0 13px 0;
+      text-align: center;
+      letter-spacing: 1px;
     }
     .lineage-header {
       text-align: center;
       color: #14307f;
       font-weight: 700;
       letter-spacing: 1px;
-      margin: 42px 0 14px;
+      margin: 40px 0 10px;
+      font-size: 1.27em;
     }
     .lineage-main-image img {
       display: block;
-      margin: 0 auto 20px;
-      max-width: 100%;
+      margin: 0 auto 14px;
+      max-width: 95vw;
       border-radius: 10px;
       box-shadow: 0 1px 8px rgba(0,0,0,0.1);
-      width: 230px;
-      height: auto;
+      width: 240px;
     }
     .lineage-photos {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 18px;
-      margin-bottom: 40px;
+      gap: 16px;
+      margin-bottom: 30px;
     }
     .lineage-photos img {
-      width: 90px;
-      border-radius: 10px;
+      width: 62px;
+      border-radius: 9px;
       box-shadow: 0 1px 6px rgba(0,0,0,0.1);
-      height: 90px;
-      object-fit: cover;
       cursor: pointer;
-      transition: transform 0.18s;
+      object-fit: cover;
+      background: #fff;
+      height: 62px;
     }
-    .lineage-photos img:hover {
-      transform: scale(1.08);
+    @media (max-width: 700px) {
+      .lineage-main-image img { width: 140px; }
+      .lineage-photos img { width: 38px; height: 38px; }
     }
     .instructors-section {
       background: #fafcff;
       border-radius: 15px;
       margin: 32px 0 40px;
-      padding: 25px 18px 30px;
+      padding: 22px 10px 28px;
       box-shadow: 0 1px 8px rgba(60,90,150,0.04);
     }
     .instructors-title {
-      font-size: 1.5em;
+      font-size: 1.17em;
       font-weight: 700;
       text-align: center;
       color: #14307f;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
       letter-spacing: 1px;
     }
     .instructors-list {
@@ -202,27 +244,27 @@
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 1px 8px rgba(0,0,0,0.08);
-      padding: 19px 18px;
+      padding: 13px 8px;
       text-align: center;
-      width: 240px;
-      min-width: 180px;
+      width: 210px;
+      min-width: 140px;
     }
     .instructor-card img {
-      width: 150px;
-      height: 200px;
+      width: 120px;
+      height: 155px;
       object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 12px;
+      border-radius: 10px;
+      margin-bottom: 8px;
       box-shadow: 0 1px 6px rgba(0,0,0,0.09);
     }
     .instructor-card h3 {
-      margin: 0 0 5px;
-      font-size: 1.12em;
+      margin: 0 0 5px 0;
+      font-size: 1em;
       font-weight: 700;
       color: #10316a;
     }
     .instructor-card p {
-      font-size: 0.96em;
+      font-size: 0.98em;
       color: #363636;
       margin-bottom: 0;
     }
@@ -240,34 +282,147 @@
     .read-more-btn:hover {
       color: #314be7;
     }
+    .conduct-section, .faqs-section {
+      margin: 36px auto 34px auto;
+      max-width: 900px;
+      background: #f7faff;
+      border-radius: 12px;
+      padding: 26px 10px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+    }
+    .conduct-section h2, .faqs-section h2 {
+      text-align: center;
+      color: #14307f;
+      margin-bottom: 12px;
+      font-size: 1.17em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      user-select: none;
+    }
+    .content-collapsible {
+      max-height: 800px;
+      overflow: hidden;
+      position: relative;
+      transition: max-height 0.3s ease;
+      color: #343a40;
+      font-size: 1em;
+      line-height: 1.4;
+      padding-left: 8px;
+      margin-bottom: 8px;
+    }
+    .content-collapsible.open {
+      max-height: 3000px;
+      padding-bottom: 12px;
+    }
+    .read-more-section-btn {
+      display: block;
+      margin: 0 auto 18px auto;
+      background: none;
+      border: none;
+      color: #14307f;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1em;
+      text-decoration: underline;
+    }
+    .read-more-section-btn:hover {
+      color: #314be7;
+    }
+    .conduct-section ul, .faqs-section .faq-item {
+      margin-bottom: 0;
+    }
+    .conduct-section ul li {
+      margin-bottom: 6px;
+    }
+    .faqs-section .faq-q {
+      font-weight: bold;
+      color: #0d2b64;
+      margin-bottom: 2px;
+    }
+    .faqs-section .faq-a {
+      margin-left: 10px;
+      color: #262626;
+    }
+    .try-free-class {
+      max-width: 430px;
+      margin: 38px auto 58px;
+      background: #f3f3f3;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 22px 10px;
+      text-align: center;
+      border: 1.5px solid #dedede;
+    }
+    .try-free-class h2 {
+      font-size: 1.17em;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #14307f;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .try-free-class p {
+      font-size: 0.94em;
+      color: #555;
+      margin-bottom: 13px;
+    }
+    .try-free-class form input,
+    .try-free-class form button,
+    .try-free-class form textarea {
+      font-size: 1em;
+      margin: 5px 0;
+      padding: 9px 10px;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #b7b7b7;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    .try-free-class form button {
+      background: #14307f;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      margin-top: 9px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .try-free-class form button:hover {
+      background: #314be7;
+    }
     .footer-logos-row {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       max-width: 900px;
-      margin: 0 auto 12px auto;
+      margin: 0 auto 10px auto;
       gap: 18px;
       background: #fff;
     }
     .footer-logos-row img {
-      max-height: 110px;
+      max-height: 125px;
       border-radius: 10px;
       box-shadow: 0 1px 8px rgba(0,0,0,0.10);
       object-fit: contain;
       background: #fff;
       display: block;
     }
+    @media (max-width: 700px) {
+      .footer-logos-row img {
+        max-height: 54px;
+      }
+    }
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 36px;
-      margin: 30px 0 12px 0;
+      gap: 38px;
+      margin: 18px 0 10px 0;
     }
     .social-links img {
-      height: 44px;
-      width: 44px;
+      height: 42px;
+      width: 42px;
       object-fit: contain;
-      border-radius: 10px;
+      border-radius: 8px;
       background: #fff;
       box-shadow: 0 1px 6px rgba(0,0,0,0.08);
       transition: transform 0.13s;
@@ -279,73 +434,10 @@
     .footer-bottom {
       text-align: center;
       color: #a6a6a6;
-      font-size: 15px;
-      margin-top: 18px;
-      margin-bottom: 6px;
+      font-size: 14px;
+      margin-top: 11px;
+      margin-bottom: 4px;
       letter-spacing: 1px;
-    }
-    /* Responsive Styles */
-    @media (max-width: 900px) {
-      .footer-logos-row img {
-        max-height: 64px;
-      }
-    }
-    @media (max-width: 700px) {
-      .container {
-        padding: 0 5px;
-      }
-      .main-banner {
-        height: 34vw;
-        max-height: none;
-        min-height: 120px;
-        object-fit: cover;
-      }
-      .academy-gallery img, .lineage-photos img {
-        width: 68px;
-        height: 68px;
-      }
-      .lineage-main-image img {
-        width: 120px;
-      }
-      .footer-logos-row img {
-        max-height: 38px;
-      }
-      .student-login img {
-        height: 30px;
-        padding: 6px 12px;
-      }
-      .nav-bar {
-        flex-direction: row;
-        gap: 3px;
-        font-size: 0.97em;
-        text-align: center;
-      }
-      .section-title, .gallery-title {
-        font-size: 1.07em;
-        margin: 26px 0 7px;
-      }
-      .gallery-title {
-        margin: 22px 0 7px 0;
-      }
-      .academy-gallery {
-        gap: 9px;
-      }
-    }
-    @media (max-width: 440px) {
-      .main-banner {
-        height: 26vw;
-        min-height: 66px;
-      }
-      .academy-gallery img, .lineage-photos img {
-        width: 46px;
-        height: 46px;
-      }
-      .lineage-main-image img {
-        width: 70px;
-      }
-      .footer-logos-row img {
-        max-height: 25px;
-      }
     }
   </style>
 </head>
@@ -364,7 +456,9 @@
     <!-- Navigation Bar -->
     <nav class="nav-bar">
       <a href="#conduct">Code of Conduct</a>
+      <span class="nav-sep">|</span>
       <a href="#faqs">FAQ's</a>
+      <span class="nav-sep">|</span>
       <a href="#try-free-class">Try a Free Class</a>
     </nav>
 
@@ -372,8 +466,7 @@
     <section id="schedule" class="schedule-section">
       <div class="section-title">Live Schedule</div>
       <div class="schedule-embed">
-        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&mode=AGENDA&src=Z3JpdGNpdHliampAZ21haWwuY29t&src=ZW4udXNhLm9mZmljaWFsI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%230b8043"
-          style="border:solid 1px #777; width:100%; max-width:850px;" height="600" frameborder="0" scrolling="no" title="Class Schedule"></iframe>
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&mode=AGENDA&src=Z3JpdGNpdHliampAZ21haWwuY29t&src=ZW4udXNhLm9mZmljaWFsI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%230b8043" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no" title="Class Schedule"></iframe>
       </div>
     </section>
 
@@ -383,12 +476,8 @@
       <div class="address-text">3635 S Lawrence St, STE G, Tacoma, WA 98409</div>
       <div class="location-text">We are located right next door to Flags A' Flyin on S 38th & Lawrence</div>
       <div class="location-maps">
-        <a href="cedar_plaza_location.jpg" target="_blank" rel="noopener noreferrer">
-          <img src="cedar_plaza_location.jpg" alt="Tacoma Cedar Plaza Map" />
-        </a>
-        <a href="cedar_plaza_building_d.jpg" target="_blank" rel="noopener noreferrer">
-          <img src="cedar_plaza_building_d.jpg" alt="Cedar Plaza Building D" />
-        </a>
+        <img src="cedar_plaza_location.jpg" alt="Tacoma Cedar Plaza Map" onclick="openModal(this.src, this.alt)" />
+        <img src="cedar_plaza_building_d.jpg" alt="Cedar Plaza Building D" onclick="openModal(this.src, this.alt)" />
       </div>
       <div class="location-map-link">
         <a href="https://maps.app.goo.gl/debgQ8w2XD5YwNJ9A" target="_blank" rel="noopener noreferrer">Open live directions map</a>
@@ -399,42 +488,42 @@
     <section id="gallery" class="gallery-section">
       <div class="gallery-title">Academy Gallery</div>
       <div class="academy-gallery">
-        <img src="img_5426.jpeg" alt="Mat Space" onclick="openImgPopup(this)" />
-        <img src="img_5427.jpeg" alt="Mat View" onclick="openImgPopup(this)" />
-        <img src="img_5425.jpeg" alt="Bag Area" onclick="openImgPopup(this)" />
+        <img src="img_5426.jpeg" alt="Mat Space" onclick="openModal(this.src, this.alt)" />
+        <img src="img_5427.jpeg" alt="Mat View" onclick="openModal(this.src, this.alt)" />
+        <img src="img_5425.jpeg" alt="Bag Area" onclick="openModal(this.src, this.alt)" />
       </div>
     </section>
 
     <!-- Academy Awards -->
     <section id="awards" class="gallery-section">
       <div class="gallery-title">Best of Tacoma Awards</div>
-      <div class="academy-gallery">
-        <img src="best_of_tacoma_2012.jpg" alt="Best of Tacoma 2012" onclick="openImgPopup(this)" />
-        <img src="best_of_tacoma_2013.jpg" alt="Best of Tacoma 2013" onclick="openImgPopup(this)" />
-        <img src="best_of_tacoma_2014.jpg" alt="Best of Tacoma 2014" onclick="openImgPopup(this)" />
-        <img src="best_of_tacoma_2015.jpg" alt="Best of Tacoma 2015" onclick="openImgPopup(this)" />
-        <img src="best_of_tacoma_2016.jpg" alt="Best of Tacoma 2016" onclick="openImgPopup(this)" />
-        <img src="best_of_tacoma_2017.jpg" alt="Best of Tacoma 2017" onclick="openImgPopup(this)" />
-        <img src="best_of_tacoma_2018.jpg" alt="Best of Tacoma 2018" onclick="openImgPopup(this)" />
-        <img src="best_of_tacoma_2019.jpg" alt="Best of Tacoma 2019" onclick="openImgPopup(this)" />
-        <img src="best_of_tacoma_2020_excellence_award.jpg" alt="Best of Tacoma 2020 Excellence Award" onclick="openImgPopup(this)" />
-        <img src="best_of_tacoma_2022.jpg" alt="Best of Tacoma 2022" onclick="openImgPopup(this)" />
-        <img src="best_of_tacoma_2023.jpg" alt="Best of Tacoma 2023" onclick="openImgPopup(this)" />
+      <div class="awards-row">
+        <img src="best_of_tacoma_2012.jpg" alt="Best of Tacoma 2012" onclick="openModal(this.src, this.alt)" />
+        <img src="best_of_tacoma_2013.jpg" alt="Best of Tacoma 2013" onclick="openModal(this.src, this.alt)" />
+        <img src="best_of_tacoma_2014.jpg" alt="Best of Tacoma 2014" onclick="openModal(this.src, this.alt)" />
+        <img src="best_of_tacoma_2015.jpg" alt="Best of Tacoma 2015" onclick="openModal(this.src, this.alt)" />
+        <img src="best_of_tacoma_2016.jpg" alt="Best of Tacoma 2016" onclick="openModal(this.src, this.alt)" />
+        <img src="best_of_tacoma_2017.jpg" alt="Best of Tacoma 2017" onclick="openModal(this.src, this.alt)" />
+        <img src="best_of_tacoma_2018.jpg" alt="Best of Tacoma 2018" onclick="openModal(this.src, this.alt)" />
+        <img src="best_of_tacoma_2019.jpg" alt="Best of Tacoma 2019" onclick="openModal(this.src, this.alt)" />
+        <img src="best_of_tacoma_2020_excellence_award.jpg" alt="Best of Tacoma 2020 Excellence Award" onclick="openModal(this.src, this.alt)" />
+        <img src="best_of_tacoma_2022.jpg" alt="Best of Tacoma 2022" onclick="openModal(this.src, this.alt)" />
+        <img src="best_of_tacoma_2023.jpg" alt="Best of Tacoma 2023" onclick="openModal(this.src, this.alt)" />
       </div>
     </section>
 
     <!-- Academy Lineage -->
     <h2 class="lineage-header">Academy Lineage</h2>
     <div class="lineage-main-image">
-      <img src="lineage.jpg" alt="Academy Lineage" onclick="openImgPopup(this)" />
+      <img src="lineage.jpg" alt="Academy Lineage" onclick="openModal(this.src, this.alt)" />
     </div>
     <div class="lineage-photos">
-      <img src="mitsuyo_maeda.jpeg" alt="Mitsuyo Maeda" onclick="openImgPopup(this)" />
-      <img src="carlos_gracie_sr.jpeg" alt="Carlos Gracie Sr." onclick="openImgPopup(this)" />
-      <img src="carlson_gracie_sr.jpeg" alt="Carlson Gracie Sr." onclick="openImgPopup(this)" />
-      <img src="ricardo_de_la_riva.jpeg" alt="Ricardo de la Riva" onclick="openImgPopup(this)" />
-      <img src="marcello_c_monteiro.jpeg" alt="Marcello C Monteiro" onclick="openImgPopup(this)" />
-      <img src="michael_proctor_sr.png" alt="Michael Proctor" onclick="openImgPopup(this)" />
+      <img src="mitsuyo_maeda.jpeg" alt="Mitsuyo Maeda" onclick="openModal(this.src, this.alt)" />
+      <img src="carlos_gracie_sr.jpeg" alt="Carlos Gracie Sr." onclick="openModal(this.src, this.alt)" />
+      <img src="carlson_gracie_sr.jpeg" alt="Carlson Gracie Sr." onclick="openModal(this.src, this.alt)" />
+      <img src="ricardo_de_la_riva.jpeg" alt="Ricardo de la Riva" onclick="openModal(this.src, this.alt)" />
+      <img src="marcello_c_monteiro.jpeg" alt="Marcello C Monteiro" onclick="openModal(this.src, this.alt)" />
+      <img src="michael_proctor_sr.png" alt="Michael Proctor" onclick="openModal(this.src, this.alt)" />
     </div>
 
     <!-- Instructors Section -->
@@ -448,6 +537,7 @@
           <p class="bio-full" style="display:none;">[Full bio omitted here for brevity]</p>
           <button class="read-more-btn" onclick="toggleBio(this)">Read More</button>
         </div>
+
         <div class="instructor-card">
           <img src="michael_proctor.jpg" alt="Professor Michael Proctor" />
           <h3>Professor Michael Proctor</h3>
@@ -455,6 +545,7 @@
           <p class="bio-full" style="display:none;">[Full bio omitted here for brevity]</p>
           <button class="read-more-btn" onclick="toggleBio(this)">Read More</button>
         </div>
+
         <div class="instructor-card">
           <img src="david_gines.jpg" alt="Professor David Gines" />
           <h3>Professor David Gines</h3>
@@ -464,12 +555,79 @@
         </div>
       </div>
     </section>
-  </div>
 
-  <!-- Popup Modal for Images -->
-  <div id="imgModal" style="display:none;position:fixed;z-index:10000;top:0;left:0;width:100vw;height:100vh;background:rgba(14,24,40,0.85);align-items:center;justify-content:center;">
-    <span onclick="closeImgPopup()" style="position:absolute;top:18px;right:32px;font-size:2.4em;color:#fff;cursor:pointer;font-weight:700;z-index:11000;">&times;</span>
-    <img id="popupImg" src="" alt="Popup" style="max-width:98vw;max-height:90vh;border-radius:18px;box-shadow:0 6px 50px #000b;" />
+    <!-- Code of Conduct -->
+    <section id="conduct" class="conduct-section">
+      <h2>Code of Conduct</h2>
+      <div class="content-collapsible" id="conduct-content">
+        <ul>
+          <li>01. Always be respectful.</li>
+          <li>02. Always address Professors and Coaches accordingly.</li>
+          <li>03. Uphold the integrity of our principles on and off the mats.</li>
+          <li>04. If you are late, wait outside the mats until the Instructor gives you permission to join.</li>
+          <li>05. Bow on and off the mats.</li>
+          <li>06. Do not leave the mat area without permission from the Instructor.</li>
+          <li>07. During class, when the instructor is demonstrating techniques, every student must sit or stand in good posture.</li>
+          <li>08. Talking should be kept to a minimum level and should relate to the class subject.</li>
+          <li>09. No foul language inside the school.</li>
+          <li>10. Be Humble</li>
+          <li>11. Believe & Achieve</li>
+        </ul>
+        <strong>Etiquette</strong>
+        <ul>
+          <li>12. No shoes on the mats. Shoes or flip flops required when you are not on the mats.</li>
+          <li>13. No food or open containers/cups. Bottled drinks only.</li>
+          <li>14. No electronic devices allowed in the training area.</li>
+          <li>15. Change in the designated changing areas. Do not change in the restrooms.</li>
+          <li>16. All training gear and bags should be left in the bag area, not on the benches or around the training area.</li>
+        </ul>
+        <strong>Hygiene</strong>
+        <ul>
+          <li>17. Always keep good hygiene.</li>
+          <li>18. The uniform must be clean at all times.</li>
+          <li>19. Keep fingernails and toenails trimmed.</li>
+          <li>20. All jewelry, piercings, necklaces, and other items should be removed during training.</li>
+        </ul>
+        <strong>Uniform</strong>
+        <ul>
+          <li>21. All students must wear our patches on their uniform at all times.</li>
+          <li>22. Absolutely, no other school/affiliation patches may be worn for training.</li>
+        </ul>
+        <strong>Spectators</strong>
+        <ul>
+          <li>23. Spectators must sit in the designated seating area.</li>
+          <li>24. Keep all electronic devices silent unless given prior permission to have them on.</li>
+          <li>25. Absolutely NO coaching your children or other students during class.</li>
+        </ul>
+      </div>
+      <button class="read-more-section-btn" onclick="toggleSection('conduct-content')">Read More</button>
+    </section>
+
+    <!-- FAQ's -->
+    <section id="faqs" class="faqs-section">
+      <h2>Brazilian Jiu-Jitsu FAQ's</h2>
+      <div class="content-collapsible" id="faqs-content">
+        <!-- ...your FAQ items here (same as before)... -->
+      </div>
+      <button class="read-more-section-btn" onclick="toggleSection('faqs-content')">Read More</button>
+    </section>
+
+    <!-- Try a Free Class -->
+    <section id="try-free-class" class="try-free-class">
+      <h2>TRY A FREE CLASS</h2>
+      <p>By filling out the form completely, you will receive membership information in your email.</p>
+      <form action="mailto:gritcitybjj@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="Name" placeholder="Name (required)" required />
+        <input type="email" name="Email" placeholder="Email (required)" required />
+        <input type="tel" name="Phone" placeholder="Phone (optional)" />
+        <textarea name="Message" placeholder="Questions or Comments (optional)" rows="4"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <div style="margin-top: 8px; font-size: 0.95em; color: #888;">
+        Or call us at
+        <a href="tel:2532546538" style="color:#153088;text-decoration:underline;">253-254-6538</a>
+      </div>
+    </section>
   </div>
 
   <footer>
@@ -483,7 +641,7 @@
         <img src="instagram.png" alt="Instagram" />
       </a>
       <a href="https://x.com/gritcitybjj" target="_blank" title="𝕏" rel="noopener noreferrer">
-        <img src="x.png" alt="𝕏" style="background:#000;" />
+        <img src="𝕏.png" alt="𝕏" style="background:#000;" />
       </a>
       <a href="https://www.facebook.com/gritcitybjj" target="_blank" title="Facebook" rel="noopener noreferrer">
         <img src="facebook.png" alt="Facebook" />
@@ -491,6 +649,13 @@
     </div>
     <div class="footer-bottom">&copy; 2025 GRIT CITY BJJ | All Rights Reserved</div>
   </footer>
+
+  <!-- Modal for image pop-up -->
+  <div id="imgModal" style="display:none;position:fixed;z-index:9999;left:0;top:0;width:100vw;height:100vh;background:rgba(30,30,50,0.93);align-items:center;justify-content:center;">
+    <span style="position:absolute;top:20px;right:28px;font-size:38px;color:#fff;cursor:pointer;" onclick="closeModal()">&times;</span>
+    <img id="modalImg" src="" alt="" style="max-width:96vw;max-height:86vh;box-shadow:0 6px 32px #000b;border-radius:16px;border:3px solid #fff;">
+    <div id="modalCaption" style="color:#eee;text-align:center;margin-top:18px;font-size:1.09em;"></div>
+  </div>
 
   <script>
     // Instructor Bio toggle
@@ -508,6 +673,13 @@
         button.textContent = 'Read More';
       }
     }
+
+    // Code of Conduct and FAQ toggle
+    function toggleSection(id) {
+      const content = document.getElementById(id);
+      content.classList.toggle('open');
+    }
+
     // Smooth scroll for nav links
     document.querySelectorAll('.nav-bar a').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -517,19 +689,23 @@
       });
     });
 
-    // Pop-up Image Modal Logic
-    function openImgPopup(img) {
-      document.getElementById('popupImg').src = img.src;
+    // Modal logic for all gallery/award/lineage/location images
+    function openModal(src, alt) {
       document.getElementById('imgModal').style.display = 'flex';
+      document.getElementById('modalImg').src = src;
+      document.getElementById('modalCaption').textContent = alt || '';
     }
-    function closeImgPopup() {
+    function closeModal() {
       document.getElementById('imgModal').style.display = 'none';
-      document.getElementById('popupImg').src = '';
+      document.getElementById('modalImg').src = '';
     }
-    // Close popup on background click
-    document.getElementById('imgModal').onclick = function(e) {
-      if(e.target === this) closeImgPopup();
-    };
+    // Close modal on background click or ESC
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+    document.getElementById('imgModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
   </script>
 </body>
 </html>
