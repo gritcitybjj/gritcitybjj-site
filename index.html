@@ -287,16 +287,12 @@
       letter-spacing: 1px;
     }
     @media (max-width: 900px) {
-      .footer-logos-row img {
-        max-height: 64px;
-      }
+      .footer-logos-row img { max-height: 64px; }
     }
     @media (max-width: 700px) {
-      .container { padding: 0 5px; }
       .main-banner {
         height: auto;
         max-height: none;
-        min-height: auto;
         object-fit: contain;
       }
       .footer-logos-row img.sanitized,
@@ -309,7 +305,6 @@
       .main-banner {
         height: auto;
         max-height: none;
-        min-height: auto;
         object-fit: contain;
       }
       .footer-logos-row img.sanitized,
@@ -318,11 +313,40 @@
         max-height: 70px !important;
       }
     }
+    .accordion-toggle {
+      background: #14307f;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.09em;
+      padding: 13px 18px;
+      border: none;
+      border-radius: 7px;
+      width: 100%;
+      text-align: left;
+      margin: 13px 0 0 0;
+      cursor: pointer;
+      transition: background 0.14s;
+      outline: none;
+    }
+    .accordion-toggle[aria-expanded="true"] {
+      background: #314be7;
+    }
+    .accordion-content {
+      display: none;
+      padding: 0 5px 13px 5px;
+      animation: fadein 0.29s;
+    }
+    .accordion-content.open {
+      display: block;
+    }
+    @keyframes fadein {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Main Banner -->
     <img src="main_banner.jpg" alt="GRIT CITY BJJ Main Banner" class="main-banner" />
 
     <!-- Student Login -->
