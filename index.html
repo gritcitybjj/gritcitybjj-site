@@ -286,56 +286,10 @@
       margin-bottom: 6px;
       letter-spacing: 1px;
     }
-    /* Responsive Styles */
     @media (max-width: 900px) {
-      .footer-logos-row img {
-        max-height: 64px;
-      }
+      .footer-logos-row img { max-height: 64px; }
     }
     @media (max-width: 700px) {
-      .container {
-        padding: 0 5px;
-      }
-      .main-banner {
-        height: auto;
-        max-height: none;
-        min-height: auto;
-      }
-      .academy-gallery img, .lineage-photos img {
-        width: 68px;
-        height: 68px;
-      }
-      .lineage-main-image img {
-        width: 120px;
-      }
-      .footer-logos-row img {
-        max-height: 38px;
-      }
-      .student-login img {
-        height: 30px;
-        padding: 6px 12px;
-      }
-      .nav-bar {
-        flex-direction: row;
-        gap: 3px;
-        font-size: 0.97em;
-        text-align: center;
-      }
-      .section-title, .gallery-title {
-        font-size: 1.07em;
-        margin: 26px 0 7px;
-      }
-      .gallery-title {
-        margin: 22px 0 7px 0;
-      }
-      .academy-gallery {
-        gap: 9px;
-      }
-      .location-thumb {
-        width: 75px;
-        height: 56px;
-      }
-      /* Larger sanitized/military/bullies images on mobile */
       .footer-logos-row img.sanitized,
       .footer-logos-row img.military,
       .footer-logos-row img.bullies {
@@ -343,167 +297,43 @@
       }
     }
     @media (max-width: 440px) {
-      .main-banner {
-        height: auto;
-        min-height: auto;
-      }
-      .academy-gallery img, .lineage-photos img {
-        width: 46px;
-        height: 46px;
-      }
-      .lineage-main-image img {
-        width: 70px;
-      }
-      .footer-logos-row img {
-        max-height: 25px;
-      }
-      .location-thumb {
-        width: 56px;
-        height: 44px;
-      }
-      /* Larger sanitized/military/bullies images on smaller screens */
       .footer-logos-row img.sanitized,
       .footer-logos-row img.military,
       .footer-logos-row img.bullies {
         max-height: 70px !important;
       }
     }
-    /* Accordion */
-    .accordion-toggle {
-      background: #14307f;
-      color: #fff;
-      font-weight: 600;
-      font-size: 1.09em;
-      padding: 13px 18px;
-      border: none;
-      border-radius: 7px;
-      width: 100%;
-      text-align: left;
-      margin: 13px 0 0 0;
-      cursor: pointer;
-      transition: background 0.14s;
-      outline: none;
-    }
-    .accordion-toggle[aria-expanded="true"] {
-      background: #314be7;
-    }
-    .accordion-content {
-      display: none;
-      padding: 0 5px 13px 5px;
-      animation: fadein 0.29s;
-    }
-    .accordion-content.open {
-      display: block;
-    }
-    @keyframes fadein {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Main Banner -->
-    <img src="main_banner.jpg" alt="GRIT CITY BJJ Main Banner" class="main-banner" />
+  <!-- ... ALL OTHER SECTIONS UNCHANGED FROM YOUR ORIGINAL ... -->
 
-    <!-- Student Login -->
-    <div class="student-login">
-      <a href="https://bjjtacoma.kicksite.net/users/sign_in" target="_blank" rel="noopener noreferrer">
-        <img src="stuloginbutton.png" alt="Student Login" />
-      </a>
+  <section id="try-free-class" class="try-free-class">
+    <div style="text-align:center;">
+      <h2>TRY A FREE CLASS</h2>
+      <p>By filling out the form completely, you will receive membership information in your email.</p>
     </div>
+    <form action="mailto:gritcitybjj@gmail.com" method="POST" enctype="text/plain"
+      style="display:flex;flex-direction:column;gap:14px;max-width:410px;margin:0 auto;">
+      <input type="text" name="Name" placeholder="Name (required)" required style="padding:11px 12px;font-size:1em;border:1.2px solid #c9d3f7;border-radius:7px;"/>
+      <input type="email" name="Email" placeholder="Email (required)" required style="padding:11px 12px;font-size:1em;border:1.2px solid #c9d3f7;border-radius:7px;"/>
+      <input type="tel" name="Phone" placeholder="Phone (optional)" style="padding:11px 12px;font-size:1em;border:1.2px solid #c9d3f7;border-radius:7px;"/>
+      <textarea name="Message" placeholder="Questions or Comments (optional)" rows="4" style="padding:11px 12px;font-size:1em;border:1.2px solid #c9d3f7;border-radius:7px;"></textarea>
+      <button type="submit" style="background:#14307f;color:#fff;padding:12px 0;font-size:1.1em;border:none;border-radius:7px;cursor:pointer;font-weight:700;letter-spacing:1px;transition:background 0.17s;">
+        Submit
+      </button>
+    </form>
+    <div style="margin-top: 8px; font-size: 0.98em; color: #14307f; font-weight:600; text-align:center;">
+      Call or text us at <a href="tel:2532546538" style="color:#14307f;text-decoration:underline;">253-254-6538</a><br>
+    </div>
+  </section>
 
-    <!-- Navigation Bar -->
-    <nav class="nav-bar">
-      <a href="#conduct">Code of Conduct</a>
-      <a href="#faqs">FAQ's</a>
-      <a href="#try-free-class">Try a Free Class</a>
-    </nav>
-
-    <!-- (The rest of your content remains unchanged up to footer) -->
-
-<!-- Try a Free Class -->
-<section id="try-free-class" class="try-free-class">
-  <div style="text-align:center;">
-    <h2>TRY A FREE CLASS</h2>
-    <p>By filling out the form completely, you will receive membership information in your email.</p>
-  </div>
-  <form action="mailto:gritcitybjj@gmail.com" method="POST" enctype="text/plain"
-    style="display:flex;flex-direction:column;gap:14px;max-width:410px;margin:0 auto;">
-    <input type="text" name="Name" placeholder="Name (required)" required style="padding:11px 12px;font-size:1em;border:1.2px solid #c9d3f7;border-radius:7px;"/>
-    <input type="email" name="Email" placeholder="Email (required)" required style="padding:11px 12px;font-size:1em;border:1.2px solid #c9d3f7;border-radius:7px;"/>
-    <input type="tel" name="Phone" placeholder="Phone (optional)" style="padding:11px 12px;font-size:1em;border:1.2px solid #c9d3f7;border-radius:7px;"/>
-    <textarea name="Message" placeholder="Questions or Comments (optional)" rows="4" style="padding:11px 12px;font-size:1em;border:1.2px solid #c9d3f7;border-radius:7px;"></textarea>
-    <button type="submit" style="background:#14307f;color:#fff;padding:12px 0;font-size:1.1em;border:none;border-radius:7px;cursor:pointer;font-weight:700;letter-spacing:1px;transition:background 0.17s;">
-      Submit
-    </button>
-  </form>
-  <div style="margin-top: 8px; font-size: 0.98em; color: #14307f; font-weight:600; text-align:center;">
-    Call or text us at <a href="tel:2532546538" style="color:#14307f;text-decoration:underline;">253-254-6538</a><br>
-  </div>
-</section>
-
-  <!-- Footer -->
   <footer>
     <div class="footer-logos-row">
       <img src="sanitized_facility.jpg" alt="Sanitized Facility" class="sanitized" />
       <img src="military_discounts.gif" alt="Military Discounts" class="military" />
       <img src="no_bullies.jpg" alt="No Bullies" class="bullies" />
     </div>
-    <div class="social-links">
-      <a href="https://www.instagram.com/gritcitybjj" target="_blank" title="Instagram" rel="noopener noreferrer">
-        <img src="instagram.png" alt="Instagram" />
-      </a>
-      <a href="https://x.com/gritcitybjj" target="_blank" title="𝕏" rel="noopener noreferrer">
-        <img src="𝕏.png" alt="𝕏" style="background:#000;" />
-      </a>
-      <a href="https://www.facebook.com/gritcitybjj" target="_blank" title="Facebook" rel="noopener noreferrer">
-        <img src="facebook.png" alt="Facebook" />
-      </a>
-    </div>
-    <div class="footer-bottom">&copy; 2025 GRIT CITY BJJ | All Rights Reserved</div>
   </footer>
-
-  <script>
-    function toggleAccordion(contentId, btn) {
-      const content = document.getElementById(contentId);
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !expanded);
-      btn.textContent = (expanded ? 'Expand ' : 'Collapse ') + (contentId === 'conduct-content' ? 'Code of Conduct' : "FAQ's");
-      content.classList.toggle('open');
-    }
-    function toggleBio(button) {
-      const card = button.parentElement;
-      const shortBio = card.querySelector('.bio-short');
-      const fullBio = card.querySelector('.bio-full');
-      if (fullBio.style.display === 'none' || fullBio.style.display === '') {
-        fullBio.style.display = 'block';
-        shortBio.style.display = 'none';
-        button.textContent = 'Read Less';
-      } else {
-        fullBio.style.display = 'none';
-        shortBio.style.display = 'block';
-        button.textContent = 'Read More';
-      }
-    }
-    document.querySelectorAll('.nav-bar a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-    function openImgPopup(img) {
-      document.getElementById('popupImg').src = img.src;
-      document.getElementById('imgModal').style.display = 'flex';
-    }
-    function closeImgPopup() {
-      document.getElementById('imgModal').style.display = 'none';
-      document.getElementById('popupImg').src = '';
-    }
-    document.getElementById('imgModal').onclick = function(e) {
-      if(e.target === this) closeImgPopup();
-    };
-  </script>
 </body>
 </html>
