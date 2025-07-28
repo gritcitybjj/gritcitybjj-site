@@ -18,16 +18,16 @@
       margin: 0 auto;
       padding: 0 15px;
     }
-.main-banner {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  max-height: none;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-  margin-bottom: 10px;
-}
+    .main-banner {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      margin-bottom: 10px;
+    }
     .student-login {
       display: flex;
       justify-content: center;
@@ -105,7 +105,6 @@
       display: block;
       margin: 0 auto 20px;
     }
-    /* LOCATION PHOTOS */
     .location-maps {
       display: flex;
       flex-wrap: wrap;
@@ -126,7 +125,6 @@
       transform: scale(1.08);
       box-shadow: 0 2px 12px rgba(20,60,100,0.16);
     }
-    /* End location images */
     .academy-gallery {
       display: flex;
       flex-wrap: wrap;
@@ -160,7 +158,6 @@
       width: 100%;
       border-radius: 10px;
       box-shadow: 0 1px 8px rgba(0,0,0,0.1);
-      /* Enlarged to fill container */
       height: auto;
     }
     .lineage-photos {
@@ -289,107 +286,37 @@
       margin-bottom: 6px;
       letter-spacing: 1px;
     }
-    /* Responsive Styles */
     @media (max-width: 900px) {
       .footer-logos-row img {
         max-height: 64px;
       }
     }
     @media (max-width: 700px) {
-      .container {
-        padding: 0 5px;
-      }
+      .container { padding: 0 5px; }
       .main-banner {
-        height: 34vw;
+        height: auto;
         max-height: none;
-        min-height: 120px;
-        object-fit: cover;
+        min-height: auto;
+        object-fit: contain;
       }
-      .academy-gallery img, .lineage-photos img {
-        width: 68px;
-        height: 68px;
-      }
-      .lineage-main-image img {
-        width: 120px;
-      }
-      .footer-logos-row img {
-        max-height: 38px;
-      }
-      .student-login img {
-        height: 30px;
-        padding: 6px 12px;
-      }
-      .nav-bar {
-        flex-direction: row;
-        gap: 3px;
-        font-size: 0.97em;
-        text-align: center;
-      }
-      .section-title, .gallery-title {
-        font-size: 1.07em;
-        margin: 26px 0 7px;
-      }
-      .gallery-title {
-        margin: 22px 0 7px 0;
-      }
-      .academy-gallery {
-        gap: 9px;
-      }
-      .location-thumb {
-        width: 75px;
-        height: 56px;
+      .footer-logos-row img.sanitized,
+      .footer-logos-row img.military,
+      .footer-logos-row img.bullies {
+        max-height: 90px !important;
       }
     }
     @media (max-width: 440px) {
       .main-banner {
-        height: 26vw;
-        min-height: 66px;
+        height: auto;
+        max-height: none;
+        min-height: auto;
+        object-fit: contain;
       }
-      .academy-gallery img, .lineage-photos img {
-        width: 46px;
-        height: 46px;
+      .footer-logos-row img.sanitized,
+      .footer-logos-row img.military,
+      .footer-logos-row img.bullies {
+        max-height: 70px !important;
       }
-      .lineage-main-image img {
-        width: 70px;
-      }
-      .footer-logos-row img {
-        max-height: 25px;
-      }
-      .location-thumb {
-        width: 56px;
-        height: 44px;
-      }
-    }
-    /* Accordion for conduct/faq */
-    .accordion-toggle {
-      background: #14307f;
-      color: #fff;
-      font-weight: 600;
-      font-size: 1.09em;
-      padding: 13px 18px;
-      border: none;
-      border-radius: 7px;
-      width: 100%;
-      text-align: left;
-      margin: 13px 0 0 0;
-      cursor: pointer;
-      transition: background 0.14s;
-      outline: none;
-    }
-    .accordion-toggle[aria-expanded="true"] {
-      background: #314be7;
-    }
-    .accordion-content {
-      display: none;
-      padding: 0 5px 13px 5px;
-      animation: fadein 0.29s;
-    }
-    .accordion-content.open {
-      display: block;
-    }
-    @keyframes fadein {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
   </style>
 </head>
