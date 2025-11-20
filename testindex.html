@@ -26,7 +26,7 @@ h2 {
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 22px;
-  color:#ffffff !important;
+  color:#ffffff !important; /* << FIXED */
 }
 
 /* --------------------------------------------------------------
@@ -62,9 +62,8 @@ h2 {
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 25px;
-  margin-top: -60px !important; /* << KILLS THE GAP */
+  margin-top: -60px !important;
 }
-
 .hero::after {
   content:"";
   position:absolute;
@@ -73,25 +72,21 @@ h2 {
   pointer-events:none;
   z-index:1;
 }
-
 .hero-content {
   position:relative;
   text-align:center;
   z-index:2;
 }
-
 .hero-sub {
   font-size: 1rem;
   opacity:.9;
   margin-bottom: 18px;
 }
-
 .hero-btns {
   display:flex;
   justify-content:center;
   gap:12px;
 }
-
 .btn-blue {
   background:#3B82F6;
   padding:12px 22px;
@@ -141,7 +136,7 @@ h2 {
 }
 
 /* --------------------------------------------------------------
-   PROGRAMS
+   PROGRAMS (FIXED COLORS)
 -------------------------------------------------------------- */
 .program-grid {
   display:grid;
@@ -149,16 +144,14 @@ h2 {
   gap:16px;
 }
 
-.program-box,
-.program-grid .program-box,
-section .program-box {
-  background:#1E2535 !important;
-  color:#ffffff !important;
+.program-box {
+  background:#1E2535 !important;   /* << FIXED */
+  color:#ffffff !important;         /* << FIXED */
+  border:2px solid #243045 !important;
+  font-weight:800;
+  text-align:center;
   padding:22px;
   border-radius:14px;
-  text-align:center;
-  font-weight:800;
-  border:2px solid #243045 !important;
 }
 
 /* --------------------------------------------------------------
@@ -258,7 +251,7 @@ section .program-box {
 }
 
 /* --------------------------------------------------------------
-   BLUE ACCORDIONS
+   ACCORDIONS
 -------------------------------------------------------------- */
 .accordion-btn {
   width:100%;
