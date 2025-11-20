@@ -31,9 +31,10 @@ h2 {
   color: #ffffff;
 }
 
-/* HEADER (20px spacing ABOVE header only) ------------------------- */
+/* HEADER (20px above + 20px under) -------------------------------- */
 .header-wrap {
   margin-top: 20px;
+  margin-bottom: 20px; /* NEW FIX */
 }
 
 .banner-img {
@@ -233,7 +234,7 @@ footer {
   margin-top:30px;
 }
 
-/* Bottom images: EACH ON OWN ROW */
+/* Bottom images on their own row */
 .footer-img-row {
   text-align:center;
   margin-bottom:22px;
@@ -249,7 +250,7 @@ footer {
 
 <body>
 
-<!-- SPACING ABOVE HEADER + HEADER IMAGE -->
+<!-- SPACING ABOVE + HEADER IMAGE -->
 <div class="header-wrap">
   <img src="header.webp" class="banner-img">
 </div>
@@ -366,7 +367,6 @@ footer {
 <h2>Code of Conduct</h2>
 <button class="accordion-btn" onclick="toggleAcc(this)">Expand Code of Conduct</button>
 <div class="accordion-content">
-
 <h3>Code of Conduct</h3>
 <ul>
 <li>01. Always be respectful.</li>
