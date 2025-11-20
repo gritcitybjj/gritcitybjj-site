@@ -39,40 +39,27 @@ h2 {
   border-radius:14px;
   box-shadow:0 5px 24px rgba(0,0,0,0.55);
 }
-
-/* REMOVE ALL SPACE UNDER HEADER */
 .banner-img.header {
   margin:0 !important;
-  padding:0 !important;
-  display:block !important;
-}
-
-html, body {
-  margin:0;
   padding:0;
-}
-
-body > img.banner-img.header {
-  margin-top:0 !important;
+  display:block;
 }
 
 /* --------------------------------------------------------------
-   HERO — team.png (tight)
+   HERO — team.webp
 -------------------------------------------------------------- */
 .hero {
   width: 100%;
   height: 45vh;
   min-height: 360px;
-  background: #000 url('team.png') center center no-repeat;
+  background: #000 url('team.webp') center center no-repeat;
   background-size: contain;
   background-color: #000;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 25px;
-
-  /* KILL THE HEADER GAP */
-  margin-top:-60px !important;
+  margin: 0;
 }
 .hero::after {
   content:"";
@@ -86,16 +73,14 @@ body > img.banner-img.header {
   z-index:10;
   margin-bottom: 6px;
 }
-.hero-title {
-  font-size: 2.4rem;
-  font-weight: 900;
-  margin-bottom: 4px;
-}
+
+/* GRIT CITY BJJ REMOVED — only subline remains */
 .hero-sub {
   font-size: 1rem;
   opacity:.9;
   margin-bottom: 18px;
 }
+
 .hero-btns {
   display:flex;
   justify-content:center;
@@ -157,7 +142,6 @@ body > img.banner-img.header {
   grid-template-columns:repeat(2, 1fr);
   gap:16px;
 }
-
 .program-box {
   background:#1E2535 !important;
   color:#ffffff !important;
@@ -165,7 +149,7 @@ body > img.banner-img.header {
   border-radius:14px;
   text-align:center;
   font-weight:800;
-  border:2px solid #2a3345 !important;
+  border:2px solid #243045 !important;
 }
 
 /* --------------------------------------------------------------
@@ -265,7 +249,7 @@ body > img.banner-img.header {
 }
 
 /* --------------------------------------------------------------
-   BLUE ACCORDIONS
+   ACCORDIONS
 -------------------------------------------------------------- */
 .accordion-btn {
   width:100%;
@@ -279,10 +263,6 @@ body > img.banner-img.header {
   text-align:left;
   letter-spacing:1px;
   box-shadow:0 0 10px rgba(59,130,246,0.4);
-}
-.accordion-btn:hover {
-  background:#1E293B;
-  box-shadow:0 0 16px rgba(59,130,246,0.7);
 }
 .accordion-content {
   display:none;
@@ -314,48 +294,10 @@ form button {
   font-weight:800;
   margin-top:8px;
 }
-form button:hover {
-  background:#60A5FA;
-}
 
 /* --------------------------------------------------------------
-   FOOTER
+   POPUP
 -------------------------------------------------------------- */
-footer {
-  padding:30px 18px;
-  background:#080808;
-  text-align:center;
-  margin-top:30px;
-}
-
-/* FIXED: TWO IMAGES ON TOP ROW ONLY */
-.footer-two {
-  display:flex;
-  justify-content:center;
-  gap:22px;
-  margin-bottom:16px;
-  flex-wrap:nowrap !important;
-}
-.footer-two img {
-  width:120px;
-  border-radius:12px;
-  background:#111;
-  padding:8px;
-}
-
-/* SECOND ROW — sanitized centered */
-.footer-one {
-  display:flex;
-  justify-content:center;
-}
-.footer-one img {
-  width:140px;
-  border-radius:12px;
-  background:#111;
-  padding:8px;
-}
-
-/* POPUP */
 #imgPopup {
   display:none;
   position:fixed;
@@ -370,17 +312,36 @@ footer {
   max-height:90%;
   border-radius:12px;
 }
+
+/* --------------------------------------------------------------
+   FOOTER (EACH IMAGE OWN LINE)
+-------------------------------------------------------------- */
+footer {
+  padding:30px 18px;
+  background:#080808;
+  text-align:center;
+  margin-top:30px;
+}
+footer img {
+  display:block;
+  margin:0 auto 22px auto;
+  background:#111;
+  padding:8px;
+  border-radius:12px;
+}
+
 </style>
 </head>
 <body>
 
-<!-- header.png -->
-<img src="header.png" class="banner-img header" />
+<!-- header.webp -->
+<img src="header.webp" class="banner-img header" />
 
-<!-- HERO — team.png -->
+<!-- HERO (team.webp) -->
 <div class="hero">
   <div class="hero-content">
-    <div class="hero-title">GRIT CITY BJJ</div>
+
+    <!-- NO GRIT CITY BJJ TITLE -->
     <div class="hero-sub">BJJ COACH International Association in Tacoma, WA</div>
 
     <div class="hero-btns">
@@ -435,11 +396,11 @@ footer {
 </div>
 </section>
 
-<!-- tacoma.png -->
-<img src="tacoma.png" class="banner-img" />
+<!-- tacoma.webp -->
+<img src="tacoma.webp" class="banner-img" />
 
-<!-- face-off.png BELOW tacoma.png -->
-<img src="face-off.png" class="banner-img" />
+<!-- face-off.webp -->
+<img src="face-off.webp" class="banner-img" />
 
 <!-- GALLERY -->
 <section>
@@ -455,6 +416,7 @@ footer {
 <section>
 <h2>Best of Tacoma Awards</h2>
 <div class="gallery-scroll">
+  <!-- All awards unchanged -->
   <img src="best_of_tacoma_2012.jpg" onclick="pop(this)">
   <img src="best_of_tacoma_2013.jpg" onclick="pop(this)">
   <img src="best_of_tacoma_2014.jpg" onclick="pop(this)">
@@ -530,7 +492,7 @@ footer {
 <li>05. Bow on and off the mats.</li>
 <li>06. No leaving mat area without permission.</li>
 <li>07. Maintain posture during instruction.</li>
-<li>08. Talking minimal and relevant only.</li>
+<li>08. Talking minimal and relevant.</li>
 <li>09. No foul language.</li>
 <li>10. Be humble.</li>
 <li>11. Believe & Achieve.</li>
@@ -542,7 +504,7 @@ footer {
 <li>Bottled drinks only.</li>
 <li>No electronics in training area.</li>
 <li>Change only in designated areas.</li>
-<li>Gear stored in proper areas.</li>
+<li>Gear stored properly.</li>
 </ul>
 
 <h3>Hygiene</h3>
@@ -563,7 +525,7 @@ footer {
 <ul>
 <li>Remain in designated seating.</li>
 <li>Devices silent.</li>
-<li>No coaching from sidelines.</li>
+<li>No sideline coaching.</li>
 </ul>
 
 </div>
@@ -631,7 +593,6 @@ Call <a href="tel:2532546538" style="color:#3B82F6;">253-254-6538</a>.</p>
   <button>Submit</button>
 </form>
 
-<!-- INTRODUCTORY IMAGE -->
 <img src="introductory_class.jpg" style="width:100%;margin-top:20px;border-radius:14px;display:block;">
 </section>
 
@@ -651,16 +612,19 @@ function toggleAcc(btn){
 }
 </script>
 
-<!-- FOOTER -->
+<!-- FOOTER (EACH IMAGE ON OWN LINE) -->
 <footer>
 
-<div class="footer-two">
-  <img src="military_discounts.gif">
-  <img src="no_bullies.jpg">
+<div style="text-align:center;margin-bottom:20px;">
+  <img src="military_discounts.gif" style="width:140px;">
 </div>
 
-<div class="footer-one">
-  <img src="sanitized_facility.jpg">
+<div style="text-align:center;margin-bottom:20px;">
+  <img src="no_bullies.jpg" style="width:140px;">
+</div>
+
+<div style="text-align:center;margin-bottom:20px;">
+  <img src="sanitized_facility.jpg" style="width:160px;">
 </div>
 
 <p>&copy; 2025 GRIT CITY BJJ — All Rights Reserved</p>
