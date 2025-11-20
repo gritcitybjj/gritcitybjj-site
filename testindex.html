@@ -26,6 +26,7 @@ h2 {
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 22px;
+  color:#ffffff !important; /* FIXED */
 }
 
 /* --------------------------------------------------------------
@@ -35,7 +36,7 @@ h2 {
   width:100%;
   height:auto;
   display:block;
-  margin:0 0 25px 0;
+  margin:0 0 25px 0; /* bottom space only */
   border-radius:14px;
   box-shadow:0 5px 24px rgba(0,0,0,0.55);
 }
@@ -43,12 +44,14 @@ h2 {
   margin:0 !important;
   padding:0;
   display:block;
+  margin-bottom:0 !important; /* FIXED */
 }
 
 /* --------------------------------------------------------------
    HERO — team.webp
 -------------------------------------------------------------- */
 .hero {
+  position:relative; /* FIXED */
   width: 100%;
   height: 45vh;
   min-height: 360px;
@@ -74,7 +77,8 @@ h2 {
   margin-bottom: 6px;
 }
 
-/* GRIT CITY BJJ REMOVED — only subline remains */
+/* HERO TITLE REMOVED */
+
 .hero-sub {
   font-size: 1rem;
   opacity:.9;
@@ -142,7 +146,10 @@ h2 {
   grid-template-columns:repeat(2, 1fr);
   gap:16px;
 }
-.program-box {
+
+.program-box,
+.program-grid .program-box,
+section .program-box {
   background:#1E2535 !important;
   color:#ffffff !important;
   padding:22px;
@@ -314,7 +321,7 @@ form button {
 }
 
 /* --------------------------------------------------------------
-   FOOTER (EACH IMAGE OWN LINE)
+   FOOTER — EACH IMAGE ON ITS OWN LINE
 -------------------------------------------------------------- */
 footer {
   padding:30px 18px;
@@ -329,7 +336,6 @@ footer img {
   padding:8px;
   border-radius:12px;
 }
-
 </style>
 </head>
 <body>
@@ -341,7 +347,7 @@ footer img {
 <div class="hero">
   <div class="hero-content">
 
-    <!-- NO GRIT CITY BJJ TITLE -->
+    <!-- Removed GRIT CITY BJJ -->
     <div class="hero-sub">BJJ COACH International Association in Tacoma, WA</div>
 
     <div class="hero-btns">
@@ -416,7 +422,6 @@ footer img {
 <section>
 <h2>Best of Tacoma Awards</h2>
 <div class="gallery-scroll">
-  <!-- All awards unchanged -->
   <img src="best_of_tacoma_2012.jpg" onclick="pop(this)">
   <img src="best_of_tacoma_2013.jpg" onclick="pop(this)">
   <img src="best_of_tacoma_2014.jpg" onclick="pop(this)">
