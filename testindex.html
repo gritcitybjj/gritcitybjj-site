@@ -35,7 +35,7 @@ h2 {
   width:100%;
   height:auto;
   display:block;
-  margin:0 0 25px 0; /* bottom-only spacing */
+  margin:0 0 25px 0;
   border-radius:14px;
   box-shadow:0 5px 24px rgba(0,0,0,0.55);
 }
@@ -70,7 +70,9 @@ body > img.banner-img.header {
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 25px;
-  margin: 0; /* NO SPACE BETWEEN HEADER & TEAM */
+
+  /* KILL THE HEADER GAP */
+  margin-top:-60px !important;
 }
 .hero::after {
   content:"";
@@ -157,13 +159,13 @@ body > img.banner-img.header {
 }
 
 .program-box {
-  background:#1E293B !important;   /* UNIFIED COLOR */
-  color:#fff !important;            /* ALWAYS LEGIBLE */
+  background:#1E2535 !important;
+  color:#ffffff !important;
   padding:22px;
   border-radius:14px;
   text-align:center;
   font-weight:800;
-  border:1px solid #243045;
+  border:2px solid #2a3345 !important;
 }
 
 /* --------------------------------------------------------------
@@ -326,13 +328,13 @@ footer {
   margin-top:30px;
 }
 
-/* TOP ROW — two images */
+/* FIXED: TWO IMAGES ON TOP ROW ONLY */
 .footer-two {
   display:flex;
   justify-content:center;
   gap:22px;
-  flex-wrap:wrap;
   margin-bottom:16px;
+  flex-wrap:nowrap !important;
 }
 .footer-two img {
   width:120px;
@@ -341,7 +343,7 @@ footer {
   padding:8px;
 }
 
-/* SECOND ROW — one centered */
+/* SECOND ROW — sanitized centered */
 .footer-one {
   display:flex;
   justify-content:center;
@@ -372,7 +374,7 @@ footer {
 </head>
 <body>
 
-<!-- header.png (NO SPACE BELOW) -->
+<!-- header.png -->
 <img src="header.png" class="banner-img header" />
 
 <!-- HERO — team.png -->
@@ -629,7 +631,7 @@ Call <a href="tel:2532546538" style="color:#3B82F6;">253-254-6538</a>.</p>
   <button>Submit</button>
 </form>
 
-<!-- INTRODUCTORY IMAGE DIRECTLY BELOW FORM -->
+<!-- INTRODUCTORY IMAGE -->
 <img src="introductory_class.jpg" style="width:100%;margin-top:20px;border-radius:14px;display:block;">
 </section>
 
@@ -652,13 +654,11 @@ function toggleAcc(btn){
 <!-- FOOTER -->
 <footer>
 
-<!-- TOP ROW — military + no bullies (side by side) -->
 <div class="footer-two">
   <img src="military_discounts.gif">
   <img src="no_bullies.jpg">
 </div>
 
-<!-- SECOND ROW — sanitized below them centered -->
 <div class="footer-one">
   <img src="sanitized_facility.jpg">
 </div>
