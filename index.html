@@ -2,12 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+
 <title>GRIT CITY BJJ | Tacoma, WA</title>
 
-<!-- DISABLE ZOOM -->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<!-- DISABLE ZOOM — FINAL, FULL LOCKDOWN -->
+<meta name="viewport"
+content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
 
 <style>
+
+/* ================================================================
+   ZOOM KILL FIX (DO NOT REMOVE)
+================================================================ */
+html, body {
+  touch-action: manipulation;
+  touch-action: pan-x pan-y !important;
+}
+input, textarea, select {
+  font-size: 16px !important; /* prevents iOS auto-zoom on inputs */
+}
+* {
+  touch-action: manipulation;
+}
+body {
+  overscroll-behavior: none;
+}
+
 /* BASE ------------------------------------------------------------ */
 body {
   margin: 0;
@@ -31,10 +51,9 @@ h2 {
   color: #ffffff;
 }
 
-/* HEADER ---------------------------------------------------------- */
+/* HEADER (20px spacing ABOVE header only) ------------------------- */
 .header-wrap {
   margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .banner-img {
@@ -72,16 +91,6 @@ h2 {
 }
 .nav-inner a:hover {
   border-color:#3B82F6;
-}
-
-/* LOGIN BUTTON PULSE --------------------------------------------- */
-@keyframes pulseButton {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.06); }
-  100% { transform: scale(1); }
-}
-.pulse-login {
-  animation: pulseButton 1.8s infinite ease-in-out;
 }
 
 /* PROGRAMS -------------------------------------------------------- */
@@ -244,7 +253,7 @@ footer {
   margin-top:30px;
 }
 
-/* Bottom images on their own row */
+/* Bottom images: EACH ON OWN ROW */
 .footer-img-row {
   text-align:center;
   margin-bottom:22px;
@@ -255,12 +264,22 @@ footer {
   background:#111;
   padding:8px;
 }
+
+/* Pulse Animation for Login Button */
+@keyframes pulseButton {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+.pulse-login {
+  animation: pulseButton 1.8s infinite ease-in-out;
+}
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- SPACING ABOVE HEADER + HEADER IMAGE -->
 <div class="header-wrap">
   <img src="header.webp" class="banner-img">
 </div>
@@ -477,7 +496,9 @@ footer {
 
 <p><strong>13. Time to Black Belt?</strong><br>Depends on dedication.</p>
 
-<p><strong>14. How to start?</strong><br>Call <a href="tel:2532546538" style="color:#3B82F6;">253-254-6538</a>.</p>
+<p><strong>14. How to start?</strong><br>
+Call <a href="tel:2532546538" style="color:#3B82F6;">253-254-6538</a>.
+</p>
 
 </div>
 </section>
@@ -494,11 +515,13 @@ footer {
   <button>Submit</button>
 </form>
 
+<!-- INTRO IMAGE -->
 <img src="introductory_class.jpg" style="width:100%;margin-top:20px;border-radius:14px;display:block;">
 </section>
 
 <!-- POPUP -->
-<div id="imgPopup" onclick="this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:99999;">
+<div id="imgPopup" onclick="this.style.display='none'" 
+     style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:99999;">
   <img style="max-width:90%;max-height:90%;border-radius:12px;">
 </div>
 
@@ -515,13 +538,13 @@ function toggleAcc(btn){
 
 <!-- FOOTER -->
 <footer>
+
 <div class="footer-img-row"><img src="military_discounts.gif"></div>
 <div class="footer-img-row"><img src="no_bullies.jpg"></div>
 <div class="footer-img-row"><img src="sanitized_facility.jpg"></div>
+
 <p>&copy; 2025 GRIT CITY BJJ — All Rights Reserved</p>
 </footer>
 
 </body>
 </html>
-
-
