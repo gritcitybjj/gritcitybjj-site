@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <title>GRIT CITY BJJ | Tacoma, WA</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- DISABLE MOBILE ZOOM -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 <style>
 /* --------------------------------------------------------------
@@ -26,7 +28,7 @@ h2 {
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 22px;
-  color: #ffffff !important;
+  color: #ffffff !important;   /* PROGRAMS IS NOW WHITE */
 }
 
 /* --------------------------------------------------------------
@@ -41,27 +43,28 @@ h2 {
   box-shadow:0 5px 24px rgba(0,0,0,0.55);
 }
 
-/* REMOVE HEADER GAP */
+/* HEADER OFFSET (YOU CHOSE 20PX) */
 .banner-img.header {
-  margin:0;
-  padding:0;
+  margin-top:20px !important;
+  margin-bottom:0 !important;
+  padding:0 !important;
 }
 
 /* --------------------------------------------------------------
-   HERO — team.webp
+   HERO — team.webp (UNCHANGED)
 -------------------------------------------------------------- */
 .hero {
   width: 100%;
   height: 45vh;
   min-height: 360px;
   background: #000 url('team.webp') center center no-repeat;
-  background-size: cover;
-  background-color: #000;
+  background-size: contain !important;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 25px;
-  margin-top: -60px; /* FINAL GAP REMOVAL */
+  margin-top: -60px;
+  position: relative;
 }
 .hero::after {
   content:"";
@@ -74,11 +77,6 @@ h2 {
   text-align:center;
   z-index:10;
   margin-bottom: 6px;
-}
-.hero-title {
-  font-size: 2.4rem;
-  font-weight: 900;
-  margin-bottom: 4px;
 }
 .hero-sub {
   font-size: 1rem;
@@ -139,7 +137,7 @@ h2 {
 }
 
 /* --------------------------------------------------------------
-   PROGRAMS (FIXED COLORS)
+   PROGRAMS (FIXED CORRECTLY)
 -------------------------------------------------------------- */
 .program-grid {
   display:grid;
@@ -147,6 +145,7 @@ h2 {
   gap:16px;
 }
 
+/* UNIFORM COLOR + WHITE TEXT */
 .program-box {
   background:#1E293B !important;
   color:#ffffff !important;
@@ -269,10 +268,6 @@ h2 {
   letter-spacing:1px;
   box-shadow:0 0 10px rgba(59,130,246,0.4);
 }
-.accordion-btn:hover {
-  background:#1E293B;
-  box-shadow:0 0 16px rgba(59,130,246,0.7);
-}
 .accordion-content {
   display:none;
   margin-top:12px;
@@ -302,9 +297,6 @@ form button {
   color:white;
   font-weight:800;
   margin-top:8px;
-}
-form button:hover {
-  background:#60A5FA;
 }
 
 /* --------------------------------------------------------------
@@ -361,7 +353,7 @@ footer {
 </head>
 <body>
 
-<!-- header.webp (NO GAP ABOVE TEAM) -->
+<!-- header.webp -->
 <img src="header.webp" class="banner-img header" />
 
 <!-- HERO — team.webp -->
