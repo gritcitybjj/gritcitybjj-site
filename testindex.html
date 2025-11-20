@@ -29,39 +29,45 @@ h2 {
 }
 
 /* --------------------------------------------------------------
-   IMAGE BANNERS (header.png, tacoma.png, face-off.png)
+   IMAGE BANNERS
 -------------------------------------------------------------- */
 .banner-img {
   width:100%;
   height:auto;
   display:block;
-  margin:25px 0 25px 0;
+  margin:25px 0;
   border-radius:14px;
   box-shadow:0 5px 24px rgba(0,0,0,0.55);
 }
 
+/* REMOVE SPACE UNDER HEADER ONLY */
+.banner-img.header {
+  margin-bottom: 0;      /* ← eliminates the gap */
+  margin-top: 0;         /* ← tightens the top also */
+}
+
 /* --------------------------------------------------------------
-   HERO — team.png (TIGHT VERSION)
+   HERO — team.png (tight)
 -------------------------------------------------------------- */
 .hero {
   width: 100%;
-  height: 45vh;                /* much tighter hero */
+  height: 45vh;
   min-height: 360px;
   background: #000 url('team.png') center center no-repeat;
-  background-size: contain;     /* full image always visible */
-  background-color: #000;       /* letterbox background */
+  background-size: contain;
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 25px;
-  margin-top: 10px;
+  margin-top: 0;          /* ← prevents ANY gap between header & hero */
   position: relative;
 }
 .hero::after {
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.75));
+  background:linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.75));
 }
 .hero-content {
   position:relative;
@@ -166,7 +172,7 @@ h2 {
 }
 
 /* --------------------------------------------------------------
-   LOCATION (UNCHANGED)
+   LOCATION
 -------------------------------------------------------------- */
 .location-card {
   background:#111827;
@@ -191,7 +197,7 @@ h2 {
 }
 
 /* --------------------------------------------------------------
-   GALLERY (UNCHANGED)
+   GALLERY
 -------------------------------------------------------------- */
 .gallery-scroll {
   display:flex;
@@ -208,7 +214,7 @@ h2 {
 }
 
 /* --------------------------------------------------------------
-   LINEAGE (UNCHANGED)
+   LINEAGE
 -------------------------------------------------------------- */
 .lineage-grid {
   display:grid;
@@ -224,7 +230,7 @@ h2 {
 }
 
 /* --------------------------------------------------------------
-   INSTRUCTORS (UNCHANGED)
+   INSTRUCTORS
 -------------------------------------------------------------- */
 .instructor-grid {
   display:grid;
@@ -246,7 +252,7 @@ h2 {
 }
 
 /* --------------------------------------------------------------
-   BLUE ACCORDION BUTTONS
+   BLUE ACCORDIONS
 -------------------------------------------------------------- */
 .accordion-btn {
   width:100%;
@@ -340,10 +346,10 @@ footer {
 </head>
 <body>
 
-<!-- header.png ABOVE team.png -->
-<img src="header.png" class="banner-img" />
+<!-- header.png ABOVE team.png, no space below it -->
+<img src="header.png" class="banner-img header" />
 
-<!-- HERO — team.png -->
+<!-- HERO — team.png, no gap above it -->
 <div class="hero">
   <div class="hero-content">
     <div class="hero-title">GRIT CITY BJJ</div>
@@ -401,7 +407,7 @@ footer {
 </div>
 </section>
 
-<!-- tacoma.png ABOVE face-off.png -->
+<!-- tacoma.png -->
 <img src="tacoma.png" class="banner-img" />
 
 <!-- face-off.png BELOW tacoma.png -->
@@ -494,9 +500,9 @@ footer {
 <li>03. Uphold the integrity of our principles on and off the mats.</li>
 <li>04. If you are late, wait outside the mats until the Instructor gives you permission to join.</li>
 <li>05. Bow on and off the mats.</li>
-<li>06. Do not leave the mat area without permission from the Instructor.</li>
+<li>06. Do not leave the mat area without permission.</li>
 <li>07. Sit or stand with good posture during demos.</li>
-<li>08. Minimal talking, only class-related.</li>
+<li>08. Talking should be minimal and relevant.</li>
 <li>09. No foul language.</li>
 <li>10. Be Humble.</li>
 <li>11. Believe & Achieve.</li>
@@ -507,28 +513,28 @@ footer {
 <li>12. No shoes on mats.</li>
 <li>13. Bottled drinks only.</li>
 <li>14. No electronics in training area.</li>
-<li>15. Change in changing rooms only.</li>
-<li>16. Gear belongs in bag area.</li>
+<li>15. Change in designated rooms only.</li>
+<li>16. Gear must be stored properly.</li>
 </ul>
 
 <h3>Hygiene</h3>
 <ul>
 <li>17. Maintain good hygiene.</li>
-<li>18. Uniform must be clean.</li>
-<li>19. Trim fingernails & toenails.</li>
+<li>18. Clean uniforms only.</li>
+<li>19. Trim nails.</li>
 <li>20. Remove all jewelry.</li>
 </ul>
 
 <h3>Uniform</h3>
 <ul>
-<li>21. Wear academy patches at all times.</li>
-<li>22. No other school patches.</li>
+<li>21. Academy patches required.</li>
+<li>22. No other school patches allowed.</li>
 </ul>
 
 <h3>Spectators</h3>
 <ul>
-<li>23. Sit in designated area.</li>
-<li>24. Keep devices silent.</li>
+<li>23. Stay in designated area.</li>
+<li>24. Devices must be silent.</li>
 <li>25. No coaching from sidelines.</li>
 </ul>
 
@@ -539,15 +545,14 @@ footer {
 <section id="faqs">
 <h2>Brazilian Jiu-Jitsu FAQ's</h2>
 <button class="accordion-btn" onclick="toggleAcc(this)">Expand FAQ's</button>
-
 <div class="accordion-content">
 
 <p><strong>1. What can BJJ and your school do for me?</strong><br>
 BJJ is a highly effective form of self-defense that promotes a healthy lifestyle…</p>
 
-<p><strong>2. Do I need to be in shape for this?</strong><br>We cater to all fitness levels…</p>
+<p><strong>2. Do I need to be in shape?</strong><br>We cater to all fitness levels…</p>
 
-<p><strong>3. Am I too old to train?</strong><br>Classes are enjoyed by younger and older students alike…</p>
+<p><strong>3. Am I too old to train?</strong><br>All ages train here…</p>
 
 <p><strong>4. Will I be expected to compete?</strong><br>Competition is optional.</p>
 
@@ -555,7 +560,7 @@ BJJ is a highly effective form of self-defense that promotes a healthy lifestyle
 
 <p><strong>6. Do you offer beginner classes?</strong><br>Yes — structured curriculum…</p>
 
-<p><strong>7. Do you offer striking or kickboxing classes?</strong><br>Yes — MMA, Muay Thai, Boxing…</p>
+<p><strong>7. Do you offer striking?</strong><br>MMA, Muay Thai, Boxing…</p>
 
 <p><strong>8. Can BJJ help with weight loss?</strong><br>Absolutely…</p>
 
@@ -563,9 +568,9 @@ BJJ is a highly effective form of self-defense that promotes a healthy lifestyle
 
 <p><strong>10. Do you offer family discounts?</strong><br>Yes.</p>
 
-<p><strong>11. What is the cost of membership?</strong><br>Depends on your goals…</p>
+<p><strong>11. What is the cost of membership?</strong><br>Depends on goals…</p>
 
-<p><strong>12. Do you offer classes for kids?</strong><br>Yes — age 5 and up.</p>
+<p><strong>12. Do you offer kids classes?</strong><br>Yes — age 5+.</p>
 
 <p><strong>13. How long to get a Black Belt?</strong><br>No fixed timeline.</p>
 
