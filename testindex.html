@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <title>GRIT CITY BJJ | Tacoma, WA</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <style>
 /* --------------------------------------------------------------
@@ -26,7 +26,7 @@ h2 {
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 22px;
-  color:#ffffff !important; /* << FIXED */
+  color: #ffffff !important;
 }
 
 /* --------------------------------------------------------------
@@ -41,11 +41,10 @@ h2 {
   box-shadow:0 5px 24px rgba(0,0,0,0.55);
 }
 
+/* REMOVE HEADER GAP */
 .banner-img.header {
-  margin: 0 !important;
-  padding: 0 !important;
-  line-height: 0 !important;
-  vertical-align: top !important;
+  margin:0;
+  padding:0;
 }
 
 /* --------------------------------------------------------------
@@ -56,26 +55,30 @@ h2 {
   height: 45vh;
   min-height: 360px;
   background: #000 url('team.webp') center center no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-color: #000;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 25px;
-  margin-top: -60px !important;
+  margin-top: -60px; /* FINAL GAP REMOVAL */
 }
 .hero::after {
   content:"";
   position:absolute;
-  top:0;left:0;right:0;bottom:0;
+  inset:0;
   background:linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.75));
-  pointer-events:none;
-  z-index:1;
 }
 .hero-content {
   position:relative;
   text-align:center;
-  z-index:2;
+  z-index:10;
+  margin-bottom: 6px;
+}
+.hero-title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-bottom: 4px;
 }
 .hero-sub {
   font-size: 1rem;
@@ -145,13 +148,13 @@ h2 {
 }
 
 .program-box {
-  background:#1E2535 !important;   /* << FIXED */
-  color:#ffffff !important;         /* << FIXED */
-  border:2px solid #243045 !important;
-  font-weight:800;
-  text-align:center;
+  background:#1E293B !important;
+  color:#ffffff !important;
   padding:22px;
   border-radius:14px;
+  text-align:center;
+  font-weight:800;
+  border:1px solid #334155;
 }
 
 /* --------------------------------------------------------------
@@ -313,14 +316,33 @@ footer {
   text-align:center;
   margin-top:30px;
 }
-footer img {
-  background:#111;
+.footer-two {
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  flex-wrap:wrap;
+  margin-bottom:16px;
+}
+.footer-two img {
+  width:120px;
   border-radius:12px;
+  background:#111;
   padding:8px;
-  margin-bottom:20px;
+}
+.footer-one {
+  display:flex;
+  justify-content:center;
+}
+.footer-one img {
+  width:140px;
+  border-radius:12px;
+  background:#111;
+  padding:8px;
 }
 
-/* POPUP */
+/* --------------------------------------------------------------
+   POPUP
+-------------------------------------------------------------- */
 #imgPopup {
   display:none;
   position:fixed;
@@ -338,15 +360,15 @@ footer img {
 </style>
 </head>
 <body>
-   
-<!-- HEADER -->
-   <div style="height:20px;"></div>
+
+<!-- header.webp (NO GAP ABOVE TEAM) -->
 <img src="header.webp" class="banner-img header" />
 
-<!-- HERO -->
+<!-- HERO — team.webp -->
 <div class="hero">
   <div class="hero-content">
     <div class="hero-sub">BJJ COACH International Association in Tacoma, WA</div>
+
     <div class="hero-btns">
       <a href="#try" class="btn-blue">Try a Free Class</a>
       <a href="#schedule" class="btn-blue-outline">View Schedule</a>
@@ -489,12 +511,12 @@ footer img {
 <ul>
 <li>01. Always be respectful.</li>
 <li>02. Always address Professors and Coaches accordingly.</li>
-<li>03. Uphold integrity on and off the mats.</li>
-<li>04. If late, wait for permission.</li>
-<li>05. Bow on and off.</li>
-<li>06. No leaving mat without permission.</li>
+<li>03. Uphold the integrity of our principles on and off the mats.</li>
+<li>04. If you are late, wait outside until permitted to join.</li>
+<li>05. Bow on and off the mats.</li>
+<li>06. No leaving mat area without permission.</li>
 <li>07. Maintain posture during instruction.</li>
-<li>08. Talking minimal.</li>
+<li>08. Talking minimal and relevant only.</li>
 <li>09. No foul language.</li>
 <li>10. Be humble.</li>
 <li>11. Believe & Achieve.</li>
@@ -504,28 +526,28 @@ footer img {
 <ul>
 <li>No shoes on mats.</li>
 <li>Bottled drinks only.</li>
-<li>No electronics.</li>
+<li>No electronics in training area.</li>
 <li>Change only in designated areas.</li>
-<li>Keep gear stored properly.</li>
+<li>Gear stored in proper areas.</li>
 </ul>
 
 <h3>Hygiene</h3>
 <ul>
 <li>Maintain hygiene.</li>
-<li>Clean uniform.</li>
+<li>Uniform must be clean.</li>
 <li>Trim nails.</li>
-<li>Remove jewelry.</li>
+<li>Remove all jewelry.</li>
 </ul>
 
 <h3>Uniform</h3>
 <ul>
 <li>Academy patches required.</li>
-<li>No other schools’ patches allowed.</li>
+<li>No other school patches allowed.</li>
 </ul>
 
 <h3>Spectators</h3>
 <ul>
-<li>Stay in seating area.</li>
+<li>Remain in designated seating.</li>
 <li>Devices silent.</li>
 <li>No coaching from sidelines.</li>
 </ul>
@@ -539,33 +561,47 @@ footer img {
 <button class="accordion-btn" onclick="toggleAcc(this)">Expand FAQ's</button>
 <div class="accordion-content">
 
-<p><strong>1. What can BJJ do for me?</strong><br>BJJ improves fitness, confidence, discipline, stress relief, and community.</p>
+<p><strong>1. What can BJJ and your school do for me?</strong><br>
+BJJ helps fitness, confidence, discipline, stress relief, and community.</p>
 
-<p><strong>2. Do I need to be in shape?</strong><br>We welcome all fitness levels.</p>
+<p><strong>2. Do I need to be in shape?</strong><br>
+We welcome all fitness levels.</p>
 
-<p><strong>3. Am I too old?</strong><br>No — all ages train.</p>
+<p><strong>3. Am I too old?</strong><br>
+No — all ages train.</p>
 
-<p><strong>4. Expected to compete?</strong><br>No — optional.</p>
+<p><strong>4. Will I be expected to compete?</strong><br>
+Competition is optional.</p>
 
-<p><strong>5. Experience required?</strong><br>No.</p>
+<p><strong>5. Prior experience needed?</strong><br>
+No.</p>
 
-<p><strong>6. Beginner classes?</strong><br>Yes — structured basics.</p>
+<p><strong>6. Beginner classes?</strong><br>
+Yes — structured basics.</p>
 
-<p><strong>7. Striking?</strong><br>Yes — MMA, Muay Thai, Boxing.</p>
+<p><strong>7. Striking?</strong><br>
+Yes — MMA, Muay Thai, Boxing.</p>
 
-<p><strong>8. Weight loss?</strong><br>Highly effective.</p>
+<p><strong>8. Weight loss?</strong><br>
+Very effective.</p>
 
-<p><strong>9. Class structure?</strong><br>Warmup → Technique → Rolling.</p>
+<p><strong>9. Class structure?</strong><br>
+Warmup → Technique → Rolling.</p>
 
-<p><strong>10. Family discounts?</strong><br>Yes.</p>
+<p><strong>10. Family discounts?</strong><br>
+Yes.</p>
 
-<p><strong>11. Membership cost?</strong><br>Depends on goals.</p>
+<p><strong>11. Membership cost?</strong><br>
+Varies based on goals.</p>
 
-<p><strong>12. Kids classes?</strong><br>Age 5+.</p>
+<p><strong>12. Kids classes?</strong><br>
+Age 5+.</p>
 
-<p><strong>13. Time to Black Belt?</strong><br>Varies per individual.</p>
+<p><strong>13. Time to Black Belt?</strong><br>
+Depends on dedication.</p>
 
-<p><strong>14. How to start?</strong><br>Call <a href="tel:2532546538" style="color:#3B82F6;">253-254-6538</a>.</p>
+<p><strong>14. How to start?</strong><br>
+Call <a href="tel:2532546538" style="color:#3B82F6;">253-254-6538</a>.</p>
 
 </div>
 </section>
@@ -581,6 +617,7 @@ footer img {
   <button>Submit</button>
 </form>
 
+<!-- INTRODUCTORY IMAGE -->
 <img src="introductory_class.jpg" style="width:100%;margin-top:20px;border-radius:14px;display:block;">
 </section>
 
@@ -603,16 +640,15 @@ function toggleAcc(btn){
 <!-- FOOTER -->
 <footer>
 
-<div>
-  <img src="military_discounts.gif" style="width:140px;">
+<!-- TOP ROW — military + no bullies -->
+<div class="footer-two">
+  <img src="military_discounts.gif">
+  <img src="no_bullies.jpg">
 </div>
 
-<div>
-  <img src="no_bullies.jpg" style="width:140px;">
-</div>
-
-<div>
-  <img src="sanitized_facility.jpg" style="width:160px;">
+<!-- SECOND ROW — sanitized -->
+<div class="footer-one">
+  <img src="sanitized_facility.jpg">
 </div>
 
 <p>&copy; 2025 GRIT CITY BJJ — All Rights Reserved</p>
