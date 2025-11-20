@@ -35,7 +35,7 @@ h2 {
   width:100%;
   height:auto;
   display:block;
-  margin:25px 0;
+  margin:0 0 25px 0; /* bottom-only spacing */
   border-radius:14px;
   box-shadow:0 5px 24px rgba(0,0,0,0.55);
 }
@@ -44,6 +44,16 @@ h2 {
 .banner-img.header {
   margin:0 !important;
   padding:0 !important;
+  display:block !important;
+}
+
+html, body {
+  margin:0;
+  padding:0;
+}
+
+body > img.banner-img.header {
+  margin-top:0 !important;
 }
 
 /* --------------------------------------------------------------
@@ -60,7 +70,7 @@ h2 {
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 25px;
-  margin: 0;
+  margin: 0; /* NO SPACE BETWEEN HEADER & TEAM */
 }
 .hero::after {
   content:"";
@@ -73,6 +83,11 @@ h2 {
   text-align:center;
   z-index:10;
   margin-bottom: 6px;
+}
+.hero-title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-bottom: 4px;
 }
 .hero-sub {
   font-size: 1rem;
@@ -133,20 +148,22 @@ h2 {
 }
 
 /* --------------------------------------------------------------
-   PROGRAMS (BRIGHTER, UNIFORM)
+   PROGRAMS
 -------------------------------------------------------------- */
 .program-grid {
   display:grid;
   grid-template-columns:repeat(2, 1fr);
   gap:16px;
 }
+
 .program-box {
-  background:#1A2333; /* BRIGHTER + uniform */
+  background:#1E293B !important;   /* UNIFIED COLOR */
+  color:#fff !important;            /* ALWAYS LEGIBLE */
   padding:22px;
   border-radius:14px;
   text-align:center;
   font-weight:800;
-  border:1px solid #1F2937;
+  border:1px solid #243045;
 }
 
 /* --------------------------------------------------------------
@@ -300,7 +317,7 @@ form button:hover {
 }
 
 /* --------------------------------------------------------------
-   FOOTER — ONE IMAGE PER ROW
+   FOOTER
 -------------------------------------------------------------- */
 footer {
   padding:30px 18px;
@@ -308,12 +325,28 @@ footer {
   text-align:center;
   margin-top:30px;
 }
-.footer-row {
+
+/* TOP ROW — two images */
+.footer-two {
   display:flex;
   justify-content:center;
-  margin-bottom:20px;
+  gap:22px;
+  flex-wrap:wrap;
+  margin-bottom:16px;
 }
-.footer-row img {
+.footer-two img {
+  width:120px;
+  border-radius:12px;
+  background:#111;
+  padding:8px;
+}
+
+/* SECOND ROW — one centered */
+.footer-one {
+  display:flex;
+  justify-content:center;
+}
+.footer-one img {
   width:140px;
   border-radius:12px;
   background:#111;
@@ -339,14 +372,13 @@ footer {
 </head>
 <body>
 
-<!-- header.png -->
+<!-- header.png (NO SPACE BELOW) -->
 <img src="header.png" class="banner-img header" />
 
 <!-- HERO — team.png -->
 <div class="hero">
   <div class="hero-content">
-
-    <!-- REMOVED "GRIT CITY BJJ" -->
+    <div class="hero-title">GRIT CITY BJJ</div>
     <div class="hero-sub">BJJ COACH International Association in Tacoma, WA</div>
 
     <div class="hero-btns">
@@ -404,7 +436,7 @@ footer {
 <!-- tacoma.png -->
 <img src="tacoma.png" class="banner-img" />
 
-<!-- face-off.png -->
+<!-- face-off.png BELOW tacoma.png -->
 <img src="face-off.png" class="banner-img" />
 
 <!-- GALLERY -->
@@ -597,6 +629,7 @@ Call <a href="tel:2532546538" style="color:#3B82F6;">253-254-6538</a>.</p>
   <button>Submit</button>
 </form>
 
+<!-- INTRODUCTORY IMAGE DIRECTLY BELOW FORM -->
 <img src="introductory_class.jpg" style="width:100%;margin-top:20px;border-radius:14px;display:block;">
 </section>
 
@@ -616,18 +649,17 @@ function toggleAcc(btn){
 }
 </script>
 
-<!-- FOOTER — ONE IMAGE PER ROW -->
+<!-- FOOTER -->
 <footer>
 
-<div class="footer-row">
+<!-- TOP ROW — military + no bullies (side by side) -->
+<div class="footer-two">
   <img src="military_discounts.gif">
-</div>
-
-<div class="footer-row">
   <img src="no_bullies.jpg">
 </div>
 
-<div class="footer-row">
+<!-- SECOND ROW — sanitized below them centered -->
+<div class="footer-one">
   <img src="sanitized_facility.jpg">
 </div>
 
