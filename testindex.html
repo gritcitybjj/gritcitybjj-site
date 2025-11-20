@@ -31,10 +31,10 @@ h2 {
   color: #ffffff;
 }
 
-/* HEADER (20px above + 20px under) -------------------------------- */
+/* HEADER ---------------------------------------------------------- */
 .header-wrap {
   margin-top: 20px;
-  margin-bottom: 20px; /* NEW FIX */
+  margin-bottom: 20px;
 }
 
 .banner-img {
@@ -72,6 +72,16 @@ h2 {
 }
 .nav-inner a:hover {
   border-color:#3B82F6;
+}
+
+/* LOGIN BUTTON PULSE --------------------------------------------- */
+@keyframes pulseButton {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+.pulse-login {
+  animation: pulseButton 1.8s infinite ease-in-out;
 }
 
 /* PROGRAMS -------------------------------------------------------- */
@@ -250,7 +260,7 @@ footer {
 
 <body>
 
-<!-- SPACING ABOVE + HEADER IMAGE -->
+<!-- HEADER -->
 <div class="header-wrap">
   <img src="header.webp" class="banner-img">
 </div>
@@ -265,6 +275,21 @@ footer {
   </div>
 </div>
 
+<!-- STUDENT LOGIN BUTTON -->
+<div style="text-align:center; margin:18px 0;">
+  <a href="https://gritcitybjj.com/login"
+     class="pulse-login"
+     style="background:#3B82F6;
+            padding:12px 24px;
+            border-radius:10px;
+            color:white;
+            font-weight:800;
+            text-decoration:none;
+            display:inline-block;">
+     Student Login
+  </a>
+</div>
+
 <!-- PROGRAMS -->
 <section>
 <h2 id="programs-title">Programs</h2>
@@ -273,6 +298,8 @@ footer {
   <div class="program-box">Kids BJJ</div>
   <div class="program-box">Private Lessons</div>
   <div class="program-box">Competition Team</div>
+  <div class="program-box">Kickboxing</div>
+  <div class="program-box">MMA</div>
 </div>
 </section>
 
@@ -367,6 +394,7 @@ footer {
 <h2>Code of Conduct</h2>
 <button class="accordion-btn" onclick="toggleAcc(this)">Expand Code of Conduct</button>
 <div class="accordion-content">
+
 <h3>Code of Conduct</h3>
 <ul>
 <li>01. Always be respectful.</li>
@@ -464,7 +492,6 @@ footer {
   <button>Submit</button>
 </form>
 
-<!-- INTRO IMAGE -->
 <img src="introductory_class.jpg" style="width:100%;margin-top:20px;border-radius:14px;display:block;">
 </section>
 
@@ -486,11 +513,9 @@ function toggleAcc(btn){
 
 <!-- FOOTER -->
 <footer>
-
 <div class="footer-img-row"><img src="military_discounts.gif"></div>
 <div class="footer-img-row"><img src="no_bullies.jpg"></div>
 <div class="footer-img-row"><img src="sanitized_facility.jpg"></div>
-
 <p>&copy; 2025 GRIT CITY BJJ — All Rights Reserved</p>
 </footer>
 
