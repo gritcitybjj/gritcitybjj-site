@@ -36,14 +36,14 @@ body {
   overflow-x: hidden;
 }
 
-/* DESKTOP WALLS — CLEAN CONTAINER ON PC */
+/* DESKTOP WALLS — SLIMMED TO 900px */
 @media (min-width: 1024px) {
   body {
     display: flex;
     justify-content: center;
   }
   .site-wrap {
-    width: 1100px;
+    width: 900px;
     background: #0A0A0A;
   }
   .banner-img {
@@ -54,7 +54,7 @@ body {
 
 section {
   padding: 45px 18px;
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -90,7 +90,7 @@ h2 {
   padding: 10px 0;
 }
 .nav-inner {
-  max-width:1100px;
+  max-width:900px;
   margin:0 auto;
   display:flex;
   justify-content:center;
@@ -109,8 +109,6 @@ h2 {
 }
 
 /* PROGRAMS */
-#programs-title { color:white; }
-
 .program-grid {
   display:grid;
   grid-template-columns:repeat(2, 1fr);
@@ -288,6 +286,7 @@ footer {
 .pulse-login {
   animation: pulseButton 1.8s infinite ease-in-out;
 }
+
 </style>
 </head>
 
@@ -326,7 +325,7 @@ footer {
 
 <!-- PROGRAMS -->
 <section>
-<h2 id="programs-title">Programs</h2>
+<h2>Programs</h2>
 <div class="program-grid">
   <div class="program-box">Adult BJJ</div>
   <div class="program-box">Kids BJJ</div>
@@ -409,14 +408,13 @@ footer {
 </div>
 </section>
 
-<!-- INSTRUCTORS -->
+<!-- INSTRUCTORS (FINKEL REMOVED) -->
 <section id="instructors">
 <h2>Instructors</h2>
 <div class="instructor-grid">
   <div class="instructor-card"><img src="mcm_5th_degree.jpg" onclick="pop(this)"><h3>Professor Marcello C Monteiro</h3></div>
   <div class="instructor-card"><img src="michael_proctor.JPG" onclick="pop(this)"><h3>Professor Michael Proctor</h3></div>
   <div class="instructor-card"><img src="david_gines.JPG" onclick="pop(this)"><h3>Professor David Gines</h3></div>
-  <div class="instructor-card"><img src="marcus_finkel.png" onclick="pop(this)"><h3>Coach Marcus Finkel</h3></div>
   <div class="instructor-card"><img src="donnie_mcmasters.png" onclick="pop(this)"><h3>Coach Donnie McMasters</h3></div>
   <div class="instructor-card"><img src="chris_kuykendall.png" onclick="pop(this)"><h3>Coach Chris Kuykendall</h3></div>
 </div>
@@ -515,7 +513,7 @@ Call <a href="tel:2532546538" style="color:#3B82F6;">253-254-6538</a>.
 </div>
 </section>
 
-<!-- FREE CLASS FORM -->
+<!-- FREE CLASS -->
 <section id="try">
 <h2>Try a Free Class</h2>
 
@@ -580,7 +578,6 @@ function closePopup() {
 }
 </script>
 
-<!-- INTRO IMAGE -->
 <img src="introductory_class.jpg" style="width:100%;margin-top:20px;border-radius:14px;display:block;">
 </section>
 
@@ -607,24 +604,14 @@ function toggleAcc(btn){
 <div class="footer-img-row"><img src="no_bullies.jpg"></div>
 <div class="footer-img-row"><img src="sanitized_facility.jpg"></div>
 
-<!-- SOCIALS -->
 <div style="text-align:center; margin:25px 0;">
-<a href="https://instagram.com/gritcitybjj"
-   target="_blank"
-   rel="noopener noreferrer">
-   <img src="instagram.png" style="width:38px; margin:0 12px;">
-</a>
-
-<a href="https://facebook.com/gritcitybjj"
-   target="_blank"
-   rel="noopener noreferrer">
-   <img src="facebook.png" style="width:38px; margin:0 12px;">
-</a>
+<a href="https://instagram.com/gritcitybjj" target="_blank"><img src="instagram.png" style="width:38px; margin:0 12px;"></a>
+<a href="https://facebook.com/gritcitybjj" target="_blank"><img src="facebook.png" style="width:38px; margin:0 12px;"></a>
 </div>
 
 <p>&copy; 2025 GRIT CITY BJJ — All Rights Reserved</p>
 </footer>
 
-</div><!-- END .site-wrap -->
+</div><!-- END site-wrap -->
 </body>
 </html>
