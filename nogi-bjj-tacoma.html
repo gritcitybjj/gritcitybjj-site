@@ -1,50 +1,691 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<title>GRIT CITY BJJ | Tacoma, WA</title>
 
-  <title>No-Gi BJJ Tacoma | GRIT CITY BJJ</title>
-  <meta name="description" content="No-Gi Brazilian Jiu-Jitsu in Tacoma. Modern, fast-paced grappling at GRIT CITY BJJ.">
+<!-- DISABLE ZOOM — FULL LOCKDOWN -->
+<meta name="viewport"
+content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
 
-  <link rel="stylesheet" href="/assets/style.css">
-  <link rel="stylesheet" href="/css/seo-pages.css">
-  <script src="/assets/main.js" defer></script>
+<style>
+
+/* ================================================================
+   ZOOM KILL FIX (DO NOT REMOVE)
+================================================================ */
+html, body {
+  touch-action: manipulation;
+  touch-action: pan-x pan-y !important;
+}
+input, textarea, select {
+  font-size: 16px !important;
+}
+* {
+  touch-action: manipulation;
+}
+body {
+  overscroll-behavior: none;
+}
+
+/* BASE ------------------------------------------------------------ */
+body {
+  margin: 0;
+  background: #0A0A0A;
+  color: #E5E7EB;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* DESKTOP WALLS — SLIMMED TO 900px */
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  .site-wrap {
+    width: 900px;
+    background: #0A0A0A;
+  }
+  .banner-img {
+    width: 100%;
+    border-radius: 14px;
+  }
+}
+
+section {
+  padding: 45px 18px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 22px;
+  color: #ffffff;
+}
+
+/* HEADER */
+.header-wrap {
+  margin-top: 20px;
+}
+
+.banner-img {
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:14px;
+  margin:0;
+  box-shadow:0 5px 24px rgba(0,0,0,0.55);
+}
+
+/* NAV BAR */
+.navbar {
+  background: rgba(10,10,10,0.75);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  padding: 10px 0;
+}
+.nav-inner {
+  max-width:900px;
+  margin:0 auto;
+  display:flex;
+  justify-content:center;
+  gap:18px;
+}
+.nav-inner a {
+  text-decoration:none;
+  color:#fff;
+  font-weight:700;
+  font-size:.85rem;
+  padding-bottom:4px;
+  border-bottom:2px solid transparent;
+}
+.nav-inner a:hover {
+  border-color:#3B82F6;
+}
+
+/* PROGRAMS */
+.program-grid {
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:16px;
+}
+
+.program-box {
+  background:#1E293B;
+  padding:22px;
+  border-radius:14px;
+  text-align:center;
+  font-weight:800;
+  border:2px solid #3B82F6;
+  color:white;
+}
+
+/* SCHEDULE */
+.schedule-card {
+  background:#111827;
+  padding:16px;
+  border-radius:14px;
+  border:1px solid #1F2937;
+}
+.schedule-card iframe {
+  width:100%;
+  height:600px;
+  border:none;
+  border-radius:12px;
+}
+
+/* LOCATION */
+.location-card {
+  background:#111827;
+  padding:22px;
+  border-radius:14px;
+  border:1px solid #1F2937;
+  text-align:center;
+}
+.location-thumbs {
+  display:flex;
+  gap:10px;
+  margin-top:14px;
+  justify-content:center;
+}
+.location-thumbs img {
+  width:130px;
+  height:90px;
+  border-radius:10px;
+  object-fit:cover;
+  cursor:pointer;
+  border:1px solid #1F2937;
+}
+
+/* GALLERY */
+.gallery-scroll {
+  display:flex;
+  overflow-x:auto;
+  gap:12px;
+}
+.gallery-scroll img {
+  width:240px;
+  height:150px;
+  border-radius:12px;
+  object-fit:cover;
+  border:1px solid #1F2937;
+  cursor:pointer;
+}
+
+/* LINEAGE */
+.lineage-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(130px,1fr));
+  gap:22px;
+  text-align:center;
+}
+.lineage-grid img {
+  width:115px;
+  height:115px;
+  border-radius:100px;
+  object-fit:cover;
+}
+
+/* INSTRUCTORS */
+.instructor-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:22px;
+}
+.instructor-card {
+  text-align:center;
+  background:#111827;
+  border-radius:14px;
+  padding:20px;
+  border:1px solid #1F2937;
+}
+.instructor-card img {
+  width:170px;
+  height:220px;
+  object-fit:contain;
+  border-radius:12px;
+}
+
+/* ACCORDIONS */
+.accordion-btn {
+  width:100%;
+  padding:14px 18px;
+  background:#0F172A;
+  border:2px solid #3B82F6;
+  color:#3B82F6;
+  font-weight:800;
+  border-radius:12px;
+  cursor:pointer;
+  text-align:left;
+  letter-spacing:1px;
+  box-shadow:0 0 10px rgba(59,130,246,0.4);
+}
+.accordion-btn:hover {
+  background:#1E293B;
+  box-shadow:0 0 16px rgba(59,130,246,0.7);
+}
+.accordion-content {
+  display:none;
+  margin-top:12px;
+  background:#111827;
+  padding:18px;
+  border-radius:12px;
+  border:1px solid #1F2937;
+}
+
+/* FORM */
+form input, form textarea {
+  width:100%;
+  background:#1F2937;
+  border:1px solid #374151;
+  padding:12px;
+  border-radius:10px;
+  color:white;
+}
+form button {
+  width:100%;
+  background:#3B82F6;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  color:white;
+  font-weight:800;
+  margin-top:8px;
+}
+
+/* FOOTER */
+footer {
+  padding:30px 18px;
+  background:#080808;
+  text-align:center;
+  margin-top:30px;
+}
+
+.footer-img-row {
+  text-align:center;
+  margin-bottom:22px;
+}
+.footer-img-row img {
+  width:140px;
+  border-radius:12px;
+  background:#111;
+  padding:8px;
+}
+
+/* PULSE LOGIN BUTTON */
+@keyframes pulseButton {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+.pulse-login {
+  animation: pulseButton 1.8s infinite ease-in-out;
+}
+
+</style>
 </head>
 
 <body>
+<div class="site-wrap">
 
-<header>
-  <!-- PASTE HEADER FROM index.html HERE -->
-</header>
+<!-- HEADER -->
+<div class="header-wrap">
+  <img src="header.webp" class="banner-img">
+</div>
 
-<main class="seo-wrap">
+<div style="text-align:center; margin:18px 0 0 0; font-size:1.1rem; font-weight:700; color:#ffffff;">
+  BJJ COACH International Association | Tacoma, WA
+</div>
 
-  <h1>No-Gi Brazilian Jiu-Jitsu in Tacoma</h1>
-
-  <p>No-Gi training emphasizes speed, control, and real-world grappling without reliance on the gi.</p>
-
-  <h2>Why Train No-Gi</h2>
-  <ul>
-    <li>Realistic grappling scenarios.</li>
-    <li>Improved athleticism.</li>
-    <li>Competition and self-defense crossover.</li>
-  </ul>
-
-  <h2>All Skill Levels Welcome</h2>
-  <p>Structured training for beginners through advanced athletes.</p>
-
-  <h2>Location</h2>
-  <p>3635 S Lawrence St, STE G, Tacoma, WA 98409</p>
-
-  <!-- PASTE MAP LINK OR IFRAME FROM index.html HERE -->
-
-  <div class="cta-box">
-    <h2>Start No-Gi Training</h2>
-    <a href="/free-trial-bjj-tacoma.html">Try a FREE Class</a>
+<!-- NAV -->
+<div class="navbar">
+  <div class="nav-inner">
+    <a href="#conduct">Conduct</a>
+    <a href="#faqs">FAQs</a>
+    <a href="#instructors">Instructors</a>
+    <a href="#try">Free Class</a>
   </div>
+</div>
 
-</main>
+<!-- LOGIN -->
+<div style="text-align:center; margin:18px 0;">
+  <a href="https://bjjtacoma.kicksite.net/users/sign_in"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="pulse-login"
+     style="background:#3B82F6; padding:12px 24px; border-radius:10px; color:white; font-weight:800; text-decoration:none; display:inline-block;">
+     Student Login
+  </a>
+</div>
 
+<!-- INTRO VIDEO (INLINE, NO POPUP) -->
+<video 
+  src="assets/Marcello C Monteiro.mp4"
+  style="width:100%; max-width:300px; border-radius:14px; display:block; margin:25px auto 10px auto;"
+  controls
+  preload="metadata"
+  playsinline
+  webkit-playsinline>
+</video>
+
+   
+<!-- PROGRAMS -->
+<section>
+<h2>Programs</h2>
+<div class="program-grid">
+  <div class="program-box">Adult BJJ</div>
+  <div class="program-box">Kids BJJ</div>
+  <div class="program-box">Private Lessons</div>
+  <div class="program-box">Competition Team</div>
+  <div class="program-box">Kickboxing</div>
+  <div class="program-box">MMA</div>
+</div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+<h2>Live Schedule</h2>
+<div class="schedule-card">
+  <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&mode=AGENDA&showPrint=0&src=Z3JpdGNpdHliampAZ21haWwuY29t"></iframe>
+</div>
+</section>
+
+<!-- LOCATION -->
+<section>
+<h2>Location</h2>
+<div class="location-card">
+  <p>3635 S Lawrence St, STE G, Tacoma, WA 98409</p>
+  <p>Next door to Flags A' Flyin on S 38th & Lawrence</p>
+
+  <a href="https://maps.app.goo.gl/debgQ8w2XD5YwNJ9A" style="color:#3B82F6;font-weight:800;">Open live directions map</a>
+
+  <div class="location-thumbs">
+    <img src="cedar_plaza_location.jpg" onclick="pop(this)">
+    <img src="cedar_plaza_building_d.jpg" onclick="pop(this)">
+  </div>
+</div>
+</section>
+
+<!-- IMAGES -->
+<img src="tacoma.webp" class="banner-img">
+<img src="face-off.webp" class="banner-img">
+
+<!-- GALLERY -->
+<section>
+<h2>Academy Gallery</h2>
+<div class="gallery-scroll">
+  <img src="img_5426.jpeg" onclick="pop(this)">
+  <img src="img_5427.jpeg" onclick="pop(this)">
+  <img src="img_5425.jpeg" onclick="pop(this)">
+</div>
+</section>
+
+<!-- AWARDS -->
+<section>
+<h2>Best of Tacoma Awards</h2>
+<div class="gallery-scroll">
+  <img src="best_of_tacoma_2025.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2024.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2023.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2022.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2021.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2020.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2019.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2018.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2017.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2016.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2015.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2014.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2013.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2012.jpg" onclick="pop(this)">
+</div>
+</section>
+
+<!-- LINEAGE -->
+<section>
+<h2>Academy Lineage</h2>
+<div class="lineage-grid">
+  <div><img src="mitsuyo_maeda.jpeg" onclick="pop(this)"><div>MITSUYO MAEDA</div></div>
+  <div><img src="carlos_gracie_sr.jpeg" onclick="pop(this)"><div>CARLOS GRACIE SR.</div></div>
+  <div><img src="carlson_gracie_sr.jpeg" onclick="pop(this)"><div>CARLSON GRACIE SR.</div></div>
+  <div><img src="ricardo_de_la_riva.jpeg" onclick="pop(this)"><div>RICARDO DE LA RIVA</div></div>
+  <div><img src="marcello_c_monteiro.jpeg" onclick="pop(this)"><div>MARCELLO C. MONTEIRO</div></div>
+  <div><img src="michael_proctor_sr.png" onclick="pop(this)"><div>MICHAEL PROCTOR SR.</div></div>
+</div>
+</section>
+
+<!-- INSTRUCTORS (FINKEL REMOVED) -->
+<section id="instructors">
+<h2>Instructors</h2>
+<div class="instructor-grid">
+  <div class="instructor-card"><img src="mcm_5th_degree.jpg" onclick="pop(this)"><h3>Professor Marcello C Monteiro</h3></div>
+  <div class="instructor-card"><img src="michael_proctor.JPG" onclick="pop(this)"><h3>Professor Michael Proctor</h3></div>
+  <div class="instructor-card"><img src="david_gines.JPG" onclick="pop(this)"><h3>Professor David Gines</h3></div>
+  <div class="instructor-card"><img src="donnie_mcmasters.png" onclick="pop(this)"><h3>Coach Donnie McMasters</h3></div>
+  <div class="instructor-card"><img src="chris_kuykendall.png" onclick="pop(this)"><h3>Coach Chris Kuykendall</h3></div>
+</div>
+</section>
+
+<!-- CONDUCT -->
+<section id="conduct">
+<h2>Code of Conduct</h2>
+<button class="accordion-btn" onclick="toggleAcc(this)">Expand Code of Conduct</button>
+<div class="accordion-content">
+
+<h3>Code of Conduct</h3>
+<ul>
+<li>01. Always be respectful.</li>
+<li>02. Always address Professors and Coaches properly.</li>
+<li>03. Uphold our principles on and off the mats.</li>
+<li>04. If late, wait outside until permitted.</li>
+<li>05. Bow on and off the mats.</li>
+<li>06. No leaving mat area without permission.</li>
+<li>07. Maintain posture during instruction.</li>
+<li>08. Talking minimal and relevant only.</li>
+<li>09. No foul language.</li>
+<li>10. Be humble.</li>
+<li>11. Believe & Achieve.</li>
+</ul>
+
+<h3>Etiquette</h3>
+<ul>
+<li>No shoes on mats.</li>
+<li>Bottled drinks only.</li>
+<li>No electronics in training area.</li>
+<li>Change only in designated areas.</li>
+<li>Gear stored properly.</li>
+</ul>
+
+<h3>Hygiene</h3>
+<ul>
+<li>Maintain hygiene.</li>
+<li>Uniform clean.</li>
+<li>Trim nails.</li>
+<li>No jewelry.</li>
+</ul>
+
+<h3>Uniform</h3>
+<ul>
+<li>Academy patches required.</li>
+<li>No other school patches allowed.</li>
+</ul>
+
+<h3>Spectators</h3>
+<ul>
+<li>Remain in designated seating.</li>
+<li>Devices silent.</li>
+<li>No coaching students.</li>
+</ul>
+
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faqs">
+<h2>Brazilian Jiu-Jitsu FAQ's</h2>
+<button class="accordion-btn" onclick="toggleAcc(this)">Expand FAQ's</button>
+<div class="accordion-content">
+
+<p><strong>1. What can BJJ and your school do for me?</strong><br>
+Brazilian Jiu-Jitsu builds real confidence, functional strength, and mental discipline. 
+Training consistently improves your conditioning, mobility, focus, stress management, and overall mindset. 
+Students also gain a powerful sense of community — you’re not just joining a gym, you’re joining a culture built 
+around respect, accountability, and personal growth. Whether your goal is self-defense, fitness, competition, or 
+a life change, BJJ gives you measurable progress month after month.
+</p>
+
+<p><strong>2. Do I need to be in shape to start?</strong><br>
+No. BJJ gets you in shape.  
+Classes scale to your level — beginners start slow, learn positioning, drills, and controlled technique. 
+You’ll build cardio naturally through training, not by needing it beforehand. Everyone starts at zero.
+</p>
+
+<p><strong>3. Am I too old?</strong><br>
+Absolutely not. We have students in their teens, 20s, 30s, 40s, 50s, and beyond. 
+BJJ is a lifelong martial art that adapts to your body and your pace.  
+Your age is not a barrier — your consistency is.
+</p>
+
+<p><strong>4. Will I be expected to compete?</strong><br>
+Competition is optional.  
+You will never be pushed to compete unless you want to.  
+We offer competition training for those who choose that path, but regular classes are designed for all skill levels 
+and all goals — lifestyle, fitness, knowledge, or self-defense.
+</p>
+
+<p><strong>5. Do I need prior martial arts experience?</strong><br>
+None.  
+Most students start with zero experience. The curriculum is structured for beginners first, then builds layer 
+by layer into advanced concepts. You learn fundamentals at your own pace.
+</p>
+
+<p><strong>6. Do you offer beginner-friendly classes?</strong><br>
+Yes.  
+We have structured classes that teach the core positions, movements, transitions, and submissions in a controlled, 
+easy-to-absorb format. Instructors guide every step and ensure beginners never feel overwhelmed.
+</p>
+
+<p><strong>7. Do you offer striking classes?</strong><br>
+Yes — we also offer Kickboxing, Muay Thai, and MMA.  
+These classes complement BJJ perfectly and are excellent for cardio, timing, confidence, and self-defense.
+</p>
+
+<p><strong>8. Will BJJ help me lose weight?</strong><br>
+Extremely.  
+Rolling, drilling, and class structure burn calories fast and build lean muscle. Most students see changes in 
+weight, energy, and confidence within the first few weeks — BJJ is one of the most effective and enjoyable 
+forms of fitness you can commit to.
+</p>
+
+<p><strong>9. What does a typical class look like?</strong><br>
+Classes usually follow this structure:<br>
+<strong>• Warm-up:</strong> mobility, movement patterns, light conditioning.<br>
+<strong>• Technique:</strong> step-by-step instruction, drilling, learning positions.<br>
+<strong>• Live training:</strong> situational training → controlled rolls → optional sparring.<br>
+Each class builds on the previous one, creating a steady progression in skill and understanding.
+</p>
+
+<p><strong>10. Do you offer family or multi-student discounts?</strong><br>
+Yes.  
+We support families training together and offer reduced pricing for households with multiple members training.
+</p>
+
+<p><strong>11. How much does membership cost?</strong><br>
+Pricing varies depending on training goals, programs, and membership type.  
+We offer multiple options — adults, kids, full access, and specialty programs.  
+Contact us directly for the most accurate plan based on what you want to achieve.
+</p>
+
+<p><strong>12. What age can kids start?</strong><br>
+Kids classes start at age 5.  
+The program builds confidence, discipline, coordination, bully-proofing, and respect — all while teaching real 
+martial arts skills in a safe, structured environment.
+</p>
+
+<p><strong>13. How long does it take to earn a Black Belt?</strong><br>
+BJJ is earned, not given.  
+On average, it takes 8–12 years depending on consistency, attitude, effort, and dedication.  
+There are no shortcuts — every belt represents real skill and real work.
+</p>
+
+<p><strong>14. How do I get started?</strong><br>
+Schedule your free class, show up with comfortable athletic clothing, and be ready to learn.  
+You can also call  
+<a href="tel:2532546538" style="color:#3B82F6;font-weight:700;">253-254-6538</a>  
+to speak directly with the academy.
+</p>
+
+</div>
+</section>
+
+
+<!-- FREE CLASS -->
+<section id="try">
+<h2>Try a Free Class</h2>
+
+<form id="freeClassForm" action="https://formsubmit.co/gritcitybjj@gmail.com" method="POST">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="">
+
+  <input name="Name" placeholder="Name (required)" required>
+  <input name="Email" placeholder="Email (required)" required>
+  <input name="Phone" placeholder="Phone (optional)">
+  <textarea name="Message" rows="4" placeholder="Your Message (optional)"></textarea>
+
+  <button>Submit</button>
+</form>
+
+<!-- THANK YOU POPUP -->
+<div id="thankYouPopup"
+     style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85);
+            z-index:999999; justify-content:center; align-items:center;">
+
+  <div style="background:#111827; padding:30px; border-radius:14px; text-align:center;
+              border:2px solid #3B82F6; max-width:320px;">
+
+    <h3 style="margin-top:0; color:#fff;">Thank You</h3>
+
+    <p style="color:#E5E7EB;">
+      Please check your email for a message from<br>
+      <strong>gritcitybjj@gmail.com</strong><br>
+      We will be in touch soon.
+    </p>
+
+    <button onclick="closePopup()"
+            style="margin-top:15px; padding:10px 20px; background:#3B82F6;
+                   color:white; border:none; border-radius:8px; font-weight:800;">
+      OK
+    </button>
+  </div>
+</div>
+
+<script>
+document.getElementById("freeClassForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: "POST",
+    body: formData
+  })
+  .then(() => {
+    document.getElementById("thankYouPopup").style.display = "flex";
+    form.reset();
+  })
+  .catch(() => {
+    alert("Error sending message. Please try again.");
+  });
+});
+
+function closePopup() {
+  document.getElementById("thankYouPopup").style.display = "none";
+}
+</script>
+
+<img src="introductory_class.jpg" style="width:100%;margin-top:20px;border-radius:14px;display:block;">
+</section>
+
+<!-- POPUP VIEWER -->
+<div id="imgPopup" onclick="this.style.display='none'" 
+     style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:99999;">
+  <img style="max-width:90%;max-height:90%;border-radius:12px;">
+</div>
+
+<script>
+function pop(el){
+  document.querySelector('#imgPopup img').src = el.src;
+  document.querySelector('#imgPopup').style.display = 'flex';
+}
+function toggleAcc(btn){
+  const content = btn.nextElementSibling;
+  content.style.display = content.style.display === "block" ? "none" : "block";
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-img-row"><img src="military_discounts.gif"></div>
+<div class="footer-img-row"><img src="no_bullies.jpg"></div>
+<div class="footer-img-row"><img src="sanitized_facility.jpg"></div>
+
+<div style="text-align:center; margin:25px 0;">
+<a href="https://instagram.com/gritcitybjj" target="_blank"><img src="instagram.png" style="width:38px; margin:0 12px;"></a>
+<a href="https://facebook.com/gritcitybjj" target="_blank"><img src="facebook.png" style="width:38px; margin:0 12px;"></a>
+</div>
+
+<p>&copy; 2025 GRIT CITY BJJ — All Rights Reserved</p>
+</footer>
+
+</div><!-- END site-wrap -->
 </body>
 </html>
+
+
+
