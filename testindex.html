@@ -293,6 +293,21 @@ footer {
   animation: pulseButton 1.8s infinite ease-in-out;
 }
 
+/* INTRODUCTORY CLASS IMAGE STYLING */
+.intro-class-img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  margin: 20px auto;
+}
+
+/* On desktop (≥1024px), make it about half width */
+@media (min-width: 1024px) {
+  .intro-class-img {
+    width: 50%;
+  }
+}
+
 </style>
 </head>
 
@@ -343,9 +358,9 @@ footer {
   loop>
 </video>
 
-<!-- INTRODUCTORY CLASS IMAGE UNDER VIDEO — NOW LINKS TO FREE CLASS FORM -->
+<!-- INTRODUCTORY CLASS IMAGE UNDER VIDEO — LINKS TO FORM, NO POPUP -->
 <a href="#try">
-  <img src="introductory_class.jpg" style="width:100%;margin:20px auto 10px auto;border-radius:14px;display:block;cursor:pointer;" onclick="pop(this)">
+  <img src="introductory_class.jpg" class="intro-class-img" alt="Try a free class">
 </a>
 
    
@@ -664,9 +679,9 @@ function closePopup() {
 }
 </script>
 
-<!-- INTRODUCTORY CLASS IMAGE — ORIGINAL POSITION, NOW ALSO LINKS TO FREE CLASS FORM -->
+<!-- INTRODUCTORY CLASS IMAGE — ORIGINAL POSITION, LINKS TO FORM, NO POPUP -->
 <a href="#try">
-  <img src="introductory_class.jpg" style="width:100%;margin-top:20px;border-radius:14px;display:block;cursor:pointer;" onclick="pop(this)">
+  <img src="introductory_class.jpg" class="intro-class-img" alt="Try a free class">
 </a>
 
 </section>
@@ -699,7 +714,7 @@ function toggleAcc(btn){
 <a href="https://facebook.com/gritcitybjj" target="_blank"><img src="facebook.png" style="width:38px; margin:0 12px;"></a>
 </div>
 
-<p>&copy; 2026 GRIT CITY BJJ — All Rights Reserved</p>
+<p>&copy; 2025 GRIT CITY BJJ — All Rights Reserved</p>
 </footer>
 
 </div><!-- END site-wrap -->
