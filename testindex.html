@@ -33,13 +33,31 @@ body {
   overscroll-behavior: none;
 }
 
+/* NEW: FULL LOCKDOWN — PREVENT HORIZONTAL SCROLL / BOUNCE ON MOBILE */
+html, body {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.site-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
 /* BASE ------------------------------------------------------------ */
 body {
   margin: 0;
   background: #0A0A0A;
   color: #E5E7EB;
   font-family: 'Segoe UI', Arial, sans-serif;
-  overflow-x: hidden;
 }
 
 /* DESKTOP WALLS — SLIMMED TO 900px */
@@ -173,6 +191,8 @@ h2 {
   display:flex;
   overflow-x:auto;
   gap:12px;
+  padding: 4px 0; /* Small padding to avoid edge clipping */
+  -webkit-overflow-scrolling: touch;
 }
 .gallery-scroll img {
   width:240px;
@@ -181,6 +201,7 @@ h2 {
   object-fit:cover;
   border:1px solid #1F2937;
   cursor:pointer;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 /* LINEAGE */
@@ -358,7 +379,7 @@ footer {
   loop>
 </video>
 
-<!-- INTRODUCTORY CLASS IMAGE UNDER VIDEO — LINKS TO FORM, NO POPUP -->
+<!-- INTRODUCTORY CLASS IMAGE UNDER VIDEO — LINKS TO FORM -->
 <a href="#try">
   <img src="introductory_class.jpg" class="intro-class-img" alt="Try a free class">
 </a>
@@ -679,7 +700,7 @@ function closePopup() {
 }
 </script>
 
-<!-- INTRODUCTORY CLASS IMAGE — ORIGINAL POSITION, LINKS TO FORM, NO POPUP -->
+<!-- INTRODUCTORY CLASS IMAGE — ORIGINAL POSITION, LINKS TO FORM -->
 <a href="#try">
   <img src="introductory_class.jpg" class="intro-class-img" alt="Try a free class">
 </a>
