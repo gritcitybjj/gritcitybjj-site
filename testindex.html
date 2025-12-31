@@ -8,6 +8,9 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
 
+<!-- LOCK PAGE LANGUAGE TO ENGLISH TO PREVENT AUTO-TRANSLATION ISSUES -->
+<meta http-equiv="Content-Language" content="en-us">
+
 <style>
 
 /* ================================================================
@@ -291,7 +294,6 @@ footer {
 </head>
 
 <body>
-<a href="#try">Free Class</a>
 <div class="site-wrap">
 
 <!-- HEADER -->
@@ -302,9 +304,6 @@ footer {
 <div style="text-align:center; margin:18px 0 0 0; font-size:1.1rem; font-weight:700; color:#ffffff;">
   BJJ COACH International Association | Tacoma, WA
 </div>
-
-<img src="introductory_class.jpg" style="width:100%;margin-top:20px;border-radius:14px;display:block;">
-<a href="#try" style="display:block; text-align:center; margin:10px 0 30px 0; color:#3B82F6; font-weight:800; font-size:1.1rem;">Try a Free Class →</a>
 
 <!-- NAV -->
 <div class="navbar">
@@ -327,14 +326,17 @@ footer {
   </a>
 </div>
 
-<!-- INTRO VIDEO (INLINE, NO POPUP) -->
+<!-- INTRO VIDEO — NOW AUTOPLAYS (muted & looped for mobile compatibility) -->
 <video 
   src="assets/Marcello C Monteiro.mp4"
   style="width:100%; max-width:300px; border-radius:14px; display:block; margin:25px auto 10px auto;"
   controls
   preload="metadata"
   playsinline
-  webkit-playsinline>
+  webkit-playsinline
+  autoplay
+  muted
+  loop>
 </video>
 
    
@@ -350,7 +352,6 @@ footer {
   <div class="program-box">MMA</div>
 </div>
 </section>
-<a href="#try">Free Class</a>
 
 <!-- SCHEDULE -->
 <section id="schedule">
@@ -410,11 +411,6 @@ footer {
   <img src="best_of_tacoma_2012.jpg" onclick="pop(this)">
 </div>
 </section>
-
-<img src="introductory_class.jpg" style="width:100%;margin:30px 0 20px 0;border-radius:14px;display:block;">
-<div style="text-align:center; margin-bottom:40px;">
-  <a href="#try" style="background:#3B82F6; padding:14px 28px; border-radius:10px; color:white; font-weight:800; text-decoration:none; display:inline-block;">Try a Free Class Today</a>
-</div>
 
 <!-- LINEAGE -->
 <section>
@@ -602,10 +598,10 @@ to speak directly with the academy.
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_next" value="">
 
-  <input name="Name" placeholder="Name (required)" required>
-  <input name="Email" placeholder="Email (required)" required>
-  <input name="Phone" placeholder="Phone (optional)">
-  <textarea name="Message" rows="4" placeholder="Your Message (optional)"></textarea>
+  <input name="Name" placeholder="Name (required)" lang="en" required>
+  <input name="Email" type="email" placeholder="Email (required)" lang="en" required>
+  <input name="Phone" type="tel" placeholder="Phone (optional)" lang="en">
+  <textarea name="Message" rows="4" placeholder="Your Message (optional)" lang="en"></textarea>
 
   <button>Submit</button>
 </form>
