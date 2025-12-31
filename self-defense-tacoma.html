@@ -8,35 +8,34 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
 
-<style>
+<!-- LOCK PAGE LANGUAGE TO ENGLISH -->
+<meta http-equiv="Content-Language" content="en-us">
 
+<!-- DISABLE GOOGLE/CHROME AUTO-TRANSLATE FOR THE PAGE -->
+<meta name="google" content="notranslate">
+
+<style>
 /* ================================================================
-   ZOOM KILL FIX (DO NOT REMOVE)
+   BASIC RESET & MOBILE HORIZONTAL LOCKDOWN (SAFE VERSION)
 ================================================================ */
 html, body {
-  touch-action: manipulation;
-  touch-action: pan-x pan-y !important;
-}
-input, textarea, select {
-  font-size: 16px !important;
-}
-* {
-  touch-action: manipulation;
-}
-body {
-  overscroll-behavior: none;
-}
-
-/* BASE ------------------------------------------------------------ */
-body {
   margin: 0;
+  padding: 0;
   background: #0A0A0A;
   color: #E5E7EB;
   font-family: 'Segoe UI', Arial, sans-serif;
-  overflow-x: hidden;
+  overflow-x: hidden;                 /* Prevent any horizontal scroll */
+  touch-action: manipulation;
+  overscroll-behavior-x: none;        /* Stop horizontal pull bounce */
 }
 
-/* DESKTOP WALLS — SLIMMED TO 900px */
+.site-wrap {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* DESKTOP CENTERING */
 @media (min-width: 1024px) {
   body {
     display: flex;
@@ -52,10 +51,12 @@ body {
   }
 }
 
+/* GENERAL SECTION STYLING */
 section {
   padding: 45px 18px;
   max-width: 900px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 h2 {
@@ -72,12 +73,12 @@ h2 {
 }
 
 .banner-img {
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:14px;
-  margin:0;
-  box-shadow:0 5px 24px rgba(0,0,0,0.55);
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  margin: 0 auto;
+  box-shadow: 0 5px 24px rgba(0,0,0,0.55);
 }
 
 /* NAV BAR */
@@ -90,191 +91,193 @@ h2 {
   padding: 10px 0;
 }
 .nav-inner {
-  max-width:900px;
-  margin:0 auto;
-  display:flex;
-  justify-content:center;
-  gap:18px;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
 }
 .nav-inner a {
-  text-decoration:none;
-  color:#fff;
-  font-weight:700;
-  font-size:.85rem;
-  padding-bottom:4px;
-  border-bottom:2px solid transparent;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: .85rem;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
 }
 .nav-inner a:hover {
-  border-color:#3B82F6;
+  border-color: #3B82F6;
 }
 
 /* PROGRAMS */
 .program-grid {
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
-
 .program-box {
-  background:#1E293B;
-  padding:22px;
-  border-radius:14px;
-  text-align:center;
-  font-weight:800;
-  border:2px solid #3B82F6;
-  color:white;
+  background: #1E293B;
+  padding: 22px;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: 800;
+  border: 2px solid #3B82F6;
+  color: white;
 }
 
 /* SCHEDULE */
 .schedule-card {
-  background:#111827;
-  padding:16px;
-  border-radius:14px;
-  border:1px solid #1F2937;
+  background: #111827;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #1F2937;
 }
 .schedule-card iframe {
-  width:100%;
-  height:600px;
-  border:none;
-  border-radius:12px;
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 12px;
 }
 
 /* LOCATION */
 .location-card {
-  background:#111827;
-  padding:22px;
-  border-radius:14px;
-  border:1px solid #1F2937;
-  text-align:center;
+  background: #111827;
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid #1F2937;
+  text-align: center;
 }
 .location-thumbs {
-  display:flex;
-  gap:10px;
-  margin-top:14px;
-  justify-content:center;
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  justify-content: center;
 }
 .location-thumbs img {
-  width:130px;
-  height:90px;
-  border-radius:10px;
-  object-fit:cover;
-  cursor:pointer;
-  border:1px solid #1F2937;
+  width: 130px;
+  height: 90px;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid #1F2937;
 }
 
-/* GALLERY */
+/* GALLERY & AWARDS SCROLL */
 .gallery-scroll {
-  display:flex;
-  overflow-x:auto;
-  gap:12px;
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 4px 0;
+  -webkit-overflow-scrolling: touch;
 }
 .gallery-scroll img {
-  width:240px;
-  height:150px;
-  border-radius:12px;
-  object-fit:cover;
-  border:1px solid #1F2937;
-  cursor:pointer;
+  width: 240px;
+  height: 150px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid #1F2937;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 /* LINEAGE */
 .lineage-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(130px,1fr));
-  gap:22px;
-  text-align:center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
+  gap: 22px;
+  text-align: center;
 }
 .lineage-grid img {
-  width:115px;
-  height:115px;
-  border-radius:100px;
-  object-fit:cover;
+  width: 115px;
+  height: 115px;
+  border-radius: 100px;
+  object-fit: cover;
 }
 
 /* INSTRUCTORS */
 .instructor-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 22px;
 }
 .instructor-card {
-  text-align:center;
-  background:#111827;
-  border-radius:14px;
-  padding:20px;
-  border:1px solid #1F2937;
+  text-align: center;
+  background: #111827;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #1F2937;
 }
 .instructor-card img {
-  width:170px;
-  height:220px;
-  object-fit:contain;
-  border-radius:12px;
+  width: 170px;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 12px;
 }
 
 /* ACCORDIONS */
 .accordion-btn {
-  width:100%;
-  padding:14px 18px;
-  background:#0F172A;
-  border:2px solid #3B82F6;
-  color:#3B82F6;
-  font-weight:800;
-  border-radius:12px;
-  cursor:pointer;
-  text-align:left;
-  letter-spacing:1px;
-  box-shadow:0 0 10px rgba(59,130,246,0.4);
+  width: 100%;
+  padding: 14px 18px;
+  background: #0F172A;
+  border: 2px solid #3B82F6;
+  color: #3B82F6;
+  font-weight: 800;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(59,130,246,0.4);
 }
 .accordion-btn:hover {
-  background:#1E293B;
-  box-shadow:0 0 16px rgba(59,130,246,0.7);
+  background: #1E293B;
+  box-shadow: 0 0 16px rgba(59,130,246,0.7);
 }
 .accordion-content {
-  display:none;
-  margin-top:12px;
-  background:#111827;
-  padding:18px;
-  border-radius:12px;
-  border:1px solid #1F2937;
+  display: none;
+  margin-top: 12px;
+  background: #111827;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #1F2937;
 }
 
 /* FORM */
 form input, form textarea {
-  width:100%;
-  background:#1F2937;
-  border:1px solid #374151;
-  padding:12px;
-  border-radius:10px;
-  color:white;
+  width: 100%;
+  background: #1F2937;
+  border: 1px solid #374151;
+  padding: 12px;
+  border-radius: 10px;
+  color: white;
+  box-sizing: border-box;
 }
 form button {
-  width:100%;
-  background:#3B82F6;
-  padding:14px;
-  border:none;
-  border-radius:10px;
-  color:white;
-  font-weight:800;
-  margin-top:8px;
+  width: 100%;
+  background: #3B82F6;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 800;
+  margin-top: 8px;
 }
 
 /* FOOTER */
 footer {
-  padding:30px 18px;
-  background:#080808;
-  text-align:center;
-  margin-top:30px;
+  padding: 30px 18px;
+  background: #080808;
+  text-align: center;
+  margin-top: 30px;
 }
-
 .footer-img-row {
-  text-align:center;
-  margin-bottom:22px;
+  text-align: center;
+  margin-bottom: 22px;
 }
 .footer-img-row img {
-  width:140px;
-  border-radius:12px;
-  background:#111;
-  padding:8px;
+  width: 140px;
+  border-radius: 12px;
+  background: #111;
+  padding: 8px;
 }
 
 /* PULSE LOGIN BUTTON */
@@ -287,15 +290,28 @@ footer {
   animation: pulseButton 1.8s infinite ease-in-out;
 }
 
+/* INTRODUCTORY CLASS IMAGE */
+.intro-class-img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  margin: 20px auto;
+}
+@media (min-width: 1024px) {
+  .intro-class-img {
+    width: 50%;
+  }
+}
 </style>
 </head>
 
-<body>
+<body class="notranslate">
+
 <div class="site-wrap">
 
 <!-- HEADER -->
 <div class="header-wrap">
-  <img src="header.webp" class="banner-img">
+  <img src="header.webp" class="banner-img" alt="Grit City BJJ">
 </div>
 
 <div style="text-align:center; margin:18px 0 0 0; font-size:1.1rem; font-weight:700; color:#ffffff;">
@@ -314,26 +330,24 @@ footer {
 
 <!-- LOGIN -->
 <div style="text-align:center; margin:18px 0;">
-  <a href="https://bjjtacoma.kicksite.net/users/sign_in"
-     target="_blank"
-     rel="noopener noreferrer"
-     class="pulse-login"
+  <a href="https://bjjtacoma.kicksite.net/users/sign_in" target="_blank" rel="noopener noreferrer" class="pulse-login"
      style="background:#3B82F6; padding:12px 24px; border-radius:10px; color:white; font-weight:800; text-decoration:none; display:inline-block;">
-     Student Login
+    Student Login
   </a>
 </div>
 
-<!-- INTRO VIDEO (INLINE, NO POPUP) -->
+<!-- INTRO VIDEO -->
 <video 
   src="assets/Marcello C Monteiro.mp4"
   style="width:100%; max-width:300px; border-radius:14px; display:block; margin:25px auto 10px auto;"
-  controls
-  preload="metadata"
-  playsinline
-  webkit-playsinline>
+  controls preload="metadata" playsinline webkit-playsinline autoplay muted loop>
 </video>
 
-   
+<!-- INTRODUCTORY CLASS IMAGE UNDER VIDEO -->
+<a href="#try">
+  <img src="introductory_class.jpg" class="intro-class-img" alt="Try a free class">
+</a>
+
 <!-- PROGRAMS -->
 <section>
 <h2>Programs</h2>
@@ -361,9 +375,7 @@ footer {
 <div class="location-card">
   <p>3635 S Lawrence St, STE G, Tacoma, WA 98409</p>
   <p>Next door to Flags A' Flyin on S 38th & Lawrence</p>
-
   <a href="https://maps.app.goo.gl/debgQ8w2XD5YwNJ9A" style="color:#3B82F6;font-weight:800;">Open live directions map</a>
-
   <div class="location-thumbs">
     <img src="cedar_plaza_location.jpg" onclick="pop(this)">
     <img src="cedar_plaza_building_d.jpg" onclick="pop(this)">
@@ -371,7 +383,7 @@ footer {
 </div>
 </section>
 
-<!-- IMAGES -->
+<!-- BANNER IMAGES -->
 <img src="tacoma.webp" class="banner-img">
 <img src="face-off.webp" class="banner-img">
 
@@ -419,7 +431,7 @@ footer {
 </div>
 </section>
 
-<!-- INSTRUCTORS (FINKEL REMOVED) -->
+<!-- INSTRUCTORS -->
 <section id="instructors">
 <h2>Instructors</h2>
 <div class="instructor-grid">
@@ -436,7 +448,6 @@ footer {
 <h2>Code of Conduct</h2>
 <button class="accordion-btn" onclick="toggleAcc(this)">Expand Code of Conduct</button>
 <div class="accordion-content">
-
 <h3>Code of Conduct</h3>
 <ul>
 <li>01. Always be respectful.</li>
@@ -451,7 +462,6 @@ footer {
 <li>10. Be humble.</li>
 <li>11. Believe & Achieve.</li>
 </ul>
-
 <h3>Etiquette</h3>
 <ul>
 <li>No shoes on mats.</li>
@@ -460,7 +470,6 @@ footer {
 <li>Change only in designated areas.</li>
 <li>Gear stored properly.</li>
 </ul>
-
 <h3>Hygiene</h3>
 <ul>
 <li>Maintain hygiene.</li>
@@ -468,20 +477,17 @@ footer {
 <li>Trim nails.</li>
 <li>No jewelry.</li>
 </ul>
-
 <h3>Uniform</h3>
 <ul>
 <li>Academy patches required.</li>
 <li>No other school patches allowed.</li>
 </ul>
-
 <h3>Spectators</h3>
 <ul>
 <li>Remain in designated seating.</li>
 <li>Devices silent.</li>
 <li>No coaching students.</li>
 </ul>
-
 </div>
 </section>
 
@@ -490,171 +496,77 @@ footer {
 <h2>Brazilian Jiu-Jitsu FAQ's</h2>
 <button class="accordion-btn" onclick="toggleAcc(this)">Expand FAQ's</button>
 <div class="accordion-content">
-
-<p><strong>1. What can BJJ and your school do for me?</strong><br>
-Brazilian Jiu-Jitsu builds real confidence, functional strength, and mental discipline. 
-Training consistently improves your conditioning, mobility, focus, stress management, and overall mindset. 
-Students also gain a powerful sense of community — you’re not just joining a gym, you’re joining a culture built 
-around respect, accountability, and personal growth. Whether your goal is self-defense, fitness, competition, or 
-a life change, BJJ gives you measurable progress month after month.
-</p>
-
-<p><strong>2. Do I need to be in shape to start?</strong><br>
-No. BJJ gets you in shape.  
-Classes scale to your level — beginners start slow, learn positioning, drills, and controlled technique. 
-You’ll build cardio naturally through training, not by needing it beforehand. Everyone starts at zero.
-</p>
-
-<p><strong>3. Am I too old?</strong><br>
-Absolutely not. We have students in their teens, 20s, 30s, 40s, 50s, and beyond. 
-BJJ is a lifelong martial art that adapts to your body and your pace.  
-Your age is not a barrier — your consistency is.
-</p>
-
-<p><strong>4. Will I be expected to compete?</strong><br>
-Competition is optional.  
-You will never be pushed to compete unless you want to.  
-We offer competition training for those who choose that path, but regular classes are designed for all skill levels 
-and all goals — lifestyle, fitness, knowledge, or self-defense.
-</p>
-
-<p><strong>5. Do I need prior martial arts experience?</strong><br>
-None.  
-Most students start with zero experience. The curriculum is structured for beginners first, then builds layer 
-by layer into advanced concepts. You learn fundamentals at your own pace.
-</p>
-
-<p><strong>6. Do you offer beginner-friendly classes?</strong><br>
-Yes.  
-We have structured classes that teach the core positions, movements, transitions, and submissions in a controlled, 
-easy-to-absorb format. Instructors guide every step and ensure beginners never feel overwhelmed.
-</p>
-
-<p><strong>7. Do you offer striking classes?</strong><br>
-Yes — we also offer Kickboxing, Muay Thai, and MMA.  
-These classes complement BJJ perfectly and are excellent for cardio, timing, confidence, and self-defense.
-</p>
-
-<p><strong>8. Will BJJ help me lose weight?</strong><br>
-Extremely.  
-Rolling, drilling, and class structure burn calories fast and build lean muscle. Most students see changes in 
-weight, energy, and confidence within the first few weeks — BJJ is one of the most effective and enjoyable 
-forms of fitness you can commit to.
-</p>
-
-<p><strong>9. What does a typical class look like?</strong><br>
-Classes usually follow this structure:<br>
-<strong>• Warm-up:</strong> mobility, movement patterns, light conditioning.<br>
-<strong>• Technique:</strong> step-by-step instruction, drilling, learning positions.<br>
-<strong>• Live training:</strong> situational training → controlled rolls → optional sparring.<br>
-Each class builds on the previous one, creating a steady progression in skill and understanding.
-</p>
-
-<p><strong>10. Do you offer family or multi-student discounts?</strong><br>
-Yes.  
-We support families training together and offer reduced pricing for households with multiple members training.
-</p>
-
-<p><strong>11. How much does membership cost?</strong><br>
-Pricing varies depending on training goals, programs, and membership type.  
-We offer multiple options — adults, kids, full access, and specialty programs.  
-Contact us directly for the most accurate plan based on what you want to achieve.
-</p>
-
-<p><strong>12. What age can kids start?</strong><br>
-Kids classes start at age 5.  
-The program builds confidence, discipline, coordination, bully-proofing, and respect — all while teaching real 
-martial arts skills in a safe, structured environment.
-</p>
-
-<p><strong>13. How long does it take to earn a Black Belt?</strong><br>
-BJJ is earned, not given.  
-On average, it takes 8–12 years depending on consistency, attitude, effort, and dedication.  
-There are no shortcuts — every belt represents real skill and real work.
-</p>
-
-<p><strong>14. How do I get started?</strong><br>
-Schedule your free class, show up with comfortable athletic clothing, and be ready to learn.  
-You can also call  
-<a href="tel:2532546538" style="color:#3B82F6;font-weight:700;">253-254-6538</a>  
-to speak directly with the academy.
-</p>
-
+<p><strong>1. What can BJJ and your school do for me?</strong><br>Brazilian Jiu-Jitsu builds real confidence, functional strength, and mental discipline. Training consistently improves your conditioning, mobility, focus, stress management, and overall mindset. Students also gain a powerful sense of community — you’re not just joining a gym, you’re joining a culture built around respect, accountability, and personal growth. Whether your goal is self-defense, fitness, competition, or a life change, BJJ gives you measurable progress month after month.</p>
+<p><strong>2. Do I need to be in shape to start?</strong><br>No. BJJ gets you in shape. Classes scale to your level — beginners start slow, learn positioning, drills, and controlled technique. You’ll build cardio naturally through training, not by needing it beforehand. Everyone starts at zero.</p>
+<p><strong>3. Am I too old?</strong><br>Absolutely not. We have students in their teens, 20s, 30s, 40s, 50s, and beyond. BJJ is a lifelong martial art that adapts to your body and your pace. Your age is not a barrier — your consistency is.</p>
+<p><strong>4. Will I be expected to compete?</strong><br>Competition is optional. You will never be pushed to compete unless you want to. We offer competition training for those who choose that path, but regular classes are designed for all skill levels and all goals — lifestyle, fitness, knowledge, or self-defense.</p>
+<p><strong>5. Do I need prior martial arts experience?</strong><br>None. Most students start with zero experience. The curriculum is structured for beginners first, then builds layer by layer into advanced concepts. You learn fundamentals at your own pace.</p>
+<p><strong>6. Do you offer beginner-friendly classes?</strong><br>Yes. We have structured classes that teach the core positions, movements, transitions, and submissions in a controlled, easy-to-absorb format. Instructors guide every step and ensure beginners never feel overwhelmed.</p>
+<p><strong>7. Do you offer striking classes?</strong><br>Yes — we also offer Kickboxing, Muay Thai, and MMA. These classes complement BJJ perfectly and are excellent for cardio, timing, confidence, and self-defense.</p>
+<p><strong>8. Will BJJ help me lose weight?</strong><br>Extremely. Rolling, drilling, and class structure burn calories fast and build lean muscle. Most students see changes in weight, energy, and confidence within the first few weeks — BJJ is one of the most effective and enjoyable forms of fitness you can commit to.</p>
+<p><strong>9. What does a typical class look like?</strong><br>Classes usually follow this structure:<br><strong>• Warm-up:</strong> mobility, movement patterns, light conditioning.<br><strong>• Technique:</strong> step-by-step instruction, drilling, learning positions.<br><strong>• Live training:</strong> situational training → controlled rolls → optional sparring.<br>Each class builds on the previous one, creating a steady progression in skill and understanding.</p>
+<p><strong>10. Do you offer family or multi-student discounts?</strong><br>Yes. We support families training together and offer reduced pricing for households with multiple members training.</p>
+<p><strong>11. How much does membership cost?</strong><br>Pricing varies depending on training goals, programs, and membership type. We offer multiple options — adults, kids, full access, and specialty programs. Contact us directly for the most accurate plan based on what you want to achieve.</p>
+<p><strong>12. What age can kids start?</strong><br>Kids classes start at age 5. The program builds confidence, discipline, coordination, bully-proofing, and respect — all while teaching real martial arts skills in a safe, structured environment.</p>
+<p><strong>13. How long does it take to earn a Black Belt?</strong><br>BJJ is earned, not given. On average, it takes 8–12 years depending on consistency, attitude, effort, and dedication. There are no shortcuts — every belt represents real skill and real work.</p>
+<p><strong>14. How do I get started?</strong><br>Schedule your free class, show up with comfortable athletic clothing, and be ready to learn. You can also call <a href="tel:2532546538" style="color:#3B82F6;font-weight:700;">253-254-6538</a> to speak directly with the academy.</p>
 </div>
 </section>
-
 
 <!-- FREE CLASS -->
 <section id="try">
 <h2>Try a Free Class</h2>
 
-<form id="freeClassForm" action="https://formsubmit.co/gritcitybjj@gmail.com" method="POST">
+<form id="freeClassForm" action="https://formsubmit.co/gritcitybjj@gmail.com" method="POST" class="notranslate">
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_next" value="">
 
-  <input name="Name" placeholder="Name (required)" required>
-  <input name="Email" placeholder="Email (required)" required>
-  <input name="Phone" placeholder="Phone (optional)">
-  <textarea name="Message" rows="4" placeholder="Your Message (optional)"></textarea>
+  <input name="Name" placeholder="Name (required)" lang="en" translate="no" required>
+  <input name="Email" type="email" placeholder="Email (required)" lang="en" translate="no" required>
+  <input name="Phone" type="tel" placeholder="Phone (optional)" lang="en" translate="no">
+  <textarea name="Message" rows="4" placeholder="Your Message (optional)" lang="en" translate="no"></textarea>
 
   <button>Submit</button>
 </form>
 
 <!-- THANK YOU POPUP -->
-<div id="thankYouPopup"
-     style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85);
-            z-index:999999; justify-content:center; align-items:center;">
-
-  <div style="background:#111827; padding:30px; border-radius:14px; text-align:center;
-              border:2px solid #3B82F6; max-width:320px;">
-
+<div id="thankYouPopup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:999999; justify-content:center; align-items:center;">
+  <div style="background:#111827; padding:30px; border-radius:14px; text-align:center; border:2px solid #3B82F6; max-width:320px;">
     <h3 style="margin-top:0; color:#fff;">Thank You</h3>
-
-    <p style="color:#E5E7EB;">
-      Please check your email for a message from<br>
-      <strong>gritcitybjj@gmail.com</strong><br>
-      We will be in touch soon.
-    </p>
-
-    <button onclick="closePopup()"
-            style="margin-top:15px; padding:10px 20px; background:#3B82F6;
-                   color:white; border:none; border-radius:8px; font-weight:800;">
-      OK
-    </button>
+    <p style="color:#E5E7EB;">Please check your email for a message from<br><strong>gritcitybjj@gmail.com</strong><br>We will be in touch soon.</p>
+    <button onclick="closePopup()" style="margin-top:15px; padding:10px 20px; background:#3B82F6; color:white; border:none; border-radius:8px; font-weight:800;">OK</button>
   </div>
 </div>
 
 <script>
 document.getElementById("freeClassForm").addEventListener("submit", function(e) {
   e.preventDefault();
-
   const form = e.target;
   const formData = new FormData(form);
-
   fetch(form.action, {
     method: "POST",
     body: formData
-  })
-  .then(() => {
+  }).then(() => {
     document.getElementById("thankYouPopup").style.display = "flex";
     form.reset();
-  })
-  .catch(() => {
+  }).catch(() => {
     alert("Error sending message. Please try again.");
   });
 });
-
 function closePopup() {
   document.getElementById("thankYouPopup").style.display = "none";
 }
 </script>
 
-<img src="introductory_class.jpg" style="width:100%;margin-top:20px;border-radius:14px;display:block;">
+<!-- INTRODUCTORY CLASS IMAGE (ORIGINAL POSITION) -->
+<a href="#try">
+  <img src="introductory_class.jpg" class="intro-class-img" alt="Try a free class">
+</a>
+
 </section>
 
-<!-- POPUP VIEWER -->
-<div id="imgPopup" onclick="this.style.display='none'" 
-     style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:99999;">
+<!-- IMAGE POPUP VIEWER -->
+<div id="imgPopup" onclick="this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:99999;">
   <img style="max-width:90%;max-height:90%;border-radius:12px;">
 </div>
 
@@ -680,14 +592,9 @@ function toggleAcc(btn){
 <a href="https://facebook.com/gritcitybjj" target="_blank"><img src="facebook.png" style="width:38px; margin:0 12px;"></a>
 </div>
 
-<p>&copy; 2026 GRIT CITY BJJ — All Rights Reserved</p>
+<p>&copy; 2025 GRIT CITY BJJ — All Rights Reserved</p>
 </footer>
 
 </div><!-- END site-wrap -->
 </body>
 </html>
-
-
-
-
-
