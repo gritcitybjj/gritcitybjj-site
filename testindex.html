@@ -8,8 +8,11 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
 
-<!-- LOCK PAGE LANGUAGE TO ENGLISH TO PREVENT AUTO-TRANSLATION ISSUES -->
+<!-- LOCK PAGE LANGUAGE TO ENGLISH -->
 <meta http-equiv="Content-Language" content="en-us">
+
+<!-- DISABLE GOOGLE/CHROME AUTO-TRANSLATE FOR THE PAGE -->
+<meta name="google" content="notranslate">
 
 <style>
 
@@ -293,7 +296,8 @@ footer {
 </style>
 </head>
 
-<body>
+<body class="notranslate">
+
 <div class="site-wrap">
 
 <!-- HEADER -->
@@ -326,7 +330,7 @@ footer {
   </a>
 </div>
 
-<!-- INTRO VIDEO — NOW AUTOPLAYS (muted & looped for mobile compatibility) -->
+<!-- INTRO VIDEO — AUTOPLAYS (muted & looped) -->
 <video 
   src="assets/Marcello C Monteiro.mp4"
   style="width:100%; max-width:300px; border-radius:14px; display:block; margin:25px auto 10px auto;"
@@ -338,6 +342,11 @@ footer {
   muted
   loop>
 </video>
+
+<!-- INTRODUCTORY CLASS IMAGE UNDER VIDEO — NOW LINKS TO FREE CLASS FORM -->
+<a href="#try">
+  <img src="introductory_class.jpg" style="width:100%;margin:20px auto 10px auto;border-radius:14px;display:block;cursor:pointer;" onclick="pop(this)">
+</a>
 
    
 <!-- PROGRAMS -->
@@ -425,7 +434,7 @@ footer {
 </div>
 </section>
 
-<!-- INSTRUCTORS (FINKEL REMOVED) -->
+<!-- INSTRUCTORS -->
 <section id="instructors">
 <h2>Instructors</h2>
 <div class="instructor-grid">
@@ -594,14 +603,14 @@ to speak directly with the academy.
 <section id="try">
 <h2>Try a Free Class</h2>
 
-<form id="freeClassForm" action="https://formsubmit.co/gritcitybjj@gmail.com" method="POST">
+<form id="freeClassForm" action="https://formsubmit.co/gritcitybjj@gmail.com" method="POST" class="notranslate">
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_next" value="">
 
-  <input name="Name" placeholder="Name (required)" lang="en" required>
-  <input name="Email" type="email" placeholder="Email (required)" lang="en" required>
-  <input name="Phone" type="tel" placeholder="Phone (optional)" lang="en">
-  <textarea name="Message" rows="4" placeholder="Your Message (optional)" lang="en"></textarea>
+  <input name="Name" placeholder="Name (required)" lang="en" translate="no" required>
+  <input name="Email" type="email" placeholder="Email (required)" lang="en" translate="no" required>
+  <input name="Phone" type="tel" placeholder="Phone (optional)" lang="en" translate="no">
+  <textarea name="Message" rows="4" placeholder="Your Message (optional)" lang="en" translate="no"></textarea>
 
   <button>Submit</button>
 </form>
@@ -655,7 +664,11 @@ function closePopup() {
 }
 </script>
 
-<img src="introductory_class.jpg" style="width:100%;margin-top:20px;border-radius:14px;display:block;">
+<!-- INTRODUCTORY CLASS IMAGE — ORIGINAL POSITION, NOW ALSO LINKS TO FREE CLASS FORM -->
+<a href="#try">
+  <img src="introductory_class.jpg" style="width:100%;margin-top:20px;border-radius:14px;display:block;cursor:pointer;" onclick="pop(this)">
+</a>
+
 </section>
 
 <!-- POPUP VIEWER -->
