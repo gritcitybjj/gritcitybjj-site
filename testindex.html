@@ -15,28 +15,23 @@ content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, 
 <meta name="google" content="notranslate">
 
 <style>
-
 /* ================================================================
-   BASIC RESET & MOBILE LOCKDOWN
+   BASIC RESET & MOBILE HORIZONTAL LOCKDOWN (SAFE VERSION)
 ================================================================ */
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;           /* Prevent body scroll/bounce */
-  touch-action: manipulation;
   background: #0A0A0A;
   color: #E5E7EB;
   font-family: 'Segoe UI', Arial, sans-serif;
+  overflow-x: hidden;                 /* Prevent any horizontal scroll */
+  touch-action: manipulation;
+  overscroll-behavior-x: none;        /* Stop horizontal pull bounce */
 }
 
 .site-wrap {
   width: 100%;
-  min-height: 100%;
-  overflow-y: auto;           /* Allow vertical scrolling */
-  overflow-x: hidden;         /* Block horizontal scrolling */
-  -webkit-overflow-scrolling: touch;
+  min-height: 100vh;
   box-sizing: border-box;
 }
 
@@ -56,11 +51,12 @@ html, body {
   }
 }
 
-/* GENERAL STYLES */
+/* GENERAL SECTION STYLING */
 section {
   padding: 45px 18px;
   max-width: 900px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 h2 {
@@ -77,12 +73,12 @@ h2 {
 }
 
 .banner-img {
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:14px;
-  margin:0 auto;
-  box-shadow:0 5px 24px rgba(0,0,0,0.55);
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  margin: 0 auto;
+  box-shadow: 0 5px 24px rgba(0,0,0,0.55);
 }
 
 /* NAV BAR */
@@ -95,195 +91,193 @@ h2 {
   padding: 10px 0;
 }
 .nav-inner {
-  max-width:900px;
-  margin:0 auto;
-  display:flex;
-  justify-content:center;
-  gap:18px;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
 }
 .nav-inner a {
-  text-decoration:none;
-  color:#fff;
-  font-weight:700;
-  font-size:.85rem;
-  padding-bottom:4px;
-  border-bottom:2px solid transparent;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: .85rem;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
 }
 .nav-inner a:hover {
-  border-color:#3B82F6;
+  border-color: #3B82F6;
 }
 
 /* PROGRAMS */
 .program-grid {
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
-
 .program-box {
-  background:#1E293B;
-  padding:22px;
-  border-radius:14px;
-  text-align:center;
-  font-weight:800;
-  border:2px solid #3B82F6;
-  color:white;
+  background: #1E293B;
+  padding: 22px;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: 800;
+  border: 2px solid #3B82F6;
+  color: white;
 }
 
 /* SCHEDULE */
 .schedule-card {
-  background:#111827;
-  padding:16px;
-  border-radius:14px;
-  border:1px solid #1F2937;
+  background: #111827;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #1F2937;
 }
 .schedule-card iframe {
-  width:100%;
-  height:600px;
-  border:none;
-  border-radius:12px;
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 12px;
 }
 
 /* LOCATION */
 .location-card {
-  background:#111827;
-  padding:22px;
-  border-radius:14px;
-  border:1px solid #1F2937;
-  text-align:center;
+  background: #111827;
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid #1F2937;
+  text-align: center;
 }
 .location-thumbs {
-  display:flex;
-  gap:10px;
-  margin-top:14px;
-  justify-content:center;
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  justify-content: center;
 }
 .location-thumbs img {
-  width:130px;
-  height:90px;
-  border-radius:10px;
-  object-fit:cover;
-  cursor:pointer;
-  border:1px solid #1F2937;
+  width: 130px;
+  height: 90px;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid #1F2937;
 }
 
-/* GALLERY SCROLL */
+/* GALLERY & AWARDS SCROLL */
 .gallery-scroll {
-  display:flex;
-  overflow-x:auto;
-  gap:12px;
-  padding:4px 0;
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 4px 0;
   -webkit-overflow-scrolling: touch;
 }
 .gallery-scroll img {
-  width:240px;
-  height:150px;
-  border-radius:12px;
-  object-fit:cover;
-  border:1px solid #1F2937;
-  cursor:pointer;
-  flex-shrink:0;
+  width: 240px;
+  height: 150px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid #1F2937;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 /* LINEAGE */
 .lineage-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(130px,1fr));
-  gap:22px;
-  text-align:center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
+  gap: 22px;
+  text-align: center;
 }
 .lineage-grid img {
-  width:115px;
-  height:115px;
-  border-radius:100px;
-  object-fit:cover;
+  width: 115px;
+  height: 115px;
+  border-radius: 100px;
+  object-fit: cover;
 }
 
 /* INSTRUCTORS */
 .instructor-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 22px;
 }
 .instructor-card {
-  text-align:center;
-  background:#111827;
-  border-radius:14px;
-  padding:20px;
-  border:1px solid #1F2937;
+  text-align: center;
+  background: #111827;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #1F2937;
 }
 .instructor-card img {
-  width:170px;
-  height:220px;
-  object-fit:contain;
-  border-radius:12px;
+  width: 170px;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 12px;
 }
 
 /* ACCORDIONS */
 .accordion-btn {
-  width:100%;
-  padding:14px 18px;
-  background:#0F172A;
-  border:2px solid #3B82F6;
-  color:#3B82F6;
-  font-weight:800;
-  border-radius:12px;
-  cursor:pointer;
-  text-align:left;
-  letter-spacing:1px;
-  box-shadow:0 0 10px rgba(59,130,246,0.4);
+  width: 100%;
+  padding: 14px 18px;
+  background: #0F172A;
+  border: 2px solid #3B82F6;
+  color: #3B82F6;
+  font-weight: 800;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(59,130,246,0.4);
 }
 .accordion-btn:hover {
-  background:#1E293B;
-  box-shadow:0 0 16px rgba(59,130,246,0.7);
+  background: #1E293B;
+  box-shadow: 0 0 16px rgba(59,130,246,0.7);
 }
 .accordion-content {
-  display:none;
-  margin-top:12px;
-  background:#111827;
-  padding:18px;
-  border-radius:12px;
-  border:1px solid #1F2937;
+  display: none;
+  margin-top: 12px;
+  background: #111827;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #1F2937;
 }
 
 /* FORM */
 form input, form textarea {
-  width:100%;
-  background:#1F2937;
-  border:1px solid #374151;
-  padding:12px;
-  border-radius:10px;
-  color:white;
-  box-sizing:border-box;
+  width: 100%;
+  background: #1F2937;
+  border: 1px solid #374151;
+  padding: 12px;
+  border-radius: 10px;
+  color: white;
+  box-sizing: border-box;
 }
 form button {
-  width:100%;
-  background:#3B82F6;
-  padding:14px;
-  border:none;
-  border-radius:10px;
-  color:white;
-  font-weight:800;
-  margin-top:8px;
+  width: 100%;
+  background: #3B82F6;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 800;
+  margin-top: 8px;
 }
 
 /* FOOTER */
 footer {
-  padding:30px 18px;
-  background:#080808;
-  text-align:center;
-  margin-top:30px;
+  padding: 30px 18px;
+  background: #080808;
+  text-align: center;
+  margin-top: 30px;
 }
-
 .footer-img-row {
-  text-align:center;
-  margin-bottom:22px;
+  text-align: center;
+  margin-bottom: 22px;
 }
 .footer-img-row img {
-  width:140px;
-  border-radius:12px;
-  background:#111;
-  padding:8px;
+  width: 140px;
+  border-radius: 12px;
+  background: #111;
+  padding: 8px;
 }
 
 /* PULSE LOGIN BUTTON */
@@ -308,7 +302,6 @@ footer {
     width: 50%;
   }
 }
-
 </style>
 </head>
 
@@ -318,7 +311,7 @@ footer {
 
 <!-- HEADER -->
 <div class="header-wrap">
-  <img src="header.webp" class="banner-img" alt="Grit City BJJ Header">
+  <img src="header.webp" class="banner-img" alt="Grit City BJJ">
 </div>
 
 <div style="text-align:center; margin:18px 0 0 0; font-size:1.1rem; font-weight:700; color:#ffffff;">
@@ -337,12 +330,9 @@ footer {
 
 <!-- LOGIN -->
 <div style="text-align:center; margin:18px 0;">
-  <a href="https://bjjtacoma.kicksite.net/users/sign_in"
-     target="_blank"
-     rel="noopener noreferrer"
-     class="pulse-login"
+  <a href="https://bjjtacoma.kicksite.net/users/sign_in" target="_blank" rel="noopener noreferrer" class="pulse-login"
      style="background:#3B82F6; padding:12px 24px; border-radius:10px; color:white; font-weight:800; text-decoration:none; display:inline-block;">
-     Student Login
+    Student Login
   </a>
 </div>
 
@@ -350,13 +340,7 @@ footer {
 <video 
   src="assets/Marcello C Monteiro.mp4"
   style="width:100%; max-width:300px; border-radius:14px; display:block; margin:25px auto 10px auto;"
-  controls
-  preload="metadata"
-  playsinline
-  webkit-playsinline
-  autoplay
-  muted
-  loop>
+  controls preload="metadata" playsinline webkit-playsinline autoplay muted loop>
 </video>
 
 <!-- INTRODUCTORY CLASS IMAGE UNDER VIDEO -->
@@ -391,27 +375,25 @@ footer {
 <div class="location-card">
   <p>3635 S Lawrence St, STE G, Tacoma, WA 98409</p>
   <p>Next door to Flags A' Flyin on S 38th & Lawrence</p>
-
   <a href="https://maps.app.goo.gl/debgQ8w2XD5YwNJ9A" style="color:#3B82F6;font-weight:800;">Open live directions map</a>
-
   <div class="location-thumbs">
-    <img src="cedar_plaza_location.jpg" onclick="pop(this)" alt="Location thumbnail 1">
-    <img src="cedar_plaza_building_d.jpg" onclick="pop(this)" alt="Location thumbnail 2">
+    <img src="cedar_plaza_location.jpg" onclick="pop(this)">
+    <img src="cedar_plaza_building_d.jpg" onclick="pop(this)">
   </div>
 </div>
 </section>
 
 <!-- BANNER IMAGES -->
-<img src="tacoma.webp" class="banner-img" alt="Tacoma image">
-<img src="face-off.webp" class="banner-img" alt="Face-off image">
+<img src="tacoma.webp" class="banner-img">
+<img src="face-off.webp" class="banner-img">
 
 <!-- GALLERY -->
 <section>
 <h2>Academy Gallery</h2>
 <div class="gallery-scroll">
-  <img src="img_5426.jpeg" onclick="pop(this)" alt="Gallery 1">
-  <img src="img_5427.jpeg" onclick="pop(this)" alt="Gallery 2">
-  <img src="img_5425.jpeg" onclick="pop(this)" alt="Gallery 3">
+  <img src="img_5426.jpeg" onclick="pop(this)">
+  <img src="img_5427.jpeg" onclick="pop(this)">
+  <img src="img_5425.jpeg" onclick="pop(this)">
 </div>
 </section>
 
@@ -419,20 +401,20 @@ footer {
 <section>
 <h2>Best of Tacoma Awards</h2>
 <div class="gallery-scroll">
-  <img src="best_of_tacoma_2025.jpg" onclick="pop(this)" alt="2025 Award">
-  <img src="best_of_tacoma_2024.jpg" onclick="pop(this)" alt="2024 Award">
-  <img src="best_of_tacoma_2023.jpg" onclick="pop(this)" alt="2023 Award">
-  <img src="best_of_tacoma_2022.jpg" onclick="pop(this)" alt="2022 Award">
-  <img src="best_of_tacoma_2021.jpg" onclick="pop(this)" alt="2021 Award">
-  <img src="best_of_tacoma_2020.jpg" onclick="pop(this)" alt="2020 Award">
-  <img src="best_of_tacoma_2019.jpg" onclick="pop(this)" alt="2019 Award">
-  <img src="best_of_tacoma_2018.jpg" onclick="pop(this)" alt="2018 Award">
-  <img src="best_of_tacoma_2017.jpg" onclick="pop(this)" alt="2017 Award">
-  <img src="best_of_tacoma_2016.jpg" onclick="pop(this)" alt="2016 Award">
-  <img src="best_of_tacoma_2015.jpg" onclick="pop(this)" alt="2015 Award">
-  <img src="best_of_tacoma_2014.jpg" onclick="pop(this)" alt="2014 Award">
-  <img src="best_of_tacoma_2013.jpg" onclick="pop(this)" alt="2013 Award">
-  <img src="best_of_tacoma_2012.jpg" onclick="pop(this)" alt="2012 Award">
+  <img src="best_of_tacoma_2025.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2024.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2023.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2022.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2021.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2020.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2019.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2018.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2017.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2016.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2015.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2014.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2013.jpg" onclick="pop(this)">
+  <img src="best_of_tacoma_2012.jpg" onclick="pop(this)">
 </div>
 </section>
 
@@ -440,12 +422,12 @@ footer {
 <section>
 <h2>Academy Lineage</h2>
 <div class="lineage-grid">
-  <div><img src="mitsuyo_maeda.jpeg" onclick="pop(this)" alt="Mitsuyo Maeda"><div>MITSUYO MAEDA</div></div>
-  <div><img src="carlos_gracie_sr.jpeg" onclick="pop(this)" alt="Carlos Gracie Sr."><div>CARLOS GRACIE SR.</div></div>
-  <div><img src="carlson_gracie_sr.jpeg" onclick="pop(this)" alt="Carlson Gracie Sr."><div>CARLSON GRACIE SR.</div></div>
-  <div><img src="ricardo_de_la_riva.jpeg" onclick="pop(this)" alt="Ricardo De La Riva"><div>RICARDO DE LA RIVA</div></div>
-  <div><img src="marcello_c_monteiro.jpeg" onclick="pop(this)" alt="Marcello C. Monteiro"><div>MARCELLO C. MONTEIRO</div></div>
-  <div><img src="michael_proctor_sr.png" onclick="pop(this)" alt="Michael Proctor Sr."><div>MICHAEL PROCTOR SR.</div></div>
+  <div><img src="mitsuyo_maeda.jpeg" onclick="pop(this)"><div>MITSUYO MAEDA</div></div>
+  <div><img src="carlos_gracie_sr.jpeg" onclick="pop(this)"><div>CARLOS GRACIE SR.</div></div>
+  <div><img src="carlson_gracie_sr.jpeg" onclick="pop(this)"><div>CARLSON GRACIE SR.</div></div>
+  <div><img src="ricardo_de_la_riva.jpeg" onclick="pop(this)"><div>RICARDO DE LA RIVA</div></div>
+  <div><img src="marcello_c_monteiro.jpeg" onclick="pop(this)"><div>MARCELLO C. MONTEIRO</div></div>
+  <div><img src="michael_proctor_sr.png" onclick="pop(this)"><div>MICHAEL PROCTOR SR.</div></div>
 </div>
 </section>
 
@@ -453,11 +435,11 @@ footer {
 <section id="instructors">
 <h2>Instructors</h2>
 <div class="instructor-grid">
-  <div class="instructor-card"><img src="mcm_5th_degree.jpg" onclick="pop(this)" alt="Marcello C Monteiro"><h3>Professor Marcello C Monteiro</h3></div>
-  <div class="instructor-card"><img src="michael_proctor.JPG" onclick="pop(this)" alt="Michael Proctor"><h3>Professor Michael Proctor</h3></div>
-  <div class="instructor-card"><img src="david_gines.JPG" onclick="pop(this)" alt="David Gines"><h3>Professor David Gines</h3></div>
-  <div class="instructor-card"><img src="donnie_mcmasters.png" onclick="pop(this)" alt="Donnie McMasters"><h3>Coach Donnie McMasters</h3></div>
-  <div class="instructor-card"><img src="chris_kuykendall.png" onclick="pop(this)" alt="Chris Kuykendall"><h3>Coach Chris Kuykendall</h3></div>
+  <div class="instructor-card"><img src="mcm_5th_degree.jpg" onclick="pop(this)"><h3>Professor Marcello C Monteiro</h3></div>
+  <div class="instructor-card"><img src="michael_proctor.JPG" onclick="pop(this)"><h3>Professor Michael Proctor</h3></div>
+  <div class="instructor-card"><img src="david_gines.JPG" onclick="pop(this)"><h3>Professor David Gines</h3></div>
+  <div class="instructor-card"><img src="donnie_mcmasters.png" onclick="pop(this)"><h3>Coach Donnie McMasters</h3></div>
+  <div class="instructor-card"><img src="chris_kuykendall.png" onclick="pop(this)"><h3>Coach Chris Kuykendall</h3></div>
 </div>
 </section>
 
@@ -466,14 +448,46 @@ footer {
 <h2>Code of Conduct</h2>
 <button class="accordion-btn" onclick="toggleAcc(this)">Expand Code of Conduct</button>
 <div class="accordion-content">
-  <!-- Full conduct content unchanged (kept for brevity in this message) -->
-  <h3>Code of Conduct</h3>
-  <ul>
-    <li>01. Always be respectful.</li>
-    <!-- ... all items ... -->
-    <li>11. Believe & Achieve.</li>
-  </ul>
-  <!-- Etiquette, Hygiene, Uniform, Spectators sections unchanged -->
+<h3>Code of Conduct</h3>
+<ul>
+<li>01. Always be respectful.</li>
+<li>02. Always address Professors and Coaches properly.</li>
+<li>03. Uphold our principles on and off the mats.</li>
+<li>04. If late, wait outside until permitted.</li>
+<li>05. Bow on and off the mats.</li>
+<li>06. No leaving mat area without permission.</li>
+<li>07. Maintain posture during instruction.</li>
+<li>08. Talking minimal and relevant only.</li>
+<li>09. No foul language.</li>
+<li>10. Be humble.</li>
+<li>11. Believe & Achieve.</li>
+</ul>
+<h3>Etiquette</h3>
+<ul>
+<li>No shoes on mats.</li>
+<li>Bottled drinks only.</li>
+<li>No electronics in training area.</li>
+<li>Change only in designated areas.</li>
+<li>Gear stored properly.</li>
+</ul>
+<h3>Hygiene</h3>
+<ul>
+<li>Maintain hygiene.</li>
+<li>Uniform clean.</li>
+<li>Trim nails.</li>
+<li>No jewelry.</li>
+</ul>
+<h3>Uniform</h3>
+<ul>
+<li>Academy patches required.</li>
+<li>No other school patches allowed.</li>
+</ul>
+<h3>Spectators</h3>
+<ul>
+<li>Remain in designated seating.</li>
+<li>Devices silent.</li>
+<li>No coaching students.</li>
+</ul>
 </div>
 </section>
 
@@ -482,7 +496,20 @@ footer {
 <h2>Brazilian Jiu-Jitsu FAQ's</h2>
 <button class="accordion-btn" onclick="toggleAcc(this)">Expand FAQ's</button>
 <div class="accordion-content">
-  <!-- Full FAQ content unchanged -->
+<p><strong>1. What can BJJ and your school do for me?</strong><br>Brazilian Jiu-Jitsu builds real confidence, functional strength, and mental discipline. Training consistently improves your conditioning, mobility, focus, stress management, and overall mindset. Students also gain a powerful sense of community — you’re not just joining a gym, you’re joining a culture built around respect, accountability, and personal growth. Whether your goal is self-defense, fitness, competition, or a life change, BJJ gives you measurable progress month after month.</p>
+<p><strong>2. Do I need to be in shape to start?</strong><br>No. BJJ gets you in shape. Classes scale to your level — beginners start slow, learn positioning, drills, and controlled technique. You’ll build cardio naturally through training, not by needing it beforehand. Everyone starts at zero.</p>
+<p><strong>3. Am I too old?</strong><br>Absolutely not. We have students in their teens, 20s, 30s, 40s, 50s, and beyond. BJJ is a lifelong martial art that adapts to your body and your pace. Your age is not a barrier — your consistency is.</p>
+<p><strong>4. Will I be expected to compete?</strong><br>Competition is optional. You will never be pushed to compete unless you want to. We offer competition training for those who choose that path, but regular classes are designed for all skill levels and all goals — lifestyle, fitness, knowledge, or self-defense.</p>
+<p><strong>5. Do I need prior martial arts experience?</strong><br>None. Most students start with zero experience. The curriculum is structured for beginners first, then builds layer by layer into advanced concepts. You learn fundamentals at your own pace.</p>
+<p><strong>6. Do you offer beginner-friendly classes?</strong><br>Yes. We have structured classes that teach the core positions, movements, transitions, and submissions in a controlled, easy-to-absorb format. Instructors guide every step and ensure beginners never feel overwhelmed.</p>
+<p><strong>7. Do you offer striking classes?</strong><br>Yes — we also offer Kickboxing, Muay Thai, and MMA. These classes complement BJJ perfectly and are excellent for cardio, timing, confidence, and self-defense.</p>
+<p><strong>8. Will BJJ help me lose weight?</strong><br>Extremely. Rolling, drilling, and class structure burn calories fast and build lean muscle. Most students see changes in weight, energy, and confidence within the first few weeks — BJJ is one of the most effective and enjoyable forms of fitness you can commit to.</p>
+<p><strong>9. What does a typical class look like?</strong><br>Classes usually follow this structure:<br><strong>• Warm-up:</strong> mobility, movement patterns, light conditioning.<br><strong>• Technique:</strong> step-by-step instruction, drilling, learning positions.<br><strong>• Live training:</strong> situational training → controlled rolls → optional sparring.<br>Each class builds on the previous one, creating a steady progression in skill and understanding.</p>
+<p><strong>10. Do you offer family or multi-student discounts?</strong><br>Yes. We support families training together and offer reduced pricing for households with multiple members training.</p>
+<p><strong>11. How much does membership cost?</strong><br>Pricing varies depending on training goals, programs, and membership type. We offer multiple options — adults, kids, full access, and specialty programs. Contact us directly for the most accurate plan based on what you want to achieve.</p>
+<p><strong>12. What age can kids start?</strong><br>Kids classes start at age 5. The program builds confidence, discipline, coordination, bully-proofing, and respect — all while teaching real martial arts skills in a safe, structured environment.</p>
+<p><strong>13. How long does it take to earn a Black Belt?</strong><br>BJJ is earned, not given. On average, it takes 8–12 years depending on consistency, attitude, effort, and dedication. There are no shortcuts — every belt represents real skill and real work.</p>
+<p><strong>14. How do I get started?</strong><br>Schedule your free class, show up with comfortable athletic clothing, and be ready to learn. You can also call <a href="tel:2532546538" style="color:#3B82F6;font-weight:700;">253-254-6538</a> to speak directly with the academy.</p>
 </div>
 </section>
 
@@ -506,14 +533,8 @@ footer {
 <div id="thankYouPopup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:999999; justify-content:center; align-items:center;">
   <div style="background:#111827; padding:30px; border-radius:14px; text-align:center; border:2px solid #3B82F6; max-width:320px;">
     <h3 style="margin-top:0; color:#fff;">Thank You</h3>
-    <p style="color:#E5E7EB;">
-      Please check your email for a message from<br>
-      <strong>gritcitybjj@gmail.com</strong><br>
-      We will be in touch soon.
-    </p>
-    <button onclick="closePopup()" style="margin-top:15px; padding:10px 20px; background:#3B82F6; color:white; border:none; border-radius:8px; font-weight:800;">
-      OK
-    </button>
+    <p style="color:#E5E7EB;">Please check your email for a message from<br><strong>gritcitybjj@gmail.com</strong><br>We will be in touch soon.</p>
+    <button onclick="closePopup()" style="margin-top:15px; padding:10px 20px; background:#3B82F6; color:white; border:none; border-radius:8px; font-weight:800;">OK</button>
   </div>
 </div>
 
@@ -525,16 +546,13 @@ document.getElementById("freeClassForm").addEventListener("submit", function(e) 
   fetch(form.action, {
     method: "POST",
     body: formData
-  })
-  .then(() => {
+  }).then(() => {
     document.getElementById("thankYouPopup").style.display = "flex";
     form.reset();
-  })
-  .catch(() => {
+  }).catch(() => {
     alert("Error sending message. Please try again.");
   });
 });
-
 function closePopup() {
   document.getElementById("thankYouPopup").style.display = "none";
 }
@@ -549,7 +567,7 @@ function closePopup() {
 
 <!-- IMAGE POPUP VIEWER -->
 <div id="imgPopup" onclick="this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:99999;">
-  <img style="max-width:90%;max-height:90%;border-radius:12px;" alt="Enlarged image">
+  <img style="max-width:90%;max-height:90%;border-radius:12px;">
 </div>
 
 <script>
@@ -565,13 +583,13 @@ function toggleAcc(btn){
 
 <!-- FOOTER -->
 <footer>
-<div class="footer-img-row"><img src="military_discounts.gif" alt="Military Discounts"></div>
-<div class="footer-img-row"><img src="no_bullies.jpg" alt="No Bullies"></div>
-<div class="footer-img-row"><img src="sanitized_facility.jpg" alt="Sanitized Facility"></div>
+<div class="footer-img-row"><img src="military_discounts.gif"></div>
+<div class="footer-img-row"><img src="no_bullies.jpg"></div>
+<div class="footer-img-row"><img src="sanitized_facility.jpg"></div>
 
 <div style="text-align:center; margin:25px 0;">
-<a href="https://instagram.com/gritcitybjj" target="_blank"><img src="instagram.png" style="width:38px; margin:0 12px;" alt="Instagram"></a>
-<a href="https://facebook.com/gritcitybjj" target="_blank"><img src="facebook.png" style="width:38px; margin:0 12px;" alt="Facebook"></a>
+<a href="https://instagram.com/gritcitybjj" target="_blank"><img src="instagram.png" style="width:38px; margin:0 12px;"></a>
+<a href="https://facebook.com/gritcitybjj" target="_blank"><img src="facebook.png" style="width:38px; margin:0 12px;"></a>
 </div>
 
 <p>&copy; 2025 GRIT CITY BJJ — All Rights Reserved</p>
