@@ -520,13 +520,10 @@ footer {
 <form id="freeClassForm" action="https://formsubmit.co/gritcitybjj@gmail.com" method="POST" class="notranslate">
   <input type="hidden" name="_next" value="">
 
-  <!-- Honeypot (invisible, traps basic bots) -->
+  <!-- Honeypot: Invisible to humans, bots fill it → submission silently discarded -->
   <div style="position:absolute; left:-9999px; top:-9999px; opacity:0;">
-    <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+    <input type="text" name="_honeypot" tabindex="-1" autocomplete="off">
   </div>
-
-  <!-- Safer blacklist (blocks spam links/words, NOT normal email domains) -->
-  <input type="hidden" name="_blacklist" value="http, https, .ru, .xyz, .top, porn, viagra, casino, seo, escort, gambling, sex, adult, cialis, loan, payday">
 
   <input name="Name" placeholder="Name (required)" lang="en" translate="no" required>
   <input name="Email" type="email" placeholder="Email (required)" lang="en" translate="no" required>
@@ -535,7 +532,7 @@ footer {
 
   <button>Submit</button>
 </form>
-
+   
 <!-- THANK YOU POPUP -->
 <div id="thankYouPopup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:999999; justify-content:center; align-items:center;">
   <div style="background:#111827; padding:30px; border-radius:14px; text-align:center; border:2px solid #3B82F6; max-width:320px;">
@@ -605,5 +602,6 @@ function toggleAcc(btn){
 </div><!-- END site-wrap -->
 </body>
 </html>
+
 
 
