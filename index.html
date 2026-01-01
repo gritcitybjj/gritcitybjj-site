@@ -518,8 +518,15 @@ footer {
 <h2>Try a Free Class</h2>
 
 <form id="freeClassForm" action="https://formsubmit.co/gritcitybjj@gmail.com" method="POST" class="notranslate">
-  <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_next" value="">
+
+  <!-- Honeypot (invisible to humans) -->
+  <div style="position:absolute; left:-9999px; top:-9999px; opacity:0;">
+    <input type="text" name="honeypot" tabindex="-1" autocomplete="off">
+  </div>
+
+  <!-- Blacklist spam keywords/URLs -->
+  <input type="hidden" name="_blacklist" value="http, https, .com, .ru, .xyz, .top, porn, viagra, casino, seo, escort, gambling">
 
   <input name="Name" placeholder="Name (required)" lang="en" translate="no" required>
   <input name="Email" type="email" placeholder="Email (required)" lang="en" translate="no" required>
@@ -598,3 +605,4 @@ function toggleAcc(btn){
 </div><!-- END site-wrap -->
 </body>
 </html>
+
