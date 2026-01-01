@@ -517,12 +517,16 @@ footer {
 <section id="try">
 <h2>Try a Free Class</h2>
 
-<form id="freeClassForm" action="https://formsubmit.co/gritcitybjj@gmail.com" method="POST" class="notranslate">
-  <input type="hidden" name="_next" value="">
+<form id="freeClassForm" action="https://api.web3forms.com/submit" method="POST" class="notranslate">
+  <!-- Your Web3Forms Access Key -->
+  <input type="hidden" name="access_key" value="cb578042-54f8-4bf8-b6e5-b625e02b9bc8">
 
-  <!-- Honeypot: Invisible to humans, bots fill it → submission silently discarded -->
+  <!-- Nice email subject line -->
+  <input type="hidden" name="subject" value="New Free Class Request - Grit City BJJ">
+
+  <!-- Strong honeypot - bots that fill this get blocked silently -->
   <div style="position:absolute; left:-9999px; top:-9999px; opacity:0;">
-    <input type="text" name="_honeypot" tabindex="-1" autocomplete="off">
+    <input type="checkbox" name="botcheck" value="true" tabindex="-1" autocomplete="off">
   </div>
 
   <input name="Name" placeholder="Name (required)" lang="en" translate="no" required>
@@ -602,6 +606,7 @@ function toggleAcc(btn){
 </div><!-- END site-wrap -->
 </body>
 </html>
+
 
 
 
