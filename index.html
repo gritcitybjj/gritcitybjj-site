@@ -262,6 +262,14 @@ form button {
   margin-top: 8px;
 }
 
+/* FORM SUBTITLE */
+.form-subtitle{
+  text-align:center;
+  font-size: .95rem;
+  font-weight: 600;
+  color: #AEB7AF;
+  margin: -14px 0 18px 0;
+}
 /* FOOTER */
 footer {
   padding: 30px 18px;
@@ -347,6 +355,33 @@ footer {
 <a href="#try">
   <img src="introductory_class.jpg" class="intro-class-img" alt="Try a free class">
 </a>
+
+<!-- TOP FREE CLASS FORM (DUPLICATED UNDER INTRO IMAGE) -->
+<section style="padding-top:20px;">
+  <h2 style="margin-top:0;">Try a Free Class</h2>
+  <div class="form-subtitle">Pricing and membership information available.</div>
+
+  <form action="https://api.web3forms.com/submit" method="POST" class="notranslate free-class-form" id="freeClassFormTop" data-freeclass>
+  <!-- Your Web3Forms Access Key -->
+  <input type="hidden" name="access_key" value="cb578042-54f8-4bf8-b6e5-b625e02b9bc8">
+
+  <!-- Nice email subject line -->
+  <input type="hidden" name="subject" value="New Free Class Request - Grit City BJJ">
+
+  <!-- Strong honeypot - bots that fill this get blocked silently -->
+  <div style="position:absolute; left:-9999px; top:-9999px; opacity:0;">
+    <input type="checkbox" name="botcheck" value="true" tabindex="-1" autocomplete="off">
+  </div>
+
+  <input name="Name" placeholder="Name (required)" lang="en" translate="no" required>
+  <input name="Email" type="email" placeholder="Email (required)" lang="en" translate="no" required>
+  <input name="Phone" type="tel" placeholder="Phone (optional)" lang="en" translate="no">
+  <textarea name="Message" rows="4" placeholder="Your Message (optional)" lang="en" translate="no"></textarea>
+
+  <button>Submit</button>
+</form>
+</section>
+
 
 <!-- PROGRAMS -->
 <section>
@@ -517,7 +552,8 @@ footer {
 <section id="try">
 <h2>Try a Free Class</h2>
 
-<form id="freeClassForm" action="https://api.web3forms.com/submit" method="POST" class="notranslate">
+<div class="form-subtitle">Pricing and membership information available.</div>
+<form action="https://api.web3forms.com/submit" method="POST" class="notranslate free-class-form" id="freeClassForm" data-freeclass>
   <!-- Your Web3Forms Access Key -->
   <input type="hidden" name="access_key" value="cb578042-54f8-4bf8-b6e5-b625e02b9bc8">
 
@@ -547,20 +583,22 @@ footer {
 </div>
 
 <script>
-document.getElementById("freeClassForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const formData = new FormData(form);
-  fetch(form.action, {
-    method: "POST",
-    body: formData
-  }).then(() => {
-    document.getElementById("thankYouPopup").style.display = "flex";
-    form.reset();
-  }).catch(() => {
-    alert("Error sending message. Please try again.");
+document.querySelectorAll('form[data-freeclass]').forEach((form) => {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: "POST",
+      body: formData
+    }).then(() => {
+      document.getElementById("thankYouPopup").style.display = "flex";
+      form.reset();
+    }).catch(() => {
+      alert("Error sending message. Please try again.");
+    });
   });
 });
+
 function closePopup() {
   document.getElementById("thankYouPopup").style.display = "none";
 }
