@@ -260,28 +260,26 @@ h2 {
 }
 @media (max-width: 430px) {
   .instructor-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    align-items: start;
   }
   .instructor-card {
     min-width: 0;
-    padding: 10px 8px 12px;
+    padding: 6px 4px 8px;
   }
   .instructor-card img {
-    width: auto;
+    width: 100%;
     max-width: 100%;
-    height: 130px;
+    height: 108px;
+    object-fit: contain;
+    object-position: center bottom;
   }
   .instructor-card h3 {
-    font-size: 0.82rem;
-    line-height: 1.25;
-    margin: 8px 0 0;
+    font-size: 0.68rem;
+    line-height: 1.15;
+    margin: 4px 0 0;
     overflow-wrap: break-word;
-  }
-  .instructor-grid .instructor-card:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    width: calc((100% - 10px) / 2);
-    justify-self: center;
   }
 }
 
