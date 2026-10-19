@@ -1,12 +1,12 @@
 {
   "name": "GRIT CITY BJJ",
-  "short_name": "BJJ",
+  "short_name": "GRIT CITY BJJ",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
   "icons": [
-    { "src": "assets/favicon-192x192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "assets/favicon-512x512.png", "sizes": "512x512", "type": "image/png" }
+    { "src": "favicon-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "favicon-512x512.png", "sizes": "512x512", "type": "image/png" }
   ]
 }
