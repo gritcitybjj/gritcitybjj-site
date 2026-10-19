@@ -2,7 +2,52 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>GRIT CITY BJJ | Tacoma, WA</title>
+<title>GRIT CITY BJJ | Brazilian Jiu-Jitsu in Tacoma since 2011</title>
+<meta name="description" content="Teaching in Tacoma since 2011. Brazilian Jiu-Jitsu for kids and adults at 3630 S Cedar St, STE L, Cedar Plaza, Tacoma. First class free. Call 253-254-6538.">
+<link rel="canonical" href="https://gritcitybjj.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GRIT CITY BJJ">
+<meta property="og:title" content="GRIT CITY BJJ | Brazilian Jiu-Jitsu in Tacoma since 2011">
+<meta property="og:description" content="Teaching in Tacoma since 2011. Brazilian Jiu-Jitsu for kids and adults at Cedar Plaza in Tacoma. First class free.">
+<meta property="og:url" content="https://gritcitybjj.com/">
+<meta property="og:image" content="https://gritcitybjj.com/images/academy-storefront.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1200">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GRIT CITY BJJ | Brazilian Jiu-Jitsu in Tacoma since 2011">
+<meta name="twitter:description" content="Teaching in Tacoma since 2011. Brazilian Jiu-Jitsu for kids and adults at Cedar Plaza in Tacoma. First class free.">
+<meta name="twitter:image" content="https://gritcitybjj.com/images/academy-storefront.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["SportsActivityLocation", "LocalBusiness"],
+  "@id": "https://gritcitybjj.com/#academy",
+  "name": "GRIT CITY BJJ",
+  "description": "GRIT CITY BJJ teaches Brazilian Jiu-Jitsu in Tacoma for kids and adults. Teaching in Tacoma since 2011 at Cedar Plaza, 3630 S Cedar St, STE L.",
+  "url": "https://gritcitybjj.com/",
+  "image": "https://gritcitybjj.com/images/academy-storefront.jpg",
+  "telephone": "+1-253-254-6538",
+  "email": "gritcitybjj@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3630 S Cedar St STE L",
+    "addressLocality": "Tacoma",
+    "addressRegion": "WA",
+    "postalCode": "98409",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 47.225038,
+    "longitude": -122.477386
+  },
+  "sameAs": [
+    "https://instagram.com/gritcitybjj",
+    "https://facebook.com/gritcitybjj"
+  ]
+}
+</script>
 
 <!-- DISABLE ZOOM — FULL LOCKDOWN -->
 <meta name="viewport"
@@ -112,7 +157,7 @@ h2 {
 /* PROGRAMS */
 .program-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 16px;
 }
 .program-box {
@@ -213,6 +258,31 @@ h2 {
   object-fit: contain;
   border-radius: 12px;
 }
+@media (max-width: 430px) {
+  .instructor-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    align-items: start;
+  }
+  .instructor-card {
+    min-width: 0;
+    padding: 6px 4px 8px;
+  }
+  .instructor-card img {
+    width: 100%;
+    max-width: 100%;
+    height: 108px;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+  .instructor-card h3 {
+    font-size: 0.68rem;
+    line-height: 1.15;
+    margin: 4px 0 0;
+    overflow-wrap: break-word;
+  }
+}
+
 
 /* ACCORDIONS */
 .accordion-btn {
@@ -319,11 +389,15 @@ footer {
 
 <!-- HEADER -->
 <div class="header-wrap">
-  <img src="header.webp" class="banner-img" alt="Grit City BJJ">
+  <img src="header.webp" class="banner-img" alt="GRIT CITY BJJ">
 </div>
 
 <div style="text-align:center; margin:18px 0 0 0; font-size:1.1rem; font-weight:700; color:#ffffff;">
   BJJ COACH International Association | Tacoma, WA
+</div>
+
+<div style="text-align:center; margin:6px 0 0 0; font-size:1.1rem; font-weight:700; color:#ffffff;">
+  Teaching in Tacoma since 2011
 </div>
 
 <!-- NAV -->
@@ -366,7 +440,7 @@ footer {
   <input type="hidden" name="access_key" value="cb578042-54f8-4bf8-b6e5-b625e02b9bc8">
 
   <!-- Nice email subject line -->
-  <input type="hidden" name="subject" value="New Free Class Request - Grit City BJJ">
+  <input type="hidden" name="subject" value="New Free Class Request - GRIT CITY BJJ">
 
   <!-- Strong honeypot - bots that fill this get blocked silently -->
   <div style="position:absolute; left:-9999px; top:-9999px; opacity:0;">
@@ -389,11 +463,9 @@ footer {
 <div class="program-grid">
   <div class="program-box">Adult BJJ</div>
   <div class="program-box">Kids BJJ</div>
-  <div class="program-box">Private Lessons</div>
   <div class="program-box">Competition Team</div>
-  <div class="program-box">Kickboxing</div>
-  <div class="program-box">MMA</div>
 </div>
+<p style="text-align:center; margin:18px 0 0 0;">MMA training is available to qualified students by invitation.</p>
 </section>
 
 <!-- SCHEDULE -->
@@ -471,8 +543,10 @@ footer {
 <div class="instructor-grid">
   <div class="instructor-card"><img src="mcm_5th_degree.jpg" onclick="pop(this)"><h3>Professor Marcello C Monteiro</h3></div>
   <div class="instructor-card"><img src="michael_proctor.JPG" onclick="pop(this)"><h3>Professor Michael Proctor</h3></div>
+  <div class="instructor-card"><img src="david_gines.JPG" onclick="pop(this)"><h3>Professor David Gines</h3></div>
   <div class="instructor-card"><img src="donnie_mcmasters.png" onclick="pop(this)"><h3>Coach Donnie McMasters</h3></div>
-  <div class="instructor-card"><img src="" onclick="pop(this)"><h3>Coach Chris Kuykendall</h3></div>
+  <div class="instructor-card"><img src="chris_kuykendall.png" onclick="pop(this)"><h3>Coach Chris Kuykendall</h3></div>
+  <div class="instructor-card"><img src="stephanie_geyer.png" alt="Coach Stephanie Geyer, GRIT CITY BJJ" onclick="pop(this)"><h3>Coach Stephanie Geyer</h3></div>
 </div>
 </section>
 
@@ -493,7 +567,6 @@ footer {
 <li>08. Talking minimal and relevant only.</li>
 <li>09. No foul language.</li>
 <li>10. Be humble.</li>
-<li>11. Believe & Achieve.</li>
 </ul>
 <h3>Etiquette</h3>
 <ul>
@@ -535,14 +608,13 @@ footer {
 <p><strong>4. Will I be expected to compete?</strong><br>Competition is optional. You will never be pushed to compete unless you want to. We offer competition training for those who choose that path, but regular classes are designed for all skill levels and all goals — lifestyle, fitness, knowledge, or self-defense.</p>
 <p><strong>5. Do I need prior martial arts experience?</strong><br>None. Most students start with zero experience. The curriculum is structured for beginners first, then builds layer by layer into advanced concepts. You learn fundamentals at your own pace.</p>
 <p><strong>6. Do you offer beginner-friendly classes?</strong><br>Yes. We have structured classes that teach the core positions, movements, transitions, and submissions in a controlled, easy-to-absorb format. Instructors guide every step and ensure beginners never feel overwhelmed.</p>
-<p><strong>7. Do you offer striking classes?</strong><br>Yes — we also offer Kickboxing, Muay Thai, and MMA. These classes complement BJJ perfectly and are excellent for cardio, timing, confidence, and self-defense.</p>
-<p><strong>8. Will BJJ help me lose weight?</strong><br>Extremely. Rolling, drilling, and class structure burn calories fast and build lean muscle. Most students see changes in weight, energy, and confidence within the first few weeks — BJJ is one of the most effective and enjoyable forms of fitness you can commit to.</p>
-<p><strong>9. What does a typical class look like?</strong><br>Classes usually follow this structure:<br><strong>• Warm-up:</strong> mobility, movement patterns, light conditioning.<br><strong>• Technique:</strong> step-by-step instruction, drilling, learning positions.<br><strong>• Live training:</strong> situational training → controlled rolls → optional sparring.<br>Each class builds on the previous one, creating a steady progression in skill and understanding.</p>
-<p><strong>10. Do you offer family or multi-student discounts?</strong><br>Yes. We support families training together and offer reduced pricing for households with multiple members training.</p>
-<p><strong>11. How much does membership cost?</strong><br>Pricing varies depending on training goals, programs, and membership type. We offer multiple options — adults, kids, full access, and specialty programs. Contact us directly for the most accurate plan based on what you want to achieve.</p>
-<p><strong>12. What age can kids start?</strong><br>Kids classes start at age 5. The program builds confidence, discipline, coordination, bully-proofing, and respect — all while teaching real martial arts skills in a safe, structured environment.</p>
-<p><strong>13. How long does it take to earn a Black Belt?</strong><br>BJJ is earned, not given. On average, it takes 8–12 years depending on consistency, attitude, effort, and dedication. There are no shortcuts — every belt represents real skill and real work.</p>
-<p><strong>14. How do I get started?</strong><br>Schedule your free class, show up with comfortable athletic clothing, and be ready to learn. You can also call <a href="tel:2532546538" style="color:#3B82F6;font-weight:700;">253-254-6538</a> to speak directly with the academy.</p>
+<p><strong>7. Will BJJ help me lose weight?</strong><br>Extremely. Rolling, drilling, and class structure burn calories fast and build lean muscle. Most students see changes in weight, energy, and confidence within the first few weeks — BJJ is one of the most effective and enjoyable forms of fitness you can commit to.</p>
+<p><strong>8. What does a typical class look like?</strong><br>Classes usually follow this structure:<br><strong>• Warm-up:</strong> mobility, movement patterns, light conditioning.<br><strong>• Technique:</strong> step-by-step instruction, drilling, learning positions.<br><strong>• Live training:</strong> situational training → controlled rolls → optional sparring.<br>Each class builds on the previous one, creating a steady progression in skill and understanding.</p>
+<p><strong>9. Do you offer family or multi-student discounts?</strong><br>Yes. We support families training together and offer reduced pricing for households with multiple members training.</p>
+<p><strong>10. How much does membership cost?</strong><br>Pricing varies depending on training goals, programs, and membership type. We offer multiple options — adults, kids, full access, and specialty programs. Contact us directly for the most accurate plan based on what you want to achieve.</p>
+<p><strong>11. What age can kids start?</strong><br>Kids classes start at age 5. The program builds confidence, discipline, coordination, bully-proofing, and respect — all while teaching real martial arts skills in a safe, structured environment.</p>
+<p><strong>12. How long does it take to earn a Black Belt?</strong><br>BJJ is earned, not given. On average, it takes 8–12 years depending on consistency, attitude, effort, and dedication. There are no shortcuts — every belt represents real skill and real work.</p>
+<p><strong>13. How do I get started?</strong><br>Schedule your free class, show up with comfortable athletic clothing, and be ready to learn. You can also call <a href="tel:2532546538" style="color:#3B82F6;font-weight:700;">253-254-6538</a> to speak directly with the academy.</p>
 </div>
 </section>
 
@@ -556,7 +628,7 @@ footer {
   <input type="hidden" name="access_key" value="cb578042-54f8-4bf8-b6e5-b625e02b9bc8">
 
   <!-- Nice email subject line -->
-  <input type="hidden" name="subject" value="New Free Class Request - Grit City BJJ">
+  <input type="hidden" name="subject" value="New Free Class Request - GRIT CITY BJJ">
 
   <!-- Strong honeypot - bots that fill this get blocked silently -->
   <div style="position:absolute; left:-9999px; top:-9999px; opacity:0;">
