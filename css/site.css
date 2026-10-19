@@ -293,6 +293,24 @@ a.program-box {
   height: 600px;
   border: none;
   border-radius: 12px;
+  background: #0A0A0A;
+}
+
+.find-us {
+  margin: 0 0 16px;
+}
+
+.find-us img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+
+.find-us figcaption {
+  margin-top: 8px;
+  color: #AEB7AF;
+  font-weight: 600;
 }
 
 .location-thumbs {
