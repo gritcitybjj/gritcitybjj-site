@@ -125,13 +125,19 @@ h3 {
 }
 
 .navbar {
-  background: rgba(10,10,10,0.75);
+  background: rgba(10,10,10,0.92);
   backdrop-filter: blur(6px);
   position: sticky;
   top: 0;
   z-index: 9999;
   padding: 10px 0;
   margin-top: 14px;
+}
+
+section[id],
+h2[id],
+#contact {
+  scroll-margin-top: 64px;
 }
 
 .nav-inner {
